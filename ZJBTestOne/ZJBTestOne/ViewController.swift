@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
 
@@ -23,6 +24,11 @@ class ViewController: UIViewController {
         let str: String = NSStringFromClass(self.classForCoder);
         self.xn_initLabel(label: self.titleLabel, text: "xiaoniushandai", textAglignment: NSTextAlignment.center, fontSize: 16, textColor: UIColor.black)
         self.view.addSubview(self.titleLabel)
+        let firstButton=UIButton()
+        self.view.addSubview(firstButton);
+        firstButton.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.view)
+        }
         print("zhoujiebing"+str);
         NotificationCenter.default.addObserver(self, selector: #selector(self.successNotification(_:)), name: NSNotification.Name(rawValue: "notification"), object: nil)
     }

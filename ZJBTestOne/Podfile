@@ -3,13 +3,13 @@ use_frameworks!
 platform :ios, ‘8.0’
 
 def shared_pods
-    pod 'Masonry', '~> 1.0.2’
     pod 'SDWebImage', '~> 4.0.0’
     pod 'MJRefresh', '~> 3.1.12'
     pod 'MBProgressHUD+JDragon', '~> 0.0.2'
     pod 'AFNetworking', '~> 3.1.0'
     pod 'UMengAnalytics', '~> 4.2.4'
     pod 'YYModel', '~> 1.0.4'
+    pod 'SnapKit', '~> 3.2.0'
 end
 
 target 'ZJBTestOne’ do
