@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.5.0)
+  - IBAnimatable (4.1.0)
   - Moya (8.0.5):
     - Moya/Core (= 8.0.5)
   - Moya/Core (8.0.5):
@@ -9,15 +10,17 @@ PODS:
   - SnapKit (3.2.0)
 
 DEPENDENCIES:
+  - IBAnimatable (~> 4.1.0)
   - Moya (~> 8.0.5)
   - SnapKit (~> 3.2.0)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  IBAnimatable: 0fd2c9fd38c4798d71bcc18dbd87d473a7df2577
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: 1e6c02cbc644d6ed2bfc5320fc64ee1e0f8d0a91
+PODFILE CHECKSUM: a61e2ebe44a3f2ba79f32a241f84014106f83448
 
 COCOAPODS: 1.2.1.beta.1

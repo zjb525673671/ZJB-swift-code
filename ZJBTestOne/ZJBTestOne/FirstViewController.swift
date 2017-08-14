@@ -36,5 +36,9 @@ class FirstViewController: UIViewController {
     public func xn_initSubViews() {
         
     }
+    
+    public func stringGotValue() -> String? {
+        return ""
+    }
 
 }
