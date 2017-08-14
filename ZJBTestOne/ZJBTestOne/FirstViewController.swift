@@ -20,5 +20,21 @@ class FirstViewController: UIViewController {
         self.firstLabel.textColor = UIColor.blue
         self.view.addSubview(self.firstLabel);
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
+    
+    private func xn_initData() {
+        
+    }
+    
+    public func xn_initSubViews() {
+        
+    }
 
 }
