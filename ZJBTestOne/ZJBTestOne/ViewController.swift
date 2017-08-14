@@ -21,10 +21,11 @@ class ViewController: UIViewController {
     //MARK: ♻️life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "首页";
         let str: String = NSStringFromClass(self.classForCoder);
         self.xn_initLabel(label: self.titleLabel, text: "xiaoniushandai", textAglignment: NSTextAlignment.center, fontSize: 16, textColor: UIColor.black)
         self.view.addSubview(self.titleLabel)
-        let firstButton=UIButton()
+        let firstButton = UIButton()
         self.view.addSubview(firstButton);
         firstButton.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
