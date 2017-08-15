@@ -3,9 +3,10 @@ use_frameworks!
 platform :ios, ‘8.0’
 
 def shared_pods
-    pod 'SnapKit', '~> 3.2.0'
-    pod 'Moya', '~> 8.0.5'
-    pod 'IBAnimatable', '~> 4.1.0'
+    pod 'SnapKit', '~> 3.2.0' #swift版本的约束
+    pod 'Moya', '~> 8.0.5' #高级的网络请求三方库
+    pod 'IBAnimatable', '~> 4.1.0' #高级动画
+    pod 'NVActivityIndicatorView', '~> 3.7.0' #loading框
 end
 
 target 'ZJBTestOne’ do
