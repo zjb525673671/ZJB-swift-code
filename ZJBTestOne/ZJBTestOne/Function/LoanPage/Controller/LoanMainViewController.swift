@@ -1,5 +1,5 @@
 //
-//  BaseTabBarController.swift
+//  LoanMainViewController.swift
 //  ZJBTestOne
 //
 //  Created by 周结兵 on 2017/8/15.
@@ -8,14 +8,15 @@
 
 import UIKit
 
-class BaseTabBarController: UITabBarController {
+class LoanMainViewController: BaseViewController {
 
     //MARK: ☸property
-    
+
     //MARK: ♻️life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.xn_initSubViews()
+        self.xn_initData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,8 +31,11 @@ class BaseTabBarController: UITabBarController {
         
     }
     //MARK: 🔒private
+    private func xn_initData() {
+        self.view.backgroundColor = UIColor.white
+    }
     
-    private func addChildController(vcStr: String?, imageName: String?, selectImage: String?, title: String?, tag:NSInteger) {        
+    private func xn_initSubViews() {
         
     }
     //MARK: 🚪public

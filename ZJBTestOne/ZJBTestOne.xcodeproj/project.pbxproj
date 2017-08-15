@@ -10,11 +10,15 @@
 		18F9874D1DE41E500043EDD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F9874C1DE41E500043EDD8 /* Assets.xcassets */; };
 		18F987501DE41E500043EDD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F9874E1DE41E500043EDD8 /* LaunchScreen.storyboard */; };
 		DD48F4DA4DD25F4D99618DC3 /* Pods_ZJBTestOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3B06BDA03F4C9F65C318E9 /* Pods_ZJBTestOne.framework */; };
-		F36983871F418FF000780DAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983831F418FF000780DAB /* ViewController.swift */; };
-		F369838A1F41901F00780DAB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983891F41901F00780DAB /* FirstViewController.swift */; };
 		F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F369838F1F42EE1600780DAB /* AppDelegate.swift */; };
 		F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983921F42EE3D00780DAB /* BaseViewController.swift */; };
 		F36983951F42EE6900780DAB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983941F42EE6900780DAB /* BaseTabBarController.swift */; };
+		F36983A81F4330B500780DAB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983A11F4330B500780DAB /* FirstViewController.swift */; };
+		F36983A91F4330B500780DAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983A21F4330B500780DAB /* ViewController.swift */; };
+		F36983BA1F43317900780DAB /* QuotaMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983B91F43317900780DAB /* QuotaMainViewController.swift */; };
+		F36983BC1F4331A400780DAB /* ActivityMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983BB1F4331A400780DAB /* ActivityMainViewController.swift */; };
+		F36983BE1F4331C000780DAB /* MeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983BD1F4331C000780DAB /* MeMainViewController.swift */; };
+		F36983C01F4331F900780DAB /* LoanMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983BF1F4331F900780DAB /* LoanMainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,11 +29,15 @@
 		55F46CFF9AC325180EF820C8 /* Pods-ZJBTestOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJBTestOne.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJBTestOne/Pods-ZJBTestOne.debug.xcconfig"; sourceTree = "<group>"; };
 		6C0C58AFFAE0D6FB2A3D3424 /* Pods-ZJBTestOne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJBTestOne.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJBTestOne/Pods-ZJBTestOne.release.xcconfig"; sourceTree = "<group>"; };
 		9A3B06BDA03F4C9F65C318E9 /* Pods_ZJBTestOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZJBTestOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F36983831F418FF000780DAB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F36983891F41901F00780DAB /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		F369838F1F42EE1600780DAB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36983921F42EE3D00780DAB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F36983941F42EE6900780DAB /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		F36983A11F4330B500780DAB /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		F36983A21F4330B500780DAB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F36983B91F43317900780DAB /* QuotaMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaMainViewController.swift; sourceTree = "<group>"; };
+		F36983BB1F4331A400780DAB /* ActivityMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMainViewController.swift; sourceTree = "<group>"; };
+		F36983BD1F4331C000780DAB /* MeMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainViewController.swift; sourceTree = "<group>"; };
+		F36983BF1F4331F900780DAB /* LoanMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoanMainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,18 +100,12 @@
 		F36983811F418FF000780DAB /* Function */ = {
 			isa = PBXGroup;
 			children = (
-				F36983821F418FF000780DAB /* HomePage */,
+				F369839F1F4330B500780DAB /* LoanPage */,
+				F36983B41F43310A00780DAB /* QuotaPage */,
+				F36983AA1F43310A00780DAB /* ActivePage */,
+				F36983AF1F43310A00780DAB /* MePage */,
 			);
 			path = Function;
-			sourceTree = "<group>";
-		};
-		F36983821F418FF000780DAB /* HomePage */ = {
-			isa = PBXGroup;
-			children = (
-				F36983891F41901F00780DAB /* FirstViewController.swift */,
-				F36983831F418FF000780DAB /* ViewController.swift */,
-			);
-			path = HomePage;
 			sourceTree = "<group>";
 		};
 		F36983841F418FF000780DAB /* Main */ = {
@@ -140,6 +142,168 @@
 				F36983941F42EE6900780DAB /* BaseTabBarController.swift */,
 			);
 			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		F369839F1F4330B500780DAB /* LoanPage */ = {
+			isa = PBXGroup;
+			children = (
+				F36983A01F4330B500780DAB /* Controller */,
+				F36983A31F4330B500780DAB /* Model */,
+				F36983A41F4330B500780DAB /* Presenter */,
+				F36983A51F4330B500780DAB /* View */,
+			);
+			path = LoanPage;
+			sourceTree = "<group>";
+		};
+		F36983A01F4330B500780DAB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F36983A11F4330B500780DAB /* FirstViewController.swift */,
+				F36983BF1F4331F900780DAB /* LoanMainViewController.swift */,
+				F36983A21F4330B500780DAB /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F36983A31F4330B500780DAB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F36983A41F4330B500780DAB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F36983A51F4330B500780DAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F36983AA1F43310A00780DAB /* ActivePage */ = {
+			isa = PBXGroup;
+			children = (
+				F36983AB1F43310A00780DAB /* Controller */,
+				F36983AC1F43310A00780DAB /* Model */,
+				F36983AD1F43310A00780DAB /* Presenter */,
+				F36983AE1F43310A00780DAB /* View */,
+			);
+			path = ActivePage;
+			sourceTree = "<group>";
+		};
+		F36983AB1F43310A00780DAB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F36983BB1F4331A400780DAB /* ActivityMainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F36983AC1F43310A00780DAB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F36983AD1F43310A00780DAB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F36983AE1F43310A00780DAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F36983AF1F43310A00780DAB /* MePage */ = {
+			isa = PBXGroup;
+			children = (
+				F36983B01F43310A00780DAB /* Controller */,
+				F36983B11F43310A00780DAB /* Model */,
+				F36983B21F43310A00780DAB /* Presenter */,
+				F36983B31F43310A00780DAB /* View */,
+			);
+			path = MePage;
+			sourceTree = "<group>";
+		};
+		F36983B01F43310A00780DAB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F36983BD1F4331C000780DAB /* MeMainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F36983B11F43310A00780DAB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F36983B21F43310A00780DAB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F36983B31F43310A00780DAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F36983B41F43310A00780DAB /* QuotaPage */ = {
+			isa = PBXGroup;
+			children = (
+				F36983B51F43310A00780DAB /* Controller */,
+				F36983B61F43310A00780DAB /* Model */,
+				F36983B71F43310A00780DAB /* Presenter */,
+				F36983B81F43310A00780DAB /* View */,
+			);
+			path = QuotaPage;
+			sourceTree = "<group>";
+		};
+		F36983B51F43310A00780DAB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F36983B91F43317900780DAB /* QuotaMainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F36983B61F43310A00780DAB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F36983B71F43310A00780DAB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F36983B81F43310A00780DAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,11 +428,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36983A91F4330B500780DAB /* ViewController.swift in Sources */,
 				F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */,
+				F36983BA1F43317900780DAB /* QuotaMainViewController.swift in Sources */,
+				F36983BE1F4331C000780DAB /* MeMainViewController.swift in Sources */,
 				F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */,
+				F36983C01F4331F900780DAB /* LoanMainViewController.swift in Sources */,
+				F36983BC1F4331A400780DAB /* ActivityMainViewController.swift in Sources */,
 				F36983951F42EE6900780DAB /* BaseTabBarController.swift in Sources */,
-				F369838A1F41901F00780DAB /* FirstViewController.swift in Sources */,
-				F36983871F418FF000780DAB /* ViewController.swift in Sources */,
+				F36983A81F4330B500780DAB /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
