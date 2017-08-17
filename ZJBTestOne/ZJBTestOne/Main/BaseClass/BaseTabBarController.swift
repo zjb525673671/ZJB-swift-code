@@ -17,7 +17,7 @@ class BaseTabBarController: UITabBarController {
         super.viewDidLoad()
         self.addChildController(VC: LoanMainViewController(), imageName: "tabBar_loan_normal", selectImage: "", title: "贷款", tag: 1)
         self.addChildController(VC: QuotaMainViewController(), imageName: "tabBar_quota_normal", selectImage: "", title: "提额", tag: 2)
-//        self.addChildController(VC: ActivityMainViewController(), imageName: "tabBar_activety_normal", selectImage: "", title: "活动", tag: 3)
+        self.addChildController(VC: ActivityMainViewController(), imageName: "tabBar_activety_normal", selectImage: "", title: "活动", tag: 3)
         self.addChildController(VC: MeMainViewController(), imageName: "tabBar_me_normal", selectImage: "", title: "我的", tag: 4)
     }
     
@@ -39,8 +39,8 @@ class BaseTabBarController: UITabBarController {
         VC?.tabBarItem.image = UIImage.init(named: imageName!)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         VC?.tabBarItem.tag = tag
         VC?.tabBarItem.selectedImage = UIImage.init(named: selectImage!)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-        VC?.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.red], for: UIControlState.selected)
-        VC?.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.blue], for: UIControlState.normal)
+        VC?.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.RGBA(hex: 0xff6268)], for: UIControlState.selected)
+        VC?.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.RGBA(hex: 0x878787)], for: UIControlState.normal)
         let nav = UINavigationController.init(rootViewController: VC!)
         self.addChildViewController(nav)
     }

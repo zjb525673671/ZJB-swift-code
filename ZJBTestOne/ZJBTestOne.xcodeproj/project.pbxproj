@@ -18,6 +18,8 @@
 		F36983BA1F43317900780DAB /* QuotaMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983B91F43317900780DAB /* QuotaMainViewController.swift */; };
 		F36983BE1F4331C000780DAB /* MeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983BD1F4331C000780DAB /* MeMainViewController.swift */; };
 		F36983C01F4331F900780DAB /* LoanMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983BF1F4331F900780DAB /* LoanMainViewController.swift */; };
+		F36983C21F459BB900780DAB /* ActivityMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983C11F459BB900780DAB /* ActivityMainViewController.swift */; };
+		F36983C81F459F6400780DAB /* BaseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983C71F459F6400780DAB /* BaseCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		F36983B91F43317900780DAB /* QuotaMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaMainViewController.swift; sourceTree = "<group>"; };
 		F36983BD1F4331C000780DAB /* MeMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainViewController.swift; sourceTree = "<group>"; };
 		F36983BF1F4331F900780DAB /* LoanMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoanMainViewController.swift; sourceTree = "<group>"; };
+		F36983C11F459BB900780DAB /* ActivityMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMainViewController.swift; sourceTree = "<group>"; };
+		F36983C71F459F6400780DAB /* BaseCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				F36983811F418FF000780DAB /* Function */,
 				F36983841F418FF000780DAB /* Main */,
+				F36983C31F459CE800780DAB /* Category */,
+				F36983C41F459CE800780DAB /* PublicUI */,
 				F36983861F418FF000780DAB /* Support */,
 			);
 			path = ZJBTestOne;
@@ -198,6 +204,7 @@
 		F36983AB1F43310A00780DAB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F36983C11F459BB900780DAB /* ActivityMainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -301,6 +308,21 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F36983C31F459CE800780DAB /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F36983C71F459F6400780DAB /* BaseCategory.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F36983C41F459CE800780DAB /* PublicUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PublicUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +450,8 @@
 				F36983A91F4330B500780DAB /* ViewController.swift in Sources */,
 				F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */,
 				F36983BA1F43317900780DAB /* QuotaMainViewController.swift in Sources */,
+				F36983C21F459BB900780DAB /* ActivityMainViewController.swift in Sources */,
+				F36983C81F459F6400780DAB /* BaseCategory.swift in Sources */,
 				F36983BE1F4331C000780DAB /* MeMainViewController.swift in Sources */,
 				F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */,
 				F36983C01F4331F900780DAB /* LoanMainViewController.swift in Sources */,
