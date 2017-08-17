@@ -15,7 +15,10 @@ class BaseTabBarController: UITabBarController {
     //MARK: ♻️life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.addChildController(VC: LoanMainViewController(), imageName: "tabBar_loan_normal", selectImage: "", title: "贷款", tag: 1)
+        self.addChildController(VC: QuotaMainViewController(), imageName: "tabBar_quota_normal", selectImage: "", title: "提额", tag: 2)
+//        self.addChildController(VC: ActivityMainViewController(), imageName: "tabBar_activety_normal", selectImage: "", title: "活动", tag: 3)
+        self.addChildController(VC: MeMainViewController(), imageName: "tabBar_me_normal", selectImage: "", title: "我的", tag: 4)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,12 +30,19 @@ class BaseTabBarController: UITabBarController {
     }
     
     deinit {
-        
+        NotificationCenter.default.removeObserver(self)
     }
     //MARK: 🔒private
     
-    private func addChildController(vcStr: String?, imageName: String?, selectImage: String?, title: String?, tag:NSInteger) {        
-        
+    private func addChildController(VC: UIViewController?, imageName: String?, selectImage: String?, title: String?, tag:NSInteger) {
+        VC?.title = title
+        VC?.tabBarItem.image = UIImage.init(named: imageName!)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        VC?.tabBarItem.tag = tag
+        VC?.tabBarItem.selectedImage = UIImage.init(named: selectImage!)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        VC?.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.red], for: UIControlState.selected)
+        VC?.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.blue], for: UIControlState.normal)
+        let nav = UINavigationController.init(rootViewController: VC!)
+        self.addChildViewController(nav)
     }
     //MARK: 🚪public
     //MARK: 🍐delegate

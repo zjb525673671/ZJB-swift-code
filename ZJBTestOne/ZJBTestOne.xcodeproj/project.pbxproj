@@ -16,7 +16,6 @@
 		F36983A81F4330B500780DAB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983A11F4330B500780DAB /* FirstViewController.swift */; };
 		F36983A91F4330B500780DAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983A21F4330B500780DAB /* ViewController.swift */; };
 		F36983BA1F43317900780DAB /* QuotaMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983B91F43317900780DAB /* QuotaMainViewController.swift */; };
-		F36983BC1F4331A400780DAB /* ActivityMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983BB1F4331A400780DAB /* ActivityMainViewController.swift */; };
 		F36983BE1F4331C000780DAB /* MeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983BD1F4331C000780DAB /* MeMainViewController.swift */; };
 		F36983C01F4331F900780DAB /* LoanMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983BF1F4331F900780DAB /* LoanMainViewController.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +34,6 @@
 		F36983A11F4330B500780DAB /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		F36983A21F4330B500780DAB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F36983B91F43317900780DAB /* QuotaMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaMainViewController.swift; sourceTree = "<group>"; };
-		F36983BB1F4331A400780DAB /* ActivityMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMainViewController.swift; sourceTree = "<group>"; };
 		F36983BD1F4331C000780DAB /* MeMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainViewController.swift; sourceTree = "<group>"; };
 		F36983BF1F4331F900780DAB /* LoanMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoanMainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,7 +198,6 @@
 		F36983AB1F43310A00780DAB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F36983BB1F4331A400780DAB /* ActivityMainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -434,7 +431,6 @@
 				F36983BE1F4331C000780DAB /* MeMainViewController.swift in Sources */,
 				F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */,
 				F36983C01F4331F900780DAB /* LoanMainViewController.swift in Sources */,
-				F36983BC1F4331A400780DAB /* ActivityMainViewController.swift in Sources */,
 				F36983951F42EE6900780DAB /* BaseTabBarController.swift in Sources */,
 				F36983A81F4330B500780DAB /* FirstViewController.swift in Sources */,
 			);
