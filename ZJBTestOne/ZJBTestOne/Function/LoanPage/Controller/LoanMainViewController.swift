@@ -23,10 +23,12 @@ class LoanMainViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
@@ -55,10 +57,6 @@ class LoanMainViewController: BaseViewController {
     @objc private func clickAction_enterNext() {
         let authenVC = AuthenMainViewController()
         self.navigationController?.pushViewController(authenVC, animated: true)
-//        self.enterButton.xn_gradView()
-//        let firstVC = FirstViewController()
-//        firstVC.hidesBottomBarWhenPushed = true
-//        self.navigationController?.pushViewController(firstVC, animated: true)
     }
     
     public func clickAction_update() {

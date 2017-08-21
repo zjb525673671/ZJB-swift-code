@@ -12,24 +12,34 @@ class BaseNavigtionController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.dropShadow(offset: CGSize.init(width: 0, height: 1.5), radius: 9, color: UIColor.RGBA(hex: 0xdb1e55), opacity: 0.5)
+        self.navigationBar.backgroundColor = UIColor.clear
+        self.navigationBar.barTintColor = UIColor.clear
+        var newImage = UIImage.init(named: "public_navigition_back")
+        newImage = newImage?.resizableImage(withCapInsets: UIEdgeInsetsMake(0, (newImage?.size.width)!/2 - 10, 0, (newImage?.size.width)!/2 - 10))
+        self.navigationBar.setBackgroundImage(newImage, for: UIBarMetrics.default)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func dropShadow (offset:CGSize, radius:CGFloat, color:UIColor, opacity:CGFloat) {
+        let path: CGMutablePath = CGMutablePath()
+        path.addRect(self.navigationBar.bounds, transform: .identity)
+        self.navigationBar.layer.shadowPath = path
+        path.closeSubpath()
+        self.navigationBar.layer.shadowColor = color.cgColor
+        self.navigationBar.layer.shadowOffset = offset
+        self.navigationBar.layer.shadowRadius = radius
+        self.navigationBar.layer.shadowOpacity = Float(opacity)
+        self.navigationBar.clipsToBounds = false
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if self.childViewControllers.count > 0 {
+            viewController.hidesBottomBarWhenPushed = true
+        }
+        super.pushViewController(viewController, animated: true)
     }
-    */
+
 
 }

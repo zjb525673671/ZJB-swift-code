@@ -41,7 +41,7 @@ class BaseTabBarController: UITabBarController {
         VC?.tabBarItem.selectedImage = UIImage.init(named: selectImage!)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         VC?.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.RGBA(hex: 0xff6268)], for: UIControlState.selected)
         VC?.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.RGBA(hex: 0x878787)], for: UIControlState.normal)
-        let nav = UINavigationController.init(rootViewController: VC!)
+        let nav = BaseNavigtionController.init(rootViewController: VC!)
         self.addChildViewController(nav)
     }
     //MARK: 🚪public
