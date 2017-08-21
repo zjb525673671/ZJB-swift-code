@@ -12,6 +12,9 @@
 		DD48F4DA4DD25F4D99618DC3 /* Pods_ZJBTestOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3B06BDA03F4C9F65C318E9 /* Pods_ZJBTestOne.framework */; };
 		F328CBEE1F4A8C1000A1D632 /* AuthenMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBED1F4A8C1000A1D632 /* AuthenMainViewController.swift */; };
 		F328CBF01F4A8FDF00A1D632 /* BaseNavigtionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBEF1F4A8FDF00A1D632 /* BaseNavigtionController.swift */; };
+		F328CBF21F4AC86500A1D632 /* MeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF11F4AC86500A1D632 /* MeMainView.swift */; };
+		F328CBF51F4ADE7000A1D632 /* XNHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF41F4ADE7000A1D632 /* XNHelper.swift */; };
+		F328CBF71F4AEF7A00A1D632 /* MeMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF61F4AEF7A00A1D632 /* MeMainCell.swift */; };
 		F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F369838F1F42EE1600780DAB /* AppDelegate.swift */; };
 		F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983921F42EE3D00780DAB /* BaseViewController.swift */; };
 		F36983951F42EE6900780DAB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983941F42EE6900780DAB /* BaseTabBarController.swift */; };
@@ -34,6 +37,9 @@
 		9A3B06BDA03F4C9F65C318E9 /* Pods_ZJBTestOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZJBTestOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F328CBED1F4A8C1000A1D632 /* AuthenMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenMainViewController.swift; sourceTree = "<group>"; };
 		F328CBEF1F4A8FDF00A1D632 /* BaseNavigtionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigtionController.swift; sourceTree = "<group>"; };
+		F328CBF11F4AC86500A1D632 /* MeMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainView.swift; sourceTree = "<group>"; };
+		F328CBF41F4ADE7000A1D632 /* XNHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNHelper.swift; sourceTree = "<group>"; };
+		F328CBF61F4AEF7A00A1D632 /* MeMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainCell.swift; sourceTree = "<group>"; };
 		F369838F1F42EE1600780DAB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36983921F42EE3D00780DAB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F36983941F42EE6900780DAB /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -145,6 +151,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F328CBF31F4ADE5000A1D632 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F328CBF41F4ADE7000A1D632 /* XNHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		F36983811F418FF000780DAB /* Function */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +174,7 @@
 		F36983841F418FF000780DAB /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F328CBF31F4ADE5000A1D632 /* Helper */,
 				F369838E1F42EE1600780DAB /* AppDelegate */,
 				F36983901F42EE1600780DAB /* BaseClass */,
 			);
@@ -310,6 +325,8 @@
 		F36983B31F43310A00780DAB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F328CBF11F4AC86500A1D632 /* MeMainView.swift */,
+				F328CBF61F4AEF7A00A1D632 /* MeMainCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -512,11 +529,14 @@
 				F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */,
 				F36983BA1F43317900780DAB /* QuotaMainViewController.swift in Sources */,
 				F36983C21F459BB900780DAB /* ActivityMainViewController.swift in Sources */,
+				F328CBF51F4ADE7000A1D632 /* XNHelper.swift in Sources */,
 				F36983C81F459F6400780DAB /* BaseCategory.swift in Sources */,
 				F36983BE1F4331C000780DAB /* MeMainViewController.swift in Sources */,
 				F328CBEE1F4A8C1000A1D632 /* AuthenMainViewController.swift in Sources */,
+				F328CBF71F4AEF7A00A1D632 /* MeMainCell.swift in Sources */,
 				F328CBF01F4A8FDF00A1D632 /* BaseNavigtionController.swift in Sources */,
 				F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */,
+				F328CBF21F4AC86500A1D632 /* MeMainView.swift in Sources */,
 				F36983CB1F46BF6500780DAB /* XNGradientButton.swift in Sources */,
 				F36983C01F4331F900780DAB /* LoanMainViewController.swift in Sources */,
 				F36983CE1F46C3A600780DAB /* XNGradientView.swift in Sources */,

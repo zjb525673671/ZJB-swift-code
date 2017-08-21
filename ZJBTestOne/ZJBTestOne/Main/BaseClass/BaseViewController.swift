@@ -11,9 +11,7 @@ import UIKit
 class BaseViewController: UIViewController {
 
     //MARK: ☸property
-    var topView:UIView = {
-        return UIView.init()
-    } ()
+    
     //MARK: ♻️life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
