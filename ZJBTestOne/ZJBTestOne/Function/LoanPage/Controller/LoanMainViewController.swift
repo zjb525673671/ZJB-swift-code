@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import SnapKit
 
 class LoanMainViewController: BaseViewController {
 
     //MARK: ☸property
-    var enterButton = UIButton.init(type: UIButtonType.custom)
+    var enterButton = XNGradientButton.init(type: UIButtonType.custom)
+    var testImageView = UIImageView()
+    
     //MARK: ♻️life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,7 @@ class LoanMainViewController: BaseViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     deinit {
@@ -38,17 +42,23 @@ class LoanMainViewController: BaseViewController {
     private func xn_initSubViews() {
         
         self.view.addSubview(self.enterButton)
-        self.enterButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view).offset(64)
-            make.centerX.equalTo(self.view)
-            make.size.equalTo(CGSize(width: 200, height: 200))
-        }
-        self.enterButton.backgroundColor = UIColor.red
+        self.enterButton.frame = CGRect(x:100,y:100,width:100,height:200)
+//        self.enterButton.snp.makeConstraints { (make) in
+//            make.top.equalTo(self.view).offset(64)
+//            make.centerX.equalTo(self.view)
+//            make.size.equalTo(CGSize(width: 200, height: 200))
+//        }
+        self.enterButton.backgroundColor = UIColor.green
         self.enterButton.addTarget(self, action: #selector(self.clickAction_enterNext), for: .touchUpInside)
     }
     
     @objc private func clickAction_enterNext() {
-        
+        let authenVC = AuthenMainViewController()
+        self.navigationController?.pushViewController(authenVC, animated: true)
+//        self.enterButton.xn_gradView()
+//        let firstVC = FirstViewController()
+//        firstVC.hidesBottomBarWhenPushed = true
+//        self.navigationController?.pushViewController(firstVC, animated: true)
     }
     
     public func clickAction_update() {

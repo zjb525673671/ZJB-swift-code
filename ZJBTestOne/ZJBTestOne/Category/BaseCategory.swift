@@ -93,3 +93,18 @@ extension UIColor {
     }
     
 }
+
+extension UIImage {
+    
+    /// 把一个View变成一张图片
+    ///
+    /// - Parameter baseView: 需要变成图片的View
+    /// - Returns: 生成后的图片
+    public static func xn_createImage(baseView:UIView) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(baseView.bounds.size, false, UIScreen.main.scale)
+        baseView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+}

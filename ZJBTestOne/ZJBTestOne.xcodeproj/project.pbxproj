@@ -10,16 +10,18 @@
 		18F9874D1DE41E500043EDD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F9874C1DE41E500043EDD8 /* Assets.xcassets */; };
 		18F987501DE41E500043EDD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F9874E1DE41E500043EDD8 /* LaunchScreen.storyboard */; };
 		DD48F4DA4DD25F4D99618DC3 /* Pods_ZJBTestOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3B06BDA03F4C9F65C318E9 /* Pods_ZJBTestOne.framework */; };
+		F328CBEE1F4A8C1000A1D632 /* AuthenMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBED1F4A8C1000A1D632 /* AuthenMainViewController.swift */; };
+		F328CBF01F4A8FDF00A1D632 /* BaseNavigtionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBEF1F4A8FDF00A1D632 /* BaseNavigtionController.swift */; };
 		F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F369838F1F42EE1600780DAB /* AppDelegate.swift */; };
 		F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983921F42EE3D00780DAB /* BaseViewController.swift */; };
 		F36983951F42EE6900780DAB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983941F42EE6900780DAB /* BaseTabBarController.swift */; };
-		F36983A81F4330B500780DAB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983A11F4330B500780DAB /* FirstViewController.swift */; };
-		F36983A91F4330B500780DAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983A21F4330B500780DAB /* ViewController.swift */; };
 		F36983BA1F43317900780DAB /* QuotaMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983B91F43317900780DAB /* QuotaMainViewController.swift */; };
 		F36983BE1F4331C000780DAB /* MeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983BD1F4331C000780DAB /* MeMainViewController.swift */; };
 		F36983C01F4331F900780DAB /* LoanMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983BF1F4331F900780DAB /* LoanMainViewController.swift */; };
 		F36983C21F459BB900780DAB /* ActivityMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983C11F459BB900780DAB /* ActivityMainViewController.swift */; };
 		F36983C81F459F6400780DAB /* BaseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983C71F459F6400780DAB /* BaseCategory.swift */; };
+		F36983CB1F46BF6500780DAB /* XNGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983CA1F46BF6500780DAB /* XNGradientButton.swift */; };
+		F36983CE1F46C3A600780DAB /* XNGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983CD1F46C3A600780DAB /* XNGradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,16 +32,18 @@
 		55F46CFF9AC325180EF820C8 /* Pods-ZJBTestOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJBTestOne.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJBTestOne/Pods-ZJBTestOne.debug.xcconfig"; sourceTree = "<group>"; };
 		6C0C58AFFAE0D6FB2A3D3424 /* Pods-ZJBTestOne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJBTestOne.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJBTestOne/Pods-ZJBTestOne.release.xcconfig"; sourceTree = "<group>"; };
 		9A3B06BDA03F4C9F65C318E9 /* Pods_ZJBTestOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZJBTestOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F328CBED1F4A8C1000A1D632 /* AuthenMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenMainViewController.swift; sourceTree = "<group>"; };
+		F328CBEF1F4A8FDF00A1D632 /* BaseNavigtionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigtionController.swift; sourceTree = "<group>"; };
 		F369838F1F42EE1600780DAB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36983921F42EE3D00780DAB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F36983941F42EE6900780DAB /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
-		F36983A11F4330B500780DAB /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		F36983A21F4330B500780DAB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F36983B91F43317900780DAB /* QuotaMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaMainViewController.swift; sourceTree = "<group>"; };
 		F36983BD1F4331C000780DAB /* MeMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainViewController.swift; sourceTree = "<group>"; };
 		F36983BF1F4331F900780DAB /* LoanMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoanMainViewController.swift; sourceTree = "<group>"; };
 		F36983C11F459BB900780DAB /* ActivityMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMainViewController.swift; sourceTree = "<group>"; };
 		F36983C71F459F6400780DAB /* BaseCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCategory.swift; sourceTree = "<group>"; };
+		F36983CA1F46BF6500780DAB /* XNGradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNGradientButton.swift; sourceTree = "<group>"; };
+		F36983CD1F46C3A600780DAB /* XNGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +105,50 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F328CBE61F4A8B7F00A1D632 /* AuthenPage */ = {
+			isa = PBXGroup;
+			children = (
+				F328CBE71F4A8BB300A1D632 /* Controller */,
+				F328CBE81F4A8BB300A1D632 /* Model */,
+				F328CBE91F4A8BB300A1D632 /* Presenter */,
+				F328CBEA1F4A8BB300A1D632 /* View */,
+			);
+			path = AuthenPage;
+			sourceTree = "<group>";
+		};
+		F328CBE71F4A8BB300A1D632 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F328CBED1F4A8C1000A1D632 /* AuthenMainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F328CBE81F4A8BB300A1D632 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F328CBE91F4A8BB300A1D632 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F328CBEA1F4A8BB300A1D632 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F36983811F418FF000780DAB /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				F328CBE61F4A8B7F00A1D632 /* AuthenPage */,
 				F369839F1F4330B500780DAB /* LoanPage */,
 				F36983B41F43310A00780DAB /* QuotaPage */,
 				F36983AA1F43310A00780DAB /* ActivePage */,
@@ -144,6 +189,7 @@
 			children = (
 				F36983921F42EE3D00780DAB /* BaseViewController.swift */,
 				F36983941F42EE6900780DAB /* BaseTabBarController.swift */,
+				F328CBEF1F4A8FDF00A1D632 /* BaseNavigtionController.swift */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -162,9 +208,7 @@
 		F36983A01F4330B500780DAB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F36983A11F4330B500780DAB /* FirstViewController.swift */,
 				F36983BF1F4331F900780DAB /* LoanMainViewController.swift */,
-				F36983A21F4330B500780DAB /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,8 +365,26 @@
 		F36983C41F459CE800780DAB /* PublicUI */ = {
 			isa = PBXGroup;
 			children = (
+				F36983CC1F46C38600780DAB /* View */,
+				F36983C91F46BEFF00780DAB /* Button */,
 			);
 			path = PublicUI;
+			sourceTree = "<group>";
+		};
+		F36983C91F46BEFF00780DAB /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				F36983CA1F46BF6500780DAB /* XNGradientButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		F36983CC1F46C38600780DAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F36983CD1F46C3A600780DAB /* XNGradientView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,16 +509,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F36983A91F4330B500780DAB /* ViewController.swift in Sources */,
 				F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */,
 				F36983BA1F43317900780DAB /* QuotaMainViewController.swift in Sources */,
 				F36983C21F459BB900780DAB /* ActivityMainViewController.swift in Sources */,
 				F36983C81F459F6400780DAB /* BaseCategory.swift in Sources */,
 				F36983BE1F4331C000780DAB /* MeMainViewController.swift in Sources */,
+				F328CBEE1F4A8C1000A1D632 /* AuthenMainViewController.swift in Sources */,
+				F328CBF01F4A8FDF00A1D632 /* BaseNavigtionController.swift in Sources */,
 				F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */,
+				F36983CB1F46BF6500780DAB /* XNGradientButton.swift in Sources */,
 				F36983C01F4331F900780DAB /* LoanMainViewController.swift in Sources */,
+				F36983CE1F46C3A600780DAB /* XNGradientView.swift in Sources */,
 				F36983951F42EE6900780DAB /* BaseTabBarController.swift in Sources */,
-				F36983A81F4330B500780DAB /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
