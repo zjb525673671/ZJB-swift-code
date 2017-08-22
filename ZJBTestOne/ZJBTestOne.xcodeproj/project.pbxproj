@@ -15,6 +15,7 @@
 		F328CBF21F4AC86500A1D632 /* MeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF11F4AC86500A1D632 /* MeMainView.swift */; };
 		F328CBF51F4ADE7000A1D632 /* XNHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF41F4ADE7000A1D632 /* XNHelper.swift */; };
 		F328CBF71F4AEF7A00A1D632 /* MeMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF61F4AEF7A00A1D632 /* MeMainCell.swift */; };
+		F328CBF91F4C032300A1D632 /* MeMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF81F4C032300A1D632 /* MeMainModel.swift */; };
 		F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F369838F1F42EE1600780DAB /* AppDelegate.swift */; };
 		F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983921F42EE3D00780DAB /* BaseViewController.swift */; };
 		F36983951F42EE6900780DAB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983941F42EE6900780DAB /* BaseTabBarController.swift */; };
@@ -40,6 +41,7 @@
 		F328CBF11F4AC86500A1D632 /* MeMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainView.swift; sourceTree = "<group>"; };
 		F328CBF41F4ADE7000A1D632 /* XNHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNHelper.swift; sourceTree = "<group>"; };
 		F328CBF61F4AEF7A00A1D632 /* MeMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainCell.swift; sourceTree = "<group>"; };
+		F328CBF81F4C032300A1D632 /* MeMainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainModel.swift; sourceTree = "<group>"; };
 		F369838F1F42EE1600780DAB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36983921F42EE3D00780DAB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F36983941F42EE6900780DAB /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 		F36983B11F43310A00780DAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F328CBF81F4C032300A1D632 /* MeMainModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				F36983BA1F43317900780DAB /* QuotaMainViewController.swift in Sources */,
 				F36983C21F459BB900780DAB /* ActivityMainViewController.swift in Sources */,
 				F328CBF51F4ADE7000A1D632 /* XNHelper.swift in Sources */,
+				F328CBF91F4C032300A1D632 /* MeMainModel.swift in Sources */,
 				F36983C81F459F6400780DAB /* BaseCategory.swift in Sources */,
 				F36983BE1F4331C000780DAB /* MeMainViewController.swift in Sources */,
 				F328CBEE1F4A8C1000A1D632 /* AuthenMainViewController.swift in Sources */,

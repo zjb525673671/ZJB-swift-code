@@ -15,6 +15,7 @@ class BaseViewController: UIViewController {
     //MARK: ♻️life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.base_initSubViews()
         self.base_initData()
     }

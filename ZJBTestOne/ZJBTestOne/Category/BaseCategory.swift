@@ -14,7 +14,7 @@ extension UILabel {
     
     
     //转换AnyHashable成string类型展示
-    public func yzts_textToString(text:AnyHashable?) {
+    public func xn_textToString(text:AnyHashable?) {
         if text == nil {
             self.text = nil
         } else {
@@ -23,37 +23,37 @@ extension UILabel {
     }
     
     //label部分属性设置
-    public func yzts_init(text:AnyHashable?, textAlignment:NSTextAlignment?) {
-        self.yzts_initAllProperty(frame: nil, text: text, textAlignment: textAlignment, fontSize: nil, textColor: nil, backgroundColor: nil)
+    public func xn_init(text:AnyHashable?, textAlignment:NSTextAlignment?) {
+        self.xn_initAllProperty(frame: nil, text: text, textAlignment: textAlignment, font: nil, textColor: nil, backgroundColor: nil)
     }
     
-    public func yzts_init(text:AnyHashable?, textAlignment:NSTextAlignment?, fontSize:Float?) {
-        self.yzts_initAllProperty(frame: nil, text: text, textAlignment: textAlignment, fontSize: fontSize, textColor: nil, backgroundColor: nil)
+    public func xn_init(text:AnyHashable?, textAlignment:NSTextAlignment?, font:UIFont?) {
+        self.xn_initAllProperty(frame: nil, text: text, textAlignment: textAlignment, font: font, textColor: nil, backgroundColor: nil)
     }
     
-    public func yzts_init(text:AnyHashable?, textAlignment:NSTextAlignment?, fontSize:Float?, textColor:UIColor?) {
-        self.yzts_initAllProperty(frame: nil, text: text, textAlignment: textAlignment, fontSize: fontSize, textColor: textColor, backgroundColor: nil)
+    public func xn_init(text:AnyHashable?, textAlignment:NSTextAlignment?, font:UIFont?, textColor:UIColor?) {
+        self.xn_initAllProperty(frame: nil, text: text, textAlignment: textAlignment, font: font, textColor: textColor, backgroundColor: nil)
     }
     
-    public func yzts_init(text:AnyHashable?, textAlignment:NSTextAlignment?, fontSize:Float?,
+    public func xn_init(text:AnyHashable?, textAlignment:NSTextAlignment?, font:UIFont?,
                           textColor:UIColor?, backgroundColor:UIColor?) {
-        self.yzts_initAllProperty(frame: nil, text: text, textAlignment: textAlignment, fontSize: fontSize, textColor: textColor, backgroundColor: backgroundColor)
+        self.xn_initAllProperty(frame: nil, text: text, textAlignment: textAlignment, font: font, textColor: textColor, backgroundColor: backgroundColor)
     }
     
     //设置label的所有属性
-    public func yzts_initAllProperty(frame:CGRect?, text:AnyHashable?, textAlignment:NSTextAlignment?, fontSize:Float?,
+    public func xn_initAllProperty(frame:CGRect?, text:AnyHashable?, textAlignment:NSTextAlignment?, font:UIFont?,
                                      textColor:UIColor?, backgroundColor:UIColor?) {
         if frame != nil {
             self.frame = frame!
         }
         if text != nil {
-            self.yzts_textToString(text: text)
+            self.xn_textToString(text: text)
         }
         if textAlignment != nil {
             self.textAlignment = textAlignment!
         }
-        if fontSize != nil {
-            self.font = UIFont.systemFont(ofSize: CGFloat(fontSize!))
+        if font != nil {
+            self.font = font
         }
         if textColor != nil {
             self.textColor = textColor!
@@ -92,6 +92,30 @@ extension UIColor {
         return UIColor(r: CGFloat(Float(arc4random()) / Float(UINT32_MAX)), g: CGFloat(Float(arc4random()) / Float(UINT32_MAX)), b: CGFloat(Float(arc4random()) / Float(UINT32_MAX)), a: (randomAlpha ? (CGFloat(Float(arc4random()) / Float(UINT32_MAX))) : 1.0))
     }
     
+}
+
+extension UIFont {
+    public static func lightFont(size:CGFloat) -> UIFont {
+        var font = UIFont(name: "PingFangSC-Light", size: size)
+        if font == nil {
+            font = UIFont.systemFont(ofSize: size)
+        }
+        return font!
+    }
+    public static func regularFont(size:CGFloat) -> UIFont {
+        var font = UIFont(name: "PingFangSC-Regular", size: size)
+        if font == nil {
+            font = UIFont.systemFont(ofSize: size)
+        }
+        return font!
+    }
+    public static func mediumFont(size:CGFloat) -> UIFont {
+        var font = UIFont(name: "PingFangSC-Medium", size: size)
+        if font == nil {
+            font = UIFont.systemFont(ofSize: size)
+        }
+        return font!
+    }
 }
 
 extension UIImage {

@@ -29,7 +29,6 @@ class LoanMainViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     deinit {
@@ -38,6 +37,7 @@ class LoanMainViewController: BaseViewController {
     //MARK: 🔒private
     private func xn_initData() {
         self.view.backgroundColor = UIColor.white
+        
         self.title = "贷款"
     }
     
