@@ -11,12 +11,14 @@ PODS:
   - NVActivityIndicatorView/Presenter (3.7.0)
   - Result (3.2.3)
   - SnapKit (3.2.0)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - IBAnimatable (~> 4.1.0)
   - Moya (~> 8.0.5)
   - NVActivityIndicatorView (~> 3.7.0)
   - SnapKit (~> 3.2.0)
+  - SwiftyJSON (~> 3.1.4)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -25,7 +27,8 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 67fb15da6b7709b3e9d5494b6705c641b14a89aa
+PODFILE CHECKSUM: d9b63be7973804a8b69d9e9d5a56661ddd95ae31
 
 COCOAPODS: 1.2.1.beta.1
