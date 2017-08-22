@@ -12,9 +12,12 @@ class MeMainHeadCell: UITableViewCell {
 
     var headImageView = UIImageView.init()
     var phoneNumLabel = UILabel.init()
-    var authenImageView = UIImageView.init()
-    var bankImageView = UIImageView.init()
-    var recordImageView = UIImageView.init()
+    var authenButton = UIButton.init(type: UIButtonType.custom)
+    var authenLabel = UILabel.init()
+    var bankButton = UIButton.init(type: UIButtonType.custom)
+    var bankLabel = UILabel.init()
+    var recordButton = UIButton.init(type: UIButtonType.custom)
+    var recordLabel = UILabel.init()
     var backView = UIView.init()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -35,9 +38,12 @@ class MeMainHeadCell: UITableViewCell {
         self.contentView.addSubview(self.backView)
         self.backView.addSubview(self.headImageView)
         self.contentView.addSubview(self.phoneNumLabel)
-        self.contentView.addSubview(self.authenImageView)
-        self.contentView.addSubview(self.bankImageView)
-        self.contentView.addSubview(self.recordImageView)
+        self.contentView.addSubview(self.authenButton)
+        self.contentView.addSubview(self.bankButton)
+        self.contentView.addSubview(self.recordButton)
+        self.contentView.addSubview(self.authenLabel)
+        self.contentView.addSubview(self.bankLabel)
+        self.contentView.addSubview(self.recordLabel)
         
         self.backView.snp.makeConstraints { (make) in
             make.left.equalTo(self.contentView).offset(12*ScaleX)
@@ -48,16 +54,58 @@ class MeMainHeadCell: UITableViewCell {
         self.headImageView.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.backView)
             make.centerY.equalTo(self.backView.snp.top)
-            make.size.equalTo(CGSize.init(width: 70*ScaleX, height: 70*ScaleX))
+            make.size.equalTo(CGSize.init(width: 80*ScaleX, height: 80*ScaleX))
+        }
+        self.phoneNumLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.headImageView.snp.bottom)
+            make.centerX.equalTo(self.backView)
+            make.size.equalTo(CGSize.init(width: 200*ScaleX, height: 20*ScaleX))
+        }
+        self.authenButton.snp.makeConstraints { (make) in
+            make.top.equalTo(self.backView).offset(91*ScaleX)
+            make.left.equalTo(self.backView).offset(33*ScaleX)
+            make.size.equalTo(CGSize.init(width: 48*ScaleX, height: 40*ScaleX))
+        }
+        self.bankButton.snp.makeConstraints { (make) in
+            make.top.equalTo(self.backView).offset(91*ScaleX)
+            make.centerX.equalTo(self.backView)
+            make.size.equalTo(CGSize.init(width: 48*ScaleX, height: 40*ScaleX))
+        }
+        self.recordButton.snp.makeConstraints { (make) in
+            make.top.equalTo(self.backView).offset(91*ScaleX)
+            make.right.equalTo(self.backView).offset(-33*ScaleX)
+            make.size.equalTo(CGSize.init(width: 48*ScaleX, height: 40*ScaleX))
+        }
+        self.authenLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.authenButton.snp.bottom).offset(3)
+            make.centerX.equalTo(self.authenButton)
+            make.size.equalTo(CGSize.init(width: 80*ScaleX, height: 17*ScaleX))
+        }
+        self.bankLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.bankButton.snp.bottom).offset(3)
+            make.centerX.equalTo(self.bankButton)
+            make.size.equalTo(CGSize.init(width: 80*ScaleX, height: 17*ScaleX))
+        }
+        self.recordLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.recordButton.snp.bottom).offset(3)
+            make.centerX.equalTo(self.recordButton)
+            make.size.equalTo(CGSize.init(width: 80*ScaleX, height: 17*ScaleX))
         }
         
-        self.headImageView.layer.cornerRadius = 35*ScaleX
-        self.headImageView.layer.borderWidth = 3
+        self.headImageView.layer.cornerRadius = 40*ScaleX
+        self.headImageView.layer.borderWidth = 4
         self.headImageView.clipsToBounds = true
         self.headImageView.layer.borderColor = UIColor.white.cgColor
         self.headImageView.image = UIImage.init(named: "me_head_icon")
         self.backView.backgroundColor = UIColor.white
         self.backView.layer.cornerRadius = 4
+        self.authenButton.setImage(UIImage.init(named: "me_cell_authen"), for: UIControlState.normal)
+        self.bankButton.setBackgroundImage(UIImage.init(named: "me_cell_bank"), for: UIControlState.normal)
+        self.recordButton.setImage(UIImage.init(named: "me_cell_record"), for: UIControlState.normal)
+        self.phoneNumLabel.xn_init(text: "137****8195", textAlignment: NSTextAlignment.center, font: UIFont.regularFont(size: 14*ScaleX), textColor: UIColor.RGBA(hex: 0x242121))
+        self.authenLabel.xn_init(text: "完善资料", textAlignment: NSTextAlignment.center, font: UIFont.regularFont(size: 12*ScaleX), textColor: UIColor.RGBA(hex: 0x242121))
+        self.bankLabel.xn_init(text: "绑定银行卡", textAlignment: NSTextAlignment.center, font: UIFont.regularFont(size: 12*ScaleX), textColor: UIColor.RGBA(hex: 0x242121))
+        self.recordLabel.xn_init(text: "借款记录", textAlignment: NSTextAlignment.center, font: UIFont.regularFont(size: 12*ScaleX), textColor: UIColor.RGBA(hex: 0x242121))
         self.backgroundColor = UIColor.clear
         self.selectionStyle = UITableViewCellSelectionStyle.none
     }
@@ -130,6 +178,7 @@ class MeMainNormalCell: UITableViewCell {
             make.height.equalTo(1)
         }
         self.backgroundColor = UIColor.clear
+        self.selectImageView.image = UIImage.init(named: "me_cell_arrow")
         self.upView.backgroundColor = UIColor.white
         self.downView.backgroundColor = UIColor.white
         self.bottomLine.backgroundColor = UIColor.RGBA(hex: 0xeeeeee)
