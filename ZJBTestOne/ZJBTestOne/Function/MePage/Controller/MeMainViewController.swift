@@ -49,6 +49,8 @@ class MeMainViewController: BaseViewController,UITableViewDelegate,UITableViewDa
             }
             self.dataArray.add(model)
         }
+        
+
     }
     
     private func xn_initSubViews() {
@@ -104,9 +106,26 @@ class MeMainViewController: BaseViewController,UITableViewDelegate,UITableViewDa
         return 0.01
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.section == 1 {
+            XNNetWorkManager.sharedInstance.POSTRequest(urlString: newsListUrl, params: [:], success: { (message) in
+            }) { (error) in
+            }
+        }
+        else
+        {
+           self.ret32String()
+        }
     }
-    
+    private func ret32String() {
+        var newStr = ""
+        
+        for _ in 0...31 {
+            let number = 65+arc4random()%26
+            let A = Character(UnicodeScalar(number)!)
+            newStr.append(A)
+        }
+        print(newStr)
+    }
     //MARK: ☎️notification
     //MARK: 🎬event response
 
