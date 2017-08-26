@@ -17,6 +17,8 @@
 		F328CBF71F4AEF7A00A1D632 /* MeMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF61F4AEF7A00A1D632 /* MeMainCell.swift */; };
 		F328CBF91F4C032300A1D632 /* MeMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF81F4C032300A1D632 /* MeMainModel.swift */; };
 		F328CBFE1F4C347900A1D632 /* XNNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBFD1F4C347900A1D632 /* XNNetWorkManager.swift */; };
+		F328CC001F4DB4A100A1D632 /* MeMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBFF1F4DB4A100A1D632 /* MeMainPresenter.swift */; };
+		F358FAC41F514375006EC360 /* LoginMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FAC31F514375006EC360 /* LoginMainViewController.swift */; };
 		F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F369838F1F42EE1600780DAB /* AppDelegate.swift */; };
 		F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983921F42EE3D00780DAB /* BaseViewController.swift */; };
 		F36983951F42EE6900780DAB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983941F42EE6900780DAB /* BaseTabBarController.swift */; };
@@ -44,6 +46,8 @@
 		F328CBF61F4AEF7A00A1D632 /* MeMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainCell.swift; sourceTree = "<group>"; };
 		F328CBF81F4C032300A1D632 /* MeMainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainModel.swift; sourceTree = "<group>"; };
 		F328CBFD1F4C347900A1D632 /* XNNetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNNetWorkManager.swift; sourceTree = "<group>"; };
+		F328CBFF1F4DB4A100A1D632 /* MeMainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainPresenter.swift; sourceTree = "<group>"; };
+		F358FAC31F514375006EC360 /* LoginMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMainViewController.swift; sourceTree = "<group>"; };
 		F369838F1F42EE1600780DAB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36983921F42EE3D00780DAB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F36983941F42EE6900780DAB /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -171,9 +175,50 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
+		F358FABE1F514326006EC360 /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				F358FABF1F514326006EC360 /* Controller */,
+				F358FAC01F514326006EC360 /* Model */,
+				F358FAC11F514326006EC360 /* Presenter */,
+				F358FAC21F514326006EC360 /* View */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		F358FABF1F514326006EC360 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F358FAC31F514375006EC360 /* LoginMainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F358FAC01F514326006EC360 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F358FAC11F514326006EC360 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F358FAC21F514326006EC360 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F36983811F418FF000780DAB /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				F358FABE1F514326006EC360 /* LoginPage */,
 				F328CBE61F4A8B7F00A1D632 /* AuthenPage */,
 				F369839F1F4330B500780DAB /* LoanPage */,
 				F36983B41F43310A00780DAB /* QuotaPage */,
@@ -332,6 +377,7 @@
 		F36983B21F43310A00780DAB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				F328CBFF1F4DB4A100A1D632 /* MeMainPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -543,6 +589,7 @@
 				F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */,
 				F36983BA1F43317900780DAB /* QuotaMainViewController.swift in Sources */,
 				F328CBFE1F4C347900A1D632 /* XNNetWorkManager.swift in Sources */,
+				F328CC001F4DB4A100A1D632 /* MeMainPresenter.swift in Sources */,
 				F36983C21F459BB900780DAB /* ActivityMainViewController.swift in Sources */,
 				F328CBF51F4ADE7000A1D632 /* XNHelper.swift in Sources */,
 				F328CBF91F4C032300A1D632 /* MeMainModel.swift in Sources */,
@@ -552,6 +599,7 @@
 				F328CBF71F4AEF7A00A1D632 /* MeMainCell.swift in Sources */,
 				F328CBF01F4A8FDF00A1D632 /* BaseNavigtionController.swift in Sources */,
 				F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */,
+				F358FAC41F514375006EC360 /* LoginMainViewController.swift in Sources */,
 				F328CBF21F4AC86500A1D632 /* MeMainView.swift in Sources */,
 				F36983CB1F46BF6500780DAB /* XNGradientButton.swift in Sources */,
 				F36983C01F4331F900780DAB /* LoanMainViewController.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-let newsListUrl = "http://pre.xnshandai.net/messageCenter/redis/getLoanRecord.do"
+let newsListUrl = "http://pre.xnshandai.net/messageCenter/redis/geLoanRecord.do"
 let baseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 private let NetworkRequestShareInstance = XNNetWorkManager()
@@ -26,7 +26,7 @@ extension XNNetWorkManager {
     public func POSTRequest(urlString: String, params : [String : Any], success : @escaping (_ response : [String : AnyObject])->(), failture : @escaping (_ error : Error)->()) {
         var newDict: [String: Any] = params
         var baseDic : [String : String] = [String : String]()
-        baseDic["requestId"] = self.ret32String()
+        baseDic["requestId"] = ""//self.ret32String()
         baseDic["token"] = ""
         baseDic["cid"] = ""
         baseDic["phone"] = ""
@@ -58,6 +58,8 @@ extension XNNetWorkManager {
                 case .failure(let error):
                     failture(error)
                     print("error:\(error)")
+                    print("分割线*****************")
+                    print("error:\(error.localizedDescription)")
                 }
         }
     }
@@ -68,14 +70,14 @@ extension XNNetWorkManager {
      
      - returns: 随机生成的字符串
      */
-    private func ret32String() -> String{
-        var newStr = ""
-        for _ in 0...31 {
-            let number = 65+arc4random()%26
-            let A = Character(UnicodeScalar(number)!)
-            newStr.append(A)
-        }
-        return newStr
-    }
+//    private func ret32String() -> String{
+//        var newStr = ""
+//        for _ in 0...31 {
+//            let number = 65+arc4random()%26
+//            let A = Character(UnicodeScalar(number)!)
+//            newStr.append(A)
+//        }
+//        return newStr
+//    }
     
 }

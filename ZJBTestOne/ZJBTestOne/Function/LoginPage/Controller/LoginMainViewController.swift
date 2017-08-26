@@ -1,14 +1,14 @@
 //
-//  QuotaMainViewController.swift
+//  LoginMainViewController.swift
 //  ZJBTestOne
 //
-//  Created by 周结兵 on 2017/8/15.
+//  Created by 周结兵 on 2017/8/26.
 //  Copyright © 2017年 zjb. All rights reserved.
 //
 
 import UIKit
 
-class QuotaMainViewController: BaseViewController {
+class LoginMainViewController: BaseViewController {
 
     //MARK: ☸property
     
