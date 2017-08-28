@@ -19,6 +19,7 @@ class BaseTabBarController: UITabBarController {
         self.addChildController(VC: QuotaMainViewController(), imageName: "tabBar_quota_normal", selectImage: "", title: "提额", tag: 2)
         self.addChildController(VC: ActivityMainViewController(), imageName: "tabBar_activety_normal", selectImage: "", title: "活动", tag: 3)
         self.addChildController(VC: MeMainViewController(), imageName: "tabBar_me_normal", selectImage: "", title: "我的", tag: 4)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notification_showLoginRegisterPage), name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +48,10 @@ class BaseTabBarController: UITabBarController {
     //MARK: 🚪public
     //MARK: 🍐delegate
     //MARK: ☎️notification
+    @objc private func notification_showLoginRegisterPage() {
+        let nav = BaseNavigtionController.init(rootViewController: LoginMainViewController())
+        self.present(nav, animated: true, completion: nil)
+    }
     //MARK: 🎬event response
 
 }

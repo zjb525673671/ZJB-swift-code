@@ -1,19 +1,20 @@
 //
-//  LoginMainViewController.swift
+//  LoginForgetPasswordViewController.swift
 //  ZJBTestOne
 //
-//  Created by 周结兵 on 2017/8/26.
+//  Created by 周结兵 on 2017/8/28.
 //  Copyright © 2017年 zjb. All rights reserved.
 //
 
 import UIKit
 
-class LoginMainViewController: BaseViewController, UITextFieldDelegate {
+class LoginForgetPasswordViewController: BaseViewController, UITextFieldDelegate {
 
     //MARK: ☸property
     private var backLayer = CAGradientLayer.init()
     private var backButton = UIButton.init(type: UIButtonType.custom)
     private var nextButton = UIButton.init(type: UIButtonType.custom)
+    private var hiddenButton = UIButton.init(type: UIButtonType.custom)
     private var phoneNumberField = UITextField.init()
     //MARK: ♻️life cycle
     override func viewDidLoad() {
@@ -41,6 +42,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
     
     private func xn_initSubViews() {
         let inputLabel = UILabel.init()
+        let tipsLabel = UILabel.init()
         let callLabel = UILabel.init()
         let phoneLine = UIView.init()
         let backImageView = UIImageView.init()
@@ -50,12 +52,13 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
         self.backLayer.endPoint = CGPoint.init(x: 0, y: 1)
         self.backLayer.colors = [(UIColor.RGBA(hex: 0xf73776).cgColor),(UIColor.RGBA(hex: 0xfa6338).cgColor)]
         self.backLayer.locations = [0.0,1.0]
-        self.view.layer .addSublayer(self.backLayer)
-        
+        self.view.layer.addSublayer(self.backLayer)
         self.view.addSubview(backImageView)
         self.view.addSubview(self.backButton)
         self.view.addSubview(inputLabel)
+        self.view.addSubview(tipsLabel)
         self.view.addSubview(callLabel)
+        self.view.addSubview(self.hiddenButton)
         self.view.addSubview(self.phoneNumberField)
         self.view.addSubview(phoneLine)
         self.view.addSubview(self.nextButton)
@@ -75,21 +78,32 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
             make.top.equalTo(self.view).offset(80*ScaleX)
             make.size.equalTo(CGSize.init(width: 200*ScaleX, height: 36*ScaleX))
         }
+        tipsLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.view).offset(18*ScaleX)
+            make.right.equalTo(self.view).offset(-18*ScaleX)
+            make.top.equalTo(self.view).offset(128*ScaleX)
+            make.height.equalTo(26*ScaleX)
+        }
         callLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(18*ScaleX)
-            make.top.equalTo(self.view).offset(160*ScaleX)
+            make.top.equalTo(self.view).offset(196*ScaleX)
             make.size.equalTo(CGSize.init(width: 80*ScaleX, height: 20*ScaleX))
+        }
+        self.hiddenButton.snp.makeConstraints { (make) in
+            make.right.equalTo(self.view).offset(-12*ScaleX)
+            make.top.equalTo(self.view).offset(191*ScaleX)
+            make.size.equalTo(CGSize.init(width: 40*ScaleX, height: 30*ScaleX))
         }
         self.phoneNumberField.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(18*ScaleX)
             make.right.equalTo(self.view).offset(-18*ScaleX)
-            make.top.equalTo(self.view).offset(187*ScaleX)
+            make.top.equalTo(self.view).offset(228*ScaleX)
             make.height.equalTo(30*ScaleX)
         }
         phoneLine.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(18*ScaleX)
             make.right.equalTo(self.view).offset(-18*ScaleX)
-            make.top.equalTo(self.view).offset(222*ScaleX)
+            make.top.equalTo(self.view).offset(263*ScaleX)
             make.height.equalTo(0.5)
         }
         self.nextButton.snp.makeConstraints { (make) in
@@ -98,24 +112,30 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
             make.size.equalTo(CGSize.init(width: 93*ScaleX, height: 33*ScaleX))
         }
         
-        inputLabel.xn_init(text: "请输入手机号码", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 26*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
-        callLabel.xn_init(text: "电话号码", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 14*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
+        inputLabel.xn_init(text: "设置密码", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 26*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
+        tipsLabel.xn_init(text: "密码必须为6～16位字符，区分大小写", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 18*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
+        callLabel.xn_init(text: "密码", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 14*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
         phoneLine.backgroundColor = UIColor.RGBA(hex: 0xffffff)
         backImageView.image = UIImage.init(named: "login_goBack")
         self.backButton.addTarget(self, action: #selector(self.clickAction_back), for: UIControlEvents.touchUpInside)
+        self.hiddenButton.addTarget(self, action: #selector(self.clickAction_hiddenPassword), for: UIControlEvents.touchUpInside)
         self.nextButton.setTitle("下一步>", for: UIControlState.normal)
         self.nextButton.titleLabel?.font = UIFont.regularFont(size: 24*ScaleX)
+        self.hiddenButton.setTitle("显示", for: UIControlState.normal)
+        self.hiddenButton.titleLabel?.font = UIFont.regularFont(size: 14*ScaleX)
         self.nextButton.addTarget(self, action: #selector(self.clickAction_nextStep), for: UIControlEvents.touchUpInside)
-        self.phoneNumberField.keyboardType = UIKeyboardType.numberPad
+        self.phoneNumberField.keyboardType = UIKeyboardType.default
         self.phoneNumberField.textColor = UIColor.white
         self.phoneNumberField.delegate = self
         self.phoneNumberField.tintColor = UIColor.white
         self.phoneNumberField.font = UIFont.regularFont(size: 24*ScaleX)
+        self.phoneNumberField.isSecureTextEntry = true
+        self.phoneNumberField.autocapitalizationType = .none;
     }
     //MARK: 🚪public
     //MARK: 🍐delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (textField.text?.characters.count)! > 10 && string != "" {
+        if (textField.text?.characters.count)! > 15 && string != "" {
             return false
         }
         return true
@@ -123,13 +143,21 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
     
     //MARK: ☎️notification
     //MARK: 🎬event response
-
+    
     @objc private func clickAction_back() {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func clickAction_hiddenPassword() {
+        self.phoneNumberField.isSecureTextEntry = !self.phoneNumberField.isSecureTextEntry
+        if self.phoneNumberField.isSecureTextEntry {
+            self.hiddenButton.setTitle("显示", for: UIControlState.normal)
+        } else {
+            self.hiddenButton.setTitle("隐藏", for: UIControlState.normal)
+        }
     }
     
     @objc private func clickAction_nextStep() {
-        let passwordVC = LoginPasswordViewController()
-        self.navigationController?.pushViewController(passwordVC, animated: true)
+        
     }
 }

@@ -1,14 +1,14 @@
 //
-//  LoginMainViewController.swift
+//  LgoinMessageViewController.swift
 //  ZJBTestOne
 //
-//  Created by 周结兵 on 2017/8/26.
+//  Created by 周结兵 on 2017/8/28.
 //  Copyright © 2017年 zjb. All rights reserved.
 //
 
 import UIKit
 
-class LoginMainViewController: BaseViewController, UITextFieldDelegate {
+class LgoinMessageViewController: BaseViewController, UITextFieldDelegate {
 
     //MARK: ☸property
     private var backLayer = CAGradientLayer.init()
@@ -98,8 +98,8 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
             make.size.equalTo(CGSize.init(width: 93*ScaleX, height: 33*ScaleX))
         }
         
-        inputLabel.xn_init(text: "请输入手机号码", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 26*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
-        callLabel.xn_init(text: "电话号码", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 14*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
+        inputLabel.xn_init(text: "输入验证码", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 26*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
+        callLabel.xn_init(text: "13701728194", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 14*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
         phoneLine.backgroundColor = UIColor.RGBA(hex: 0xffffff)
         backImageView.image = UIImage.init(named: "login_goBack")
         self.backButton.addTarget(self, action: #selector(self.clickAction_back), for: UIControlEvents.touchUpInside)
@@ -123,7 +123,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
     
     //MARK: ☎️notification
     //MARK: 🎬event response
-
+    
     @objc private func clickAction_back() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -132,4 +132,6 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
         let passwordVC = LoginPasswordViewController()
         self.navigationController?.pushViewController(passwordVC, animated: true)
     }
+
+
 }

@@ -55,8 +55,9 @@ class LoanMainViewController: BaseViewController {
     }
     
     @objc private func clickAction_enterNext() {
-        let authenVC = AuthenMainViewController()
-        self.navigationController?.pushViewController(authenVC, animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
+//        let authenVC = AuthenMainViewController()
+//        self.navigationController?.pushViewController(authenVC, animated: true)
     }
     
     public func clickAction_update() {

@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-let newsListUrl = "http://pre.xnshandai.net/messageCenter/redis/geLoanRecord.do"
+let newsListUrl = "http://pre.xnshandai.net/messageCenter/redis/getLoanRecord.do"
 let baseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 private let NetworkRequestShareInstance = XNNetWorkManager()

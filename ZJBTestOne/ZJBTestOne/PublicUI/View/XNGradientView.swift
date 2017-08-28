@@ -14,9 +14,7 @@ class XNGradientView: UIView {
     lazy public var endColor = UIColor()
     lazy public var startPoint = CGPoint()
     lazy public var endPoint = CGPoint()
-    lazy private var backLayer: CAGradientLayer = {
-       return CAGradientLayer()
-    }()
+    lazy private var backLayer = CAGradientLayer.init()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
