@@ -8,13 +8,25 @@
 
 import UIKit
 
+class CustomTextField: UITextField {
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return false
+    }
+}
+
 class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
 
     //MARK: ☸property
     private var backLayer = CAGradientLayer.init()
     private var backButton = UIButton.init(type: UIButtonType.custom)
     private var nextButton = UIButton.init(type: UIButtonType.custom)
-    private var phoneNumberField = UITextField.init()
+    private var phoneNumberField = CustomTextField.init()
+    private var countDownButton = UIButton.init()
+    
+    private var firstCodeLabel = UILabel.init()
+    private var secondCodeLabel = UILabel.init()
+    private var thirdCodeLabel = UILabel.init()
+    private var forthCodeLabel = UILabel.init()
     //MARK: ♻️life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +54,6 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
     private func xn_initSubViews() {
         let inputLabel = UILabel.init()
         let callLabel = UILabel.init()
-        let phoneLine = UIView.init()
         let backImageView = UIImageView.init()
         
         self.backLayer.frame = self.view.bounds
@@ -56,8 +67,12 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
         self.view.addSubview(self.backButton)
         self.view.addSubview(inputLabel)
         self.view.addSubview(callLabel)
+        self.view.addSubview(self.countDownButton)
+        self.view.addSubview(self.firstCodeLabel)
+        self.view.addSubview(self.secondCodeLabel)
+        self.view.addSubview(self.thirdCodeLabel)
+        self.view.addSubview(self.forthCodeLabel)
         self.view.addSubview(self.phoneNumberField)
-        self.view.addSubview(phoneLine)
         self.view.addSubview(self.nextButton)
         
         backImageView.snp.makeConstraints { (make) in
@@ -80,17 +95,37 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
             make.top.equalTo(self.view).offset(130*ScaleX)
             make.size.equalTo(CGSize.init(width: 110*ScaleX, height: 25*ScaleX))
         }
+        self.countDownButton.snp.makeConstraints { (make) in
+            make.left.equalTo(self.view).offset(143*ScaleX)
+            make.top.equalTo(self.view).offset(130*ScaleX)
+            make.size.equalTo(CGSize.init(width: 110*ScaleX, height: 25*ScaleX))
+        }
+        self.firstCodeLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.view).offset(18*ScaleX)
+            make.top.equalTo(self.view).offset(195*ScaleX)
+            make.size.equalTo(CGSize.init(width: 60*ScaleX, height: 60*ScaleX))
+        }
+        self.secondCodeLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.firstCodeLabel.snp.right).offset(21*ScaleX)
+            make.top.equalTo(self.view).offset(195*ScaleX)
+            make.size.equalTo(CGSize.init(width: 60*ScaleX, height: 60*ScaleX))
+        }
+        self.thirdCodeLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.secondCodeLabel.snp.right).offset(21*ScaleX)
+            make.top.equalTo(self.view).offset(195*ScaleX)
+            make.size.equalTo(CGSize.init(width: 60*ScaleX, height: 60*ScaleX))
+        }
+        self.forthCodeLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.thirdCodeLabel.snp.right).offset(21*ScaleX)
+            make.top.equalTo(self.view).offset(195*ScaleX)
+            make.size.equalTo(CGSize.init(width: 60*ScaleX, height: 60*ScaleX))
+        }
+        
         self.phoneNumberField.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(18*ScaleX)
             make.right.equalTo(self.view).offset(-18*ScaleX)
-            make.top.equalTo(self.view).offset(187*ScaleX)
-            make.height.equalTo(30*ScaleX)
-        }
-        phoneLine.snp.makeConstraints { (make) in
-            make.left.equalTo(self.view).offset(18*ScaleX)
-            make.right.equalTo(self.view).offset(-18*ScaleX)
-            make.top.equalTo(self.view).offset(222*ScaleX)
-            make.height.equalTo(0.5)
+            make.centerY.equalTo(self.firstCodeLabel)
+            make.height.equalTo(60*ScaleX)
         }
         self.nextButton.snp.makeConstraints { (make) in
             make.right.equalTo(self.view).offset(-18*ScaleX)
@@ -100,22 +135,84 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
         
         inputLabel.xn_init(text: "输入验证码", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 26*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
         callLabel.xn_init(text: "13701728194", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 18*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
-        phoneLine.backgroundColor = UIColor.RGBA(hex: 0xffffff)
+        self.initLabel(self.firstCodeLabel, true)
+        self.initLabel(self.secondCodeLabel, false)
+        self.initLabel(self.thirdCodeLabel, false)
+        self.initLabel(self.forthCodeLabel, false)
         backImageView.image = UIImage.init(named: "login_goBack")
         self.backButton.addTarget(self, action: #selector(self.clickAction_back), for: UIControlEvents.touchUpInside)
         self.nextButton.setTitle("下一步>", for: UIControlState.normal)
         self.nextButton.titleLabel?.font = UIFont.regularFont(size: 24*ScaleX)
         self.nextButton.addTarget(self, action: #selector(self.clickAction_nextStep), for: UIControlEvents.touchUpInside)
+        self.countDownButton.setTitle("52秒后重新获取", for: UIControlState.normal)
+        self.countDownButton.titleLabel?.font = UIFont.regularFont(size: 14*ScaleX)
+        self.countDownButton.setTitleColor(UIColor.RGBA(hex: 0xffffff, alpha: 0.5), for: UIControlState.normal)
+        self.countDownButton.addTarget(self, action: #selector(self.clickAction_sendMessage), for: UIControlEvents.touchUpInside)
         self.phoneNumberField.keyboardType = UIKeyboardType.numberPad
-        self.phoneNumberField.textColor = UIColor.white
+        self.phoneNumberField.textColor = UIColor.clear
         self.phoneNumberField.delegate = self
-        self.phoneNumberField.tintColor = UIColor.white
-        self.phoneNumberField.font = UIFont.regularFont(size: 24*ScaleX)
+        self.phoneNumberField.tintColor = UIColor.clear
     }
+    
+    private func initLabel(_ label: UILabel, _ isShow: Bool) {
+        label.textAlignment = NSTextAlignment.center
+        label.font = UIFont.mediumFont(size: 40*ScaleX)
+        label.textColor = UIColor.RGBA(hex: 0xffffff)
+        label.layer.cornerRadius = 2
+        label.layer.borderWidth = 1
+        if isShow {
+            label.layer.borderColor = UIColor.white.cgColor
+        } else {
+            label.layer.borderColor = UIColor.RGBA(hex: 0xffffff, alpha: 0.5).cgColor
+        }
+    }
+    
     //MARK: 🚪public
     //MARK: 🍐delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (textField.text?.characters.count)! > 10 && string != "" {
+        let length:Int = (textField.text?.characters.count)!
+        
+        
+        if length == 0 {
+            if string == "" {
+                self.firstCodeLabel.text = ""
+            } else {
+                self.firstCodeLabel.text = string
+                self.secondCodeLabel.layer.borderColor = UIColor.white.cgColor
+            }
+        }
+        if length == 1 {
+            if string == "" {
+                self.firstCodeLabel.text = ""
+                self.secondCodeLabel.layer.borderColor = UIColor.RGBA(hex: 0xffffff, alpha: 0.5).cgColor
+            } else {
+                self.secondCodeLabel.text = string
+                self.thirdCodeLabel.layer.borderColor = UIColor.white.cgColor
+            }
+        }
+        if length == 2 {
+            if string == "" {
+                self.secondCodeLabel.text = ""
+                self.thirdCodeLabel.layer.borderColor = UIColor.RGBA(hex: 0xffffff, alpha: 0.5).cgColor
+            } else {
+                self.thirdCodeLabel.text = string
+                self.forthCodeLabel.layer.borderColor = UIColor.white.cgColor
+            }
+        }
+        if length == 3 {
+            if string == "" {
+                self.thirdCodeLabel.text = ""
+                self.forthCodeLabel.layer.borderColor = UIColor.RGBA(hex: 0xffffff, alpha: 0.5).cgColor
+            } else {
+                self.forthCodeLabel.text = string
+            }
+        }
+        if length == 4 {
+            if string == "" {
+                self.forthCodeLabel.text = ""
+            }
+        }
+        if (length > 3 && string != "") {
             return false
         }
         return true
@@ -132,6 +229,10 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
         let passwordVC = LoginPasswordViewController()
         self.navigationController?.pushViewController(passwordVC, animated: true)
     }
-
+    
+    @objc private func clickAction_sendMessage() {
+        //发送短信验证码
+        print("短信验证码发送成功!")
+    }
 
 }

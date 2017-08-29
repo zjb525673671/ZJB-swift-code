@@ -63,21 +63,5 @@ extension XNNetWorkManager {
                 }
         }
     }
-    /**
-     生成随机字符串,
-     
-     - parameter length: 生成的字符串的长度
-     
-     - returns: 随机生成的字符串
-     */
-//    private func ret32String() -> String{
-//        var newStr = ""
-//        for _ in 0...31 {
-//            let number = 65+arc4random()%26
-//            let A = Character(UnicodeScalar(number)!)
-//            newStr.append(A)
-//        }
-//        return newStr
-//    }
     
 }
