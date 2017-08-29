@@ -129,7 +129,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc private func clickAction_nextStep() {
-        let passwordVC = LoginPasswordViewController()
+        let passwordVC = LoginMessageViewController()
         self.navigationController?.pushViewController(passwordVC, animated: true)
     }
 }

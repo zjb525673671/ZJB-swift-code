@@ -1,5 +1,5 @@
 //
-//  LgoinMessageViewController.swift
+//  LoginMessageViewController.swift
 //  ZJBTestOne
 //
 //  Created by 周结兵 on 2017/8/28.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LgoinMessageViewController: BaseViewController, UITextFieldDelegate {
+class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
 
     //MARK: ☸property
     private var backLayer = CAGradientLayer.init()
@@ -77,8 +77,8 @@ class LgoinMessageViewController: BaseViewController, UITextFieldDelegate {
         }
         callLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(18*ScaleX)
-            make.top.equalTo(self.view).offset(160*ScaleX)
-            make.size.equalTo(CGSize.init(width: 80*ScaleX, height: 20*ScaleX))
+            make.top.equalTo(self.view).offset(130*ScaleX)
+            make.size.equalTo(CGSize.init(width: 110*ScaleX, height: 25*ScaleX))
         }
         self.phoneNumberField.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(18*ScaleX)
@@ -99,7 +99,7 @@ class LgoinMessageViewController: BaseViewController, UITextFieldDelegate {
         }
         
         inputLabel.xn_init(text: "输入验证码", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 26*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
-        callLabel.xn_init(text: "13701728194", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 14*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
+        callLabel.xn_init(text: "13701728194", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 18*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
         phoneLine.backgroundColor = UIColor.RGBA(hex: 0xffffff)
         backImageView.image = UIImage.init(named: "login_goBack")
         self.backButton.addTarget(self, action: #selector(self.clickAction_back), for: UIControlEvents.touchUpInside)

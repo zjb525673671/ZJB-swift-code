@@ -21,7 +21,7 @@
 		F358FAC41F514375006EC360 /* LoginMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FAC31F514375006EC360 /* LoginMainViewController.swift */; };
 		F358FAC61F514AB2006EC360 /* XNNotificationAndURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FAC51F514AB2006EC360 /* XNNotificationAndURL.swift */; };
 		F358FACB1F54490B006EC360 /* LoginPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FACA1F54490B006EC360 /* LoginPasswordViewController.swift */; };
-		F358FACD1F544924006EC360 /* LgoinMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FACC1F544924006EC360 /* LgoinMessageViewController.swift */; };
+		F358FACD1F544924006EC360 /* LoginMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FACC1F544924006EC360 /* LoginMessageViewController.swift */; };
 		F358FACF1F5454B7006EC360 /* LoginForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FACE1F5454B7006EC360 /* LoginForgetPasswordViewController.swift */; };
 		F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F369838F1F42EE1600780DAB /* AppDelegate.swift */; };
 		F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983921F42EE3D00780DAB /* BaseViewController.swift */; };
@@ -54,7 +54,7 @@
 		F358FAC31F514375006EC360 /* LoginMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMainViewController.swift; sourceTree = "<group>"; };
 		F358FAC51F514AB2006EC360 /* XNNotificationAndURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNNotificationAndURL.swift; sourceTree = "<group>"; };
 		F358FACA1F54490B006EC360 /* LoginPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPasswordViewController.swift; sourceTree = "<group>"; };
-		F358FACC1F544924006EC360 /* LgoinMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LgoinMessageViewController.swift; sourceTree = "<group>"; };
+		F358FACC1F544924006EC360 /* LoginMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMessageViewController.swift; sourceTree = "<group>"; };
 		F358FACE1F5454B7006EC360 /* LoginForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		F369838F1F42EE1600780DAB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36983921F42EE3D00780DAB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 			children = (
 				F358FAC31F514375006EC360 /* LoginMainViewController.swift */,
 				F358FACA1F54490B006EC360 /* LoginPasswordViewController.swift */,
-				F358FACC1F544924006EC360 /* LgoinMessageViewController.swift */,
+				F358FACC1F544924006EC360 /* LoginMessageViewController.swift */,
 				F358FACE1F5454B7006EC360 /* LoginForgetPasswordViewController.swift */,
 			);
 			path = Controller;
@@ -619,7 +619,7 @@
 				F36983C01F4331F900780DAB /* LoanMainViewController.swift in Sources */,
 				F358FACF1F5454B7006EC360 /* LoginForgetPasswordViewController.swift in Sources */,
 				F36983CE1F46C3A600780DAB /* XNGradientView.swift in Sources */,
-				F358FACD1F544924006EC360 /* LgoinMessageViewController.swift in Sources */,
+				F358FACD1F544924006EC360 /* LoginMessageViewController.swift in Sources */,
 				F36983951F42EE6900780DAB /* BaseTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
