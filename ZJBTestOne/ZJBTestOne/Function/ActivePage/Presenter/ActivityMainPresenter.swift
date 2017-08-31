@@ -34,24 +34,14 @@ class ActivityMainPresenter: NSObject {
                     self.dataArray.append(model)
                 }
                 callBack(true, "")
-//                for i in 0...newArray.count {
-//                    let model = ActivityMainModel.init()
-//                    let dic:[String:Any] = newArray[i] as! Dictionary
-//                    model.imageUrl = dic["activityPic"] as! String
-//                    model.peopleCount = dic["depict"] as! Int
-//                    let isParticipate:NSString = dic["isParticipate"] as! NSString
-//                    model.isJion = isParticipate.boolValue
-//                    model.html5Url = dic["linkAddress"] as! String
-//                    self.dataArray.append(model)
-//                }
                 
             }
             else
             {
                 callBack(false, message)
             }
-        }) { (error) in
-            callBack(false, "服务异常")
+        }) { (eMsg) in
+            callBack(false, eMsg)
         }
     }
 }

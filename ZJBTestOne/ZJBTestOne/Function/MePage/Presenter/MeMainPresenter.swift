@@ -23,8 +23,8 @@ class MeMainPresenter: NSObject {
             {
                 callBack(false, message)
             }
-        }) { (error) in
-            callBack(false, "服务异常")
+        }) { (eMsg) in
+            callBack(false, eMsg)
         }
     }
 }

@@ -27,6 +27,7 @@
 		F358FAD31F56A857006EC360 /* ActivityMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FAD21F56A857006EC360 /* ActivityMainCell.swift */; };
 		F358FADD1F56D289006EC360 /* ActivityMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FADC1F56D289006EC360 /* ActivityMainPresenter.swift */; };
 		F358FADF1F56D2A8006EC360 /* ActivityMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FADE1F56D2A8006EC360 /* ActivityMainModel.swift */; };
+		F358FAE11F57FB3E006EC360 /* LoginUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FAE01F57FB3E006EC360 /* LoginUserModel.swift */; };
 		F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F369838F1F42EE1600780DAB /* AppDelegate.swift */; };
 		F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983921F42EE3D00780DAB /* BaseViewController.swift */; };
 		F36983951F42EE6900780DAB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983941F42EE6900780DAB /* BaseTabBarController.swift */; };
@@ -64,6 +65,7 @@
 		F358FAD21F56A857006EC360 /* ActivityMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMainCell.swift; sourceTree = "<group>"; };
 		F358FADC1F56D289006EC360 /* ActivityMainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMainPresenter.swift; sourceTree = "<group>"; };
 		F358FADE1F56D2A8006EC360 /* ActivityMainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMainModel.swift; sourceTree = "<group>"; };
+		F358FAE01F57FB3E006EC360 /* LoginUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUserModel.swift; sourceTree = "<group>"; };
 		F369838F1F42EE1600780DAB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36983921F42EE3D00780DAB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F36983941F42EE6900780DAB /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 		F358FAC01F514326006EC360 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F358FAE01F57FB3E006EC360 /* LoginUserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				F328CBF71F4AEF7A00A1D632 /* MeMainCell.swift in Sources */,
 				F328CBF01F4A8FDF00A1D632 /* BaseNavigtionController.swift in Sources */,
 				F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */,
+				F358FAE11F57FB3E006EC360 /* LoginUserModel.swift in Sources */,
 				F358FAC41F514375006EC360 /* LoginMainViewController.swift in Sources */,
 				F328CBF21F4AC86500A1D632 /* MeMainView.swift in Sources */,
 				F36983CB1F46BF6500780DAB /* XNGradientButton.swift in Sources */,

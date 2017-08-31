@@ -23,25 +23,38 @@ class XNNetWorkManager {
 
 extension XNNetWorkManager {
     
-    public func POSTRequest(urlString: String, params : [String : Any], success : @escaping (_ response : [String : AnyObject])->(), failture : @escaping (_ error : Error)->()) {
+    public func POSTRequest(urlString: String, params : [String : Any], success : @escaping (_ response : [String : AnyObject])->(), failture : @escaping (_ error : String)->()) {
         var newDict: [String: Any] = params
         var baseDic : [String : String] = [String : String]()
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
+        
+        //随机32位大写字符串
         baseDic["requestId"] = self.ret32String()
-        baseDic["token"] = ""
-        baseDic["cid"] = ""
-        baseDic["phone"] = ""
+        //用户token
+        baseDic["token"] = XNUserInfo.tokenCode
+        //用户customId
+        baseDic["cid"] = XNUserInfo.customId
+        //用户手机号
+        baseDic["phone"] = XNUserInfo.phoneNum
+        //iOS系统
         baseDic["osversion"] = "ios"
-        baseDic["appversion"] = ""
-        baseDic["deviceId"] = ""
-        baseDic["sdkversion"] = ""
+        //APP版本号
+        baseDic["appversion"] = version as? String
+        //手机的UUID
+        baseDic["deviceId"] = UIDevice.current.identifierForVendor?.uuidString
+        //手机的系统版本
+        baseDic["sdkversion"] = UIDevice.current.systemVersion
+        //App Store
         baseDic["market"] = "AppStore"
         baseDic["appname"] = "1"
         baseDic["marketName"] = "iOS2"
         let jsonData: Data? = try? JSONSerialization.data(withJSONObject: baseDic, options: JSONSerialization.WritingOptions.prettyPrinted)
         let jsonString: String = String(data: jsonData!, encoding: String.Encoding.utf8)!
         newDict["xn_data"] = jsonString
-        //使用Alamofire进行网络请求时，调用该方法的参数都是通过getRequest(urlString， params, success :, failture :）传入的，而success传入的其实是一个接受           [String : AnyObject]类型 返回void类型的函数
-        Alamofire.request(urlString, method: .post, parameters: newDict)
+
+        let manager = Alamofire.SessionManager.default
+        manager.session.configuration.timeoutIntervalForRequest = 20
+        manager.request(urlString, method: .post, parameters: newDict)
             .responseJSON { (response) in/*这里使用了闭包*/
                 //当请求后response是我们自定义的，这个变量用于接受服务器响应的信息
                 //使用switch判断请求是否成功，也就是response的result
@@ -54,10 +67,16 @@ extension XNNetWorkManager {
                     print(json)
                     
                 case .failure(let error):
-                    failture(error)
-                    print("error:\(error)")
-                    print("分割线*****************")
-                    print("error:\(error.localizedDescription)")
+                    var errorMessage = ""
+                    if error._code == -1009 {
+                        errorMessage = "没有网络"
+                    } else if error._code == -1001 {
+                        errorMessage = "连接超时"
+                    } else {
+                        errorMessage = "网络异常"
+                    }
+                    failture(errorMessage)
+                    print("error:\(error)错误原因:\(errorMessage)")
                 }
         }
     }
