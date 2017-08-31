@@ -8,6 +8,7 @@ def shared_pods
     pod 'SwiftyJSON', '~> 3.1.4' #swift网络请求json解析
     pod 'IBAnimatable', '~> 4.1.0' #高级动画
     pod 'NVActivityIndicatorView', '~> 3.7.0' #loading框
+    pod 'Kingfisher', '~> 3.10.3' #图片下载、缓存的框架,灵感取自于SDWebImage
 end
 
 target 'ZJBTestOne’ do

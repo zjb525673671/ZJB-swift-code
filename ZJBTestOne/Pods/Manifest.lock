@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.5.0)
   - IBAnimatable (4.1.0)
+  - Kingfisher (3.10.3)
   - Moya (8.0.5):
     - Moya/Core (= 8.0.5)
   - Moya/Core (8.0.5):
@@ -15,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - IBAnimatable (~> 4.1.0)
+  - Kingfisher (~> 3.10.3)
   - Moya (~> 8.0.5)
   - NVActivityIndicatorView (~> 3.7.0)
   - SnapKit (~> 3.2.0)
@@ -23,12 +25,13 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   IBAnimatable: 0fd2c9fd38c4798d71bcc18dbd87d473a7df2577
+  Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: d9b63be7973804a8b69d9e9d5a56661ddd95ae31
+PODFILE CHECKSUM: e5b32bbad8ee1553fc0e48a315d2c29158f3397d
 
 COCOAPODS: 1.2.1.beta.1

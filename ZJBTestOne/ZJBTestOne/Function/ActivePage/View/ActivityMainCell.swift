@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ActivityMainCell: UITableViewCell {
 
@@ -70,7 +71,7 @@ class ActivityMainCell: UITableViewCell {
     //MARK: 🚪public
     
     public func updateCellData(model:ActivityMainModel) {
-        self.itemImageView.image = UIImage.init(contentsOfFile: model.imageUrl)
+        self.itemImageView.kf.setImage(with: ImageResource.init(downloadURL: URL.init(string: model.imageUrl)!))
         self.peopleLabel.text = "\(model.peopleCount)人已参与"
         if model.isJion {
             self.jionLabel.text = "您已经参与"

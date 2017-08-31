@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ActivityMainPresenter: NSObject {
 
@@ -16,24 +17,34 @@ class ActivityMainPresenter: NSObject {
         var baseDic : [String : String] = [String : String]()
         baseDic["clientType"] = "2"
         XNNetWorkManager.sharedInstance.POSTRequest(urlString: "\(Test_Environment)\(Activity_ActivityList_Request)", params: baseDic, success: { (object) in
-            let code:String = (String)(describing: object["code"])
-            let message:String = (String)(describing: object["message"])
-            if code == "200"
+            let newJson = JSON.init(object)
+            let newCode = newJson["code"].intValue
+            let message = newJson["message"].stringValue
+            if newCode == 200
             {
                 //对请求的数据做处理
-                let newArray:[Any] = object["data"]!["activitys"] as! [Any]
+                let array = newJson["data"]["activitys"].arrayValue
                 self.dataArray.removeAll()
-                for i in 0...newArray.count {
+                for subJson in array {
                     let model = ActivityMainModel.init()
-                    let dic:[String:Any] = newArray[i] as! Dictionary
-                    model.imageUrl = dic["activityPic"] as! String
-                    model.peopleCount = dic["depict"] as! Int
-                    let isParticipate:NSString = dic["isParticipate"] as! NSString
-                    model.isJion = isParticipate.boolValue
-                    model.html5Url = dic["linkAddress"] as! String
+                    model.imageUrl = "\(Test_PIC_URL)\(subJson["activityPic"].stringValue)"
+                    model.peopleCount = subJson["depict"].intValue
+                    model.isJion = subJson["isParticipate"].boolValue
+                    model.html5Url = subJson["linkAddress"].stringValue
                     self.dataArray.append(model)
                 }
                 callBack(true, "")
+//                for i in 0...newArray.count {
+//                    let model = ActivityMainModel.init()
+//                    let dic:[String:Any] = newArray[i] as! Dictionary
+//                    model.imageUrl = dic["activityPic"] as! String
+//                    model.peopleCount = dic["depict"] as! Int
+//                    let isParticipate:NSString = dic["isParticipate"] as! NSString
+//                    model.isJion = isParticipate.boolValue
+//                    model.html5Url = dic["linkAddress"] as! String
+//                    self.dataArray.append(model)
+//                }
+                
             }
             else
             {
