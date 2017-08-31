@@ -22,16 +22,14 @@ class BaseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     deinit {
-        
+        print("\(self.classForCoder)销毁了")
     }
     //MARK: 🔒private
     private func base_initData() {

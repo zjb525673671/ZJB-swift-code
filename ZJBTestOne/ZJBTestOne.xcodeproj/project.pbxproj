@@ -23,6 +23,10 @@
 		F358FACB1F54490B006EC360 /* LoginPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FACA1F54490B006EC360 /* LoginPasswordViewController.swift */; };
 		F358FACD1F544924006EC360 /* LoginMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FACC1F544924006EC360 /* LoginMessageViewController.swift */; };
 		F358FACF1F5454B7006EC360 /* LoginForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FACE1F5454B7006EC360 /* LoginForgetPasswordViewController.swift */; };
+		F358FAD11F5695D0006EC360 /* LoginMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FAD01F5695D0006EC360 /* LoginMainPresenter.swift */; };
+		F358FAD31F56A857006EC360 /* ActivityMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FAD21F56A857006EC360 /* ActivityMainCell.swift */; };
+		F358FADD1F56D289006EC360 /* ActivityMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FADC1F56D289006EC360 /* ActivityMainPresenter.swift */; };
+		F358FADF1F56D2A8006EC360 /* ActivityMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358FADE1F56D2A8006EC360 /* ActivityMainModel.swift */; };
 		F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F369838F1F42EE1600780DAB /* AppDelegate.swift */; };
 		F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983921F42EE3D00780DAB /* BaseViewController.swift */; };
 		F36983951F42EE6900780DAB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983941F42EE6900780DAB /* BaseTabBarController.swift */; };
@@ -56,6 +60,10 @@
 		F358FACA1F54490B006EC360 /* LoginPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPasswordViewController.swift; sourceTree = "<group>"; };
 		F358FACC1F544924006EC360 /* LoginMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMessageViewController.swift; sourceTree = "<group>"; };
 		F358FACE1F5454B7006EC360 /* LoginForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		F358FAD01F5695D0006EC360 /* LoginMainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMainPresenter.swift; sourceTree = "<group>"; };
+		F358FAD21F56A857006EC360 /* ActivityMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMainCell.swift; sourceTree = "<group>"; };
+		F358FADC1F56D289006EC360 /* ActivityMainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMainPresenter.swift; sourceTree = "<group>"; };
+		F358FADE1F56D2A8006EC360 /* ActivityMainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMainModel.swift; sourceTree = "<group>"; };
 		F369838F1F42EE1600780DAB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36983921F42EE3D00780DAB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F36983941F42EE6900780DAB /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -216,6 +224,7 @@
 		F358FAC11F514326006EC360 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				F358FAD01F5695D0006EC360 /* LoginMainPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -341,6 +350,7 @@
 		F36983AC1F43310A00780DAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F358FADE1F56D2A8006EC360 /* ActivityMainModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,6 +358,7 @@
 		F36983AD1F43310A00780DAB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				F358FADC1F56D289006EC360 /* ActivityMainPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -355,6 +366,7 @@
 		F36983AE1F43310A00780DAB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F358FAD21F56A857006EC360 /* ActivityMainCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -599,13 +611,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */,
+				F358FAD11F5695D0006EC360 /* LoginMainPresenter.swift in Sources */,
 				F358FACB1F54490B006EC360 /* LoginPasswordViewController.swift in Sources */,
+				F358FAD31F56A857006EC360 /* ActivityMainCell.swift in Sources */,
 				F36983BA1F43317900780DAB /* QuotaMainViewController.swift in Sources */,
 				F328CBFE1F4C347900A1D632 /* XNNetWorkManager.swift in Sources */,
 				F328CC001F4DB4A100A1D632 /* MeMainPresenter.swift in Sources */,
 				F36983C21F459BB900780DAB /* ActivityMainViewController.swift in Sources */,
 				F328CBF51F4ADE7000A1D632 /* XNHelper.swift in Sources */,
 				F328CBF91F4C032300A1D632 /* MeMainModel.swift in Sources */,
+				F358FADD1F56D289006EC360 /* ActivityMainPresenter.swift in Sources */,
 				F36983C81F459F6400780DAB /* BaseCategory.swift in Sources */,
 				F358FAC61F514AB2006EC360 /* XNNotificationAndURL.swift in Sources */,
 				F36983BE1F4331C000780DAB /* MeMainViewController.swift in Sources */,
@@ -616,6 +631,7 @@
 				F358FAC41F514375006EC360 /* LoginMainViewController.swift in Sources */,
 				F328CBF21F4AC86500A1D632 /* MeMainView.swift in Sources */,
 				F36983CB1F46BF6500780DAB /* XNGradientButton.swift in Sources */,
+				F358FADF1F56D2A8006EC360 /* ActivityMainModel.swift in Sources */,
 				F36983C01F4331F900780DAB /* LoanMainViewController.swift in Sources */,
 				F358FACF1F5454B7006EC360 /* LoginForgetPasswordViewController.swift in Sources */,
 				F36983CE1F46C3A600780DAB /* XNGradientView.swift in Sources */,

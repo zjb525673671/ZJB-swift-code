@@ -26,7 +26,7 @@ extension XNNetWorkManager {
     public func POSTRequest(urlString: String, params : [String : Any], success : @escaping (_ response : [String : AnyObject])->(), failture : @escaping (_ error : Error)->()) {
         var newDict: [String: Any] = params
         var baseDic : [String : String] = [String : String]()
-        baseDic["requestId"] = ""//self.ret32String()
+        baseDic["requestId"] = self.ret32String()
         baseDic["token"] = ""
         baseDic["cid"] = ""
         baseDic["phone"] = ""
@@ -48,9 +48,7 @@ extension XNNetWorkManager {
                 switch response.result {
                 case .success(let value):
                     //当响应成功是，使用临时变量value接受服务器返回的信息并判断是否为[String: AnyObject]类型 如果是那么将其传给其定义方法中的success
-                    //                    if let value = response.result.value as? [String: AnyObject] {
                     success(value as! [String : AnyObject])
-                    //                    }
                     let json = JSON(value)
                     print("请求成功的数据:")
                     print(json)
@@ -62,6 +60,18 @@ extension XNNetWorkManager {
                     print("error:\(error.localizedDescription)")
                 }
         }
+    }
+    
+    private func ret32String() -> String {
+        var newStr = ""
+        
+        for _ in 0...31 {
+            let number = 65+arc4random()%26
+            let A = Character(UnicodeScalar(number)!)
+            newStr.append(A)
+        }
+        print(newStr)
+        return newStr
     }
     
 }

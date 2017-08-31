@@ -25,8 +25,33 @@ let Product_PIC_URL = "http://image.xnshandai.com/"
 let Product_H5_WEBURL = "https://sdai.xnsudai.com/"
 
 //***************** 通知 ********************//
+
+//============================== 登录 ==============================\\
+
 let LoginRegisterShowNotifacation = "LoginRegisterShowNotifacation"
+
+//============================== 贷款 ==============================\\
 
 
 //***************** 请求地址 ********************//
+
+//============================== 贷款 ==============================\\
+
+/** 贷款消息列表 */
+let Loan_NewsList_Request = "messageCenter/redis/getLoanRecord.do"
+
+//============================== 提额 ==============================\\
+
+/** 提额消息列表 */
+let Quota_NewsList_Request = "messageCenter/redis/getLoanRecord.do"
+
+//============================== 活动 ==============================\\
+
+/** 活动列表 */
+let Activity_ActivityList_Request = "activityCenter/activity/getActivityList.do"
+
+//============================== 我的 ==============================\\
+
+/** 消息列表 */
 let Me_NewsList_Request = "messageCenter/redis/getLoanRecord.do"
+

@@ -27,6 +27,9 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
     private var secondCodeLabel = UILabel.init()
     private var thirdCodeLabel = UILabel.init()
     private var forthCodeLabel = UILabel.init()
+    private var timer:Timer? = Timer.init()
+    
+    private var seconds:Int = 60
     //MARK: ♻️life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,13 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        
+        self.timer?.invalidate()
+        self.timer = nil
+        self.countDownButton.isEnabled = true
+        self.countDownButton.setTitle("重新获取验证码", for: UIControlState.normal)
+        self.countDownButton.setTitleColor(UIColor.RGBA(hex: 0xffffff, alpha: 1), for: UIControlState.normal)
+        self.seconds = 60
+        print("我消失了哦")
     }
     
     deinit {
@@ -144,9 +153,9 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
         self.nextButton.setTitle("下一步>", for: UIControlState.normal)
         self.nextButton.titleLabel?.font = UIFont.regularFont(size: 24*ScaleX)
         self.nextButton.addTarget(self, action: #selector(self.clickAction_nextStep), for: UIControlEvents.touchUpInside)
-        self.countDownButton.setTitle("52秒后重新获取", for: UIControlState.normal)
+        self.countDownButton.setTitle("获取验证码", for: UIControlState.normal)
         self.countDownButton.titleLabel?.font = UIFont.regularFont(size: 14*ScaleX)
-        self.countDownButton.setTitleColor(UIColor.RGBA(hex: 0xffffff, alpha: 0.5), for: UIControlState.normal)
+        self.countDownButton.setTitleColor(UIColor.RGBA(hex: 0xffffff, alpha: 1), for: UIControlState.normal)
         self.countDownButton.addTarget(self, action: #selector(self.clickAction_sendMessage), for: UIControlEvents.touchUpInside)
         self.phoneNumberField.keyboardType = UIKeyboardType.numberPad
         self.phoneNumberField.textColor = UIColor.clear
@@ -222,7 +231,7 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
     //MARK: 🎬event response
     
     @objc private func clickAction_back() {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc private func clickAction_nextStep() {
@@ -233,6 +242,29 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
     @objc private func clickAction_sendMessage() {
         //发送短信验证码
         print("短信验证码发送成功!")
+        self.countDownButton.isEnabled = false
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timer_countTime(timer:)), userInfo: nil, repeats: true)
+        RunLoop.current.add(self.timer!, forMode: RunLoopMode.commonModes)
+        self.countDownButton.setTitle("60秒后重新获取", for: UIControlState.normal)
+        self.countDownButton.setTitleColor(UIColor.RGBA(hex: 0xffffff, alpha: 0.5), for: UIControlState.normal)
+    }
+    
+    @objc private func timer_countTime(timer:Timer) {
+        //短信倒计时
+        self.seconds -= 1
+        if self.seconds < 1 {
+            self.timer?.invalidate()
+            self.timer = nil
+            self.countDownButton.isEnabled = true
+            self.countDownButton.setTitle("重新获取验证码", for: UIControlState.normal)
+            self.countDownButton.setTitleColor(UIColor.RGBA(hex: 0xffffff, alpha: 1), for: UIControlState.normal)
+            self.seconds = 60
+        }
+        else
+        {
+            self.countDownButton.setTitle( "\(self.seconds)秒后重新获取", for: UIControlState.normal)
+//            self.countDownButton.setTitleColor(UIColor.RGBA(hex: 0xffffff, alpha: 0.5), for: UIControlState.normal)
+        }
     }
 
 }
