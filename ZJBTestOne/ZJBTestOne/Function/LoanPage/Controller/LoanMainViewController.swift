@@ -31,6 +31,8 @@ class LoanMainViewController: BaseViewController {
         super.viewWillDisappear(animated)
     }
     
+    
+    
     deinit {
         
     }
@@ -39,6 +41,12 @@ class LoanMainViewController: BaseViewController {
         self.view.backgroundColor = UIColor.white
         
         self.title = "贷款"
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            if !XNUserInfo.isLogin {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
+            }
+        }
+        
     }
     
     private func xn_initSubViews() {

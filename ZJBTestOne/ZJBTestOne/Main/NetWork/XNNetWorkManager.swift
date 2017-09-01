@@ -10,9 +10,6 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-let newsListUrl = "http://pre.xnshandai.net/messageCenter/redis/getLoanRecord.do"
-let baseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
 private let NetworkRequestShareInstance = XNNetWorkManager()
 
 class XNNetWorkManager {
@@ -54,7 +51,7 @@ extension XNNetWorkManager {
 
         let manager = Alamofire.SessionManager.default
         manager.session.configuration.timeoutIntervalForRequest = 20
-        manager.request(urlString, method: .post, parameters: newDict)
+        manager.request("\(Environment_BaseURL)\(urlString)", method: .post, parameters: newDict)
             .responseJSON { (response) in/*这里使用了闭包*/
                 //当请求后response是我们自定义的，这个变量用于接受服务器响应的信息
                 //使用switch判断请求是否成功，也就是response的result
@@ -63,6 +60,11 @@ extension XNNetWorkManager {
                     //当响应成功是，使用临时变量value接受服务器返回的信息并判断是否为[String: AnyObject]类型 如果是那么将其传给其定义方法中的success
                     success(value as! [String : AnyObject])
                     let json = JSON(value)
+                    let code = json["code"].intValue
+                    if code == 1009 {
+                        XNUserInfo.removeAllKey()
+                        
+                    }
                     print("请求成功的数据:")
                     print(json)
                     
@@ -93,4 +95,62 @@ extension XNNetWorkManager {
         return newStr
     }
     
+    /// 请求地址头
+    ///
+    /// - Returns: 请求地址头
+    public func setEnvironment() -> String {
+        if EnvironmentIndex == 1 {
+            //测试环境
+            return "http://pre.xnshandai.net/"
+        } else if EnvironmentIndex == 2  {
+            //开发环境
+            return "http://test.xnsudai5.com/"
+        } else if EnvironmentIndex == 3  {
+            //预发布环境
+            return "http://pre.xnshandai.com/"
+        } else {
+            //生产环境
+            return "https://sdai.xnsudai.com/"
+        }
+    }
+    
+    
+    /// 图片地址头
+    ///
+    /// - Returns: 基础图片地址头
+    public func setPictureBaseUrl() -> String {
+        if EnvironmentIndex == 1 {
+            //测试环境
+            return "http://image.xnshandai.net/"
+        } else if EnvironmentIndex == 2  {
+            //开发环境
+            return "http://h5.xnsudai5.com/"
+        } else if EnvironmentIndex == 3  {
+            //预发布环境
+            return "http://image.xnshandai.com/"
+        } else {
+            //生产环境
+            return "http://image.xnshandai.com/"
+        }
+    }
+    
+    
+    /// html5头
+    ///
+    /// - Returns: html5头
+    public func setHtml5BaseUrl() -> String {
+        if EnvironmentIndex == 1 {
+            //测试环境
+            return "http://h5.xnsudai5.com/"
+        } else if EnvironmentIndex == 2  {
+            //开发环境
+            return "http://h5.xnsudai5.com/"
+        } else if EnvironmentIndex == 3  {
+            //预发布环境
+            return "https://sdai.xnsudai.com/"
+        } else {
+            //生产环境
+            return "https://sdai.xnsudai.com/"
+        }
+    }
 }

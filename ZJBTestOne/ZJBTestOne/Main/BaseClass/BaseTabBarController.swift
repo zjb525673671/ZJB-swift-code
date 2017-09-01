@@ -15,11 +15,13 @@ class BaseTabBarController: UITabBarController {
     //MARK: ♻️life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notification_showLoginRegisterPage), name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
+        XNUserInfo.isLogin = XNUserInfo.checkUserIsLogon()
         self.addChildController(VC: LoanMainViewController(), imageName: "tabBar_loan_normal", selectImage: "", title: "贷款", tag: 1)
         self.addChildController(VC: QuotaMainViewController(), imageName: "tabBar_quota_normal", selectImage: "", title: "提额", tag: 2)
         self.addChildController(VC: ActivityMainViewController(), imageName: "tabBar_activety_normal", selectImage: "", title: "活动", tag: 3)
         self.addChildController(VC: MeMainViewController(), imageName: "tabBar_me_normal", selectImage: "", title: "我的", tag: 4)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.notification_showLoginRegisterPage), name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,4 +56,5 @@ class BaseTabBarController: UITabBarController {
     }
     //MARK: 🎬event response
 
+    
 }

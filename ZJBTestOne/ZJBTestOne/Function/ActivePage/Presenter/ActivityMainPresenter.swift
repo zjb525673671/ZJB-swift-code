@@ -16,7 +16,7 @@ class ActivityMainPresenter: NSObject {
     public func requestActivityList(callBack:@escaping(_ isSuccess:Bool, _ eMsg:String?) -> ()) {
         var baseDic : [String : String] = [String : String]()
         baseDic["clientType"] = "2"
-        XNNetWorkManager.sharedInstance.POSTRequest(urlString: "\(Test_Environment)\(Activity_ActivityList_Request)", params: baseDic, success: { (object) in
+        XNNetWorkManager.sharedInstance.POSTRequest(urlString: Activity_ActivityList_Request, params: baseDic, success: { (object) in
             let newJson = JSON.init(object)
             let newCode = newJson["code"].intValue
             let message = newJson["message"].stringValue
@@ -27,7 +27,7 @@ class ActivityMainPresenter: NSObject {
                 self.dataArray.removeAll()
                 for subJson in array {
                     let model = ActivityMainModel.init()
-                    model.imageUrl = "\(Test_PIC_URL)\(subJson["activityPic"].stringValue)"
+                    model.imageUrl = "\(Picture_BaseURL)\(subJson["activityPic"].stringValue)"
                     model.peopleCount = subJson["depict"].intValue
                     model.isJion = subJson["isParticipate"].boolValue
                     model.html5Url = subJson["linkAddress"].stringValue

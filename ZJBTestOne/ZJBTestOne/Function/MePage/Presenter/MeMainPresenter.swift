@@ -11,7 +11,7 @@ import UIKit
 class MeMainPresenter: NSObject {
 
     public func requestNewsList(callBack : @escaping (_ isSuccess:Bool, _ eMsg:String)->()) {
-        XNNetWorkManager.sharedInstance.POSTRequest(urlString: newsListUrl, params: [:], success: { (object) in
+        XNNetWorkManager.sharedInstance.POSTRequest(urlString: Loan_NewsList_Request, params: [:], success: { (object) in
             let code:String = (String)(describing: object["code"])
             let message:String = (String)(describing: object["message"])
             if code == "200"

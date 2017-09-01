@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class MeMainViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
 
@@ -107,9 +108,7 @@ class MeMainViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            XNNetWorkManager.sharedInstance.POSTRequest(urlString: newsListUrl, params: [:], success: { (message) in
-            }) { (error) in
-            }
+
         }
         else
         {

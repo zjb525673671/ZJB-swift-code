@@ -15,13 +15,16 @@ class LoginUserModel: NSObject {
     class var sharedInfo: LoginUserModel {
         return XNUserInfo
     }
+    
+    var isLogin:Bool = false
+    
     //客户的唯一id
     var customId:String? {
         get{
             return UserDefaults.standard.object(forKey: "user_key_customId") as? String
         }
         set{
-            if (newValue?.isEmpty)! == false {
+            if newValue != nil {
                 UserDefaults.standard.set(newValue, forKey: "user_key_customId")
             }
         }
@@ -32,7 +35,7 @@ class LoginUserModel: NSObject {
             return UserDefaults.standard.object(forKey: "user_key_phoneNum") as? String
         }
         set{
-            if (newValue?.isEmpty)! == false {
+            if newValue != nil {
                 UserDefaults.standard.set(newValue, forKey: "user_key_phoneNum")
             }
         }
@@ -43,7 +46,7 @@ class LoginUserModel: NSObject {
             return UserDefaults.standard.object(forKey: "user_key_tokenCode") as? String
         }
         set{
-            if (newValue?.isEmpty)! == false {
+            if newValue != nil {
                 UserDefaults.standard.set(newValue, forKey: "user_key_tokenCode")
             }
         }
@@ -54,7 +57,7 @@ class LoginUserModel: NSObject {
             return UserDefaults.standard.object(forKey: "user_key_nickName") as? String
         }
         set{
-            if (newValue?.isEmpty)! == false {
+            if newValue != nil {
                 UserDefaults.standard.set(newValue, forKey: "user_key_nickName")
             }
         }
@@ -65,7 +68,7 @@ class LoginUserModel: NSObject {
             return UserDefaults.standard.object(forKey: "user_key_tokenEffective") as? String
         }
         set{
-            if (newValue?.isEmpty)! == false {
+            if newValue != nil {
                 UserDefaults.standard.set(newValue, forKey: "user_key_tokenEffective")
             }
         }
@@ -76,7 +79,7 @@ class LoginUserModel: NSObject {
             return UserDefaults.standard.object(forKey: "user_key_tokenExpired") as? String
         }
         set{
-            if (newValue?.isEmpty)! == false {
+            if newValue != nil {
                 UserDefaults.standard.set(newValue, forKey: "user_key_tokenExpired")
             }
         }
@@ -87,9 +90,36 @@ class LoginUserModel: NSObject {
             return UserDefaults.standard.object(forKey: "user_key_userAvatar") as? String
         }
         set{
-            if (newValue?.isEmpty)! == false {
+            if newValue != nil {
                 UserDefaults.standard.set(newValue, forKey: "user_key_userAvatar")
             }
         }
+    }
+    
+    func checkUserIsLogon() -> Bool {
+        let nowTime = (Int)(Date().timeIntervalSinceNow)*1000
+        var beforeTime = 0
+        var afterTime = 0
+        if self.tokenEffective != nil {
+            beforeTime = (self.tokenEffective! as NSString).integerValue
+        }
+        if self.tokenExpired != nil {
+            afterTime = (self.tokenExpired! as NSString).integerValue
+        }
+        if nowTime > beforeTime && nowTime < afterTime {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func removeAllKey() {
+        UserDefaults.standard.removeObject(forKey: "user_key_customId")
+        UserDefaults.standard.removeObject(forKey: "user_key_phoneNum")
+        UserDefaults.standard.removeObject(forKey: "user_key_tokenCode")
+        UserDefaults.standard.removeObject(forKey: "user_key_nickName")
+        UserDefaults.standard.removeObject(forKey: "user_key_tokenEffective")
+        UserDefaults.standard.removeObject(forKey: "user_key_tokenExpired")
+        UserDefaults.standard.removeObject(forKey: "user_key_userAvatar")
     }
 }
