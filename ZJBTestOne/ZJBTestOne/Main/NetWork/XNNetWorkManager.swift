@@ -20,7 +20,7 @@ class XNNetWorkManager {
 
 extension XNNetWorkManager {
     
-    public func POSTRequest(urlString: String, params : [String : Any], success : @escaping (_ response : [String : AnyObject])->(), failture : @escaping (_ error : String)->()) {
+    public func POSTRequest(urlString: String, params : [String : Any], success : @escaping (_ response : JSON)->(), failture : @escaping (_ error : String)->()) {
         var newDict: [String: Any] = params
         var baseDic : [String : String] = [String : String]()
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
@@ -58,15 +58,21 @@ extension XNNetWorkManager {
                 switch response.result {
                 case .success(let value):
                     //当响应成功是，使用临时变量value接受服务器返回的信息并判断是否为[String: AnyObject]类型 如果是那么将其传给其定义方法中的success
-                    success(value as! [String : AnyObject])
                     let json = JSON(value)
-                    let code = json["code"].intValue
-                    if code == 1009 {
-                        XNUserInfo.removeAllKey()
-                        
+                    let status = json["status"].intValue
+                    if status == 404 {
+                        failture(json["error"].stringValue)
+                        print("接口异常的数据:")
+                        print(json)
+                    } else {
+                        success(json)
+                        let code = json["code"].intValue
+                        if code == 1009 {
+                            XNUserInfo.removeAllKey()
+                        }
+                        print("请求成功的数据:")
+                        print(json)
                     }
-                    print("请求成功的数据:")
-                    print(json)
                     
                 case .failure(let error):
                     var errorMessage = ""

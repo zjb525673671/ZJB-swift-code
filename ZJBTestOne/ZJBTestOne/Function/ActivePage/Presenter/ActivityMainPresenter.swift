@@ -17,7 +17,7 @@ class ActivityMainPresenter: NSObject {
         var baseDic : [String : String] = [String : String]()
         baseDic["clientType"] = "2"
         XNNetWorkManager.sharedInstance.POSTRequest(urlString: Activity_ActivityList_Request, params: baseDic, success: { (object) in
-            let newJson = JSON.init(object)
+            let newJson = object
             let newCode = newJson["code"].intValue
             let message = newJson["message"].stringValue
             if newCode == 200

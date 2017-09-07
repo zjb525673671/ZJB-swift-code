@@ -10,32 +10,53 @@ import UIKit
 
 class LoginMainPresenter: NSObject {
 
-    public func requestUserIsLogin(phoneNumber:String, callBack:@escaping (_ isSuccess:Bool, _ eMsg:String?) -> ()) {
-        XNNetWorkManager.sharedInstance.POSTRequest(urlString: Me_NewsList_Request, params: [:], success: { (object) in
-            if object.isEmpty {
-                callBack(false,"数据错误")
-            } else {
-                let code:String = object["code"] as! String
-                if code == "200" {
-                    
-                }
+    /// 查询手机号码是否注册
+    ///
+    /// - Parameters:
+    ///   - phoneNumber: 手机号码
+    ///   - callBack: 回调
+    public func requestCheckPhoneNumberRegister(phoneNumber:String, callBack:@escaping (_ isSuccess:Bool, _ eMsg:String?) -> ()) {
+        var dic : [String : String] = [String : String]()
+        dic["phoneNum"] = phoneNumber
+        dic["appNum"] = "1"
+        XNNetWorkManager.sharedInstance.POSTRequest(urlString: Login_checkIsRegister_Request, params: dic, success: { (object) in
+            if object["data"]["successed"].boolValue
+            {
+                callBack(true, nil)
+            }
+            else
+            {
+                callBack(false, object["message"].stringValue)
             }
         }) { (error) in
-            callBack(false,"网络错误")
+            callBack(false,error)
         }
     }
-    public func requestSendMessage(customId:String, callBack:@escaping (_ isSuccess:Bool, _ eMsg:String?) -> ()) {
-        XNNetWorkManager.sharedInstance.POSTRequest(urlString: Me_NewsList_Request, params: [:], success: { (object) in
-            if object.isEmpty {
-                callBack(false,"数据错误")
-            } else {
-                let code:String = object["code"] as! String
-                if code == "200" {
-                    
-                }
+    
+    /// 发送短信
+    ///
+    /// - Parameters:
+    ///   - phoneNumber: 手机号码
+    ///   - callBack: 回调
+    public func requestSendMessage(phoneNumber:String, callBack:@escaping (_ isSuccess:Bool, _ eMsg:String?) -> ()) {
+        var dic : [String : String] = [String : String]()
+        dic["phoneNum"] = phoneNumber
+        dic["channelType"] = "1"
+        dic["ip"] = "1"
+        dic["blackBox"] = "1"
+        dic["appNum"] = "1"
+        XNNetWorkManager.sharedInstance.POSTRequest(urlString: Login_getMessageCode_Request, params: dic, success: { (object) in
+            if object["data"]["successed"].boolValue
+            {
+                callBack(true, nil)
             }
+            else
+            {
+                callBack(false, object["message"].stringValue)
+            }
+            
         }) { (error) in
-            callBack(false,"网络错误")
+            callBack(false,error)
         }
     }
 }

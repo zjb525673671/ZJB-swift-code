@@ -15,6 +15,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
     private var backButton = UIButton.init(type: UIButtonType.custom)
     private var nextButton = UIButton.init(type: UIButtonType.custom)
     private var phoneNumberField = UITextField.init()
+    private var presenter = LoginMainPresenter.init()
     //MARK: ♻️life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +130,26 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc private func clickAction_nextStep() {
-        let passwordVC = LoginMessageViewController()
-        self.navigationController?.pushViewController(passwordVC, animated: true)
+        if (self.phoneNumberField.text?.characters.count)! < 11
+        {
+            //tips提示
+            print("手机号码错误")
+            return
+        }
+        else
+        {
+            self.presenter.requestCheckPhoneNumberRegister(phoneNumber: self.phoneNumberField.text!, callBack: { (isSuccess, eMsg) in
+                if isSuccess
+                {
+                    let passwordVC = LoginMessageViewController()
+                    self.navigationController?.pushViewController(passwordVC, animated: true)
+                }
+                else
+                {
+                    //tips提示
+                }
+            })
+            
+        }
     }
 }

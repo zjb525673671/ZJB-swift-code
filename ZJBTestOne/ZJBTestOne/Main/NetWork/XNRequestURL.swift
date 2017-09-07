@@ -22,8 +22,14 @@ let Html_BaseURL = XNNetWorkManager.sharedInstance.setHtml5BaseUrl()//H5头
 /** 注册 */
 let Login_Register_Request = "userCenter/customer/login.do"
 
-/** 检查登录状态 */
-let Login_CheckLogined_Request = "userCenter/customer/login.do"
+/** 检测是否注册 */
+let Login_checkIsRegister_Request = "userCenter/customer/checkPhoneNum.do"
+
+/** 发送短信验证码 */
+let Login_getMessageCode_Request = "userCenter/smsValidate/getValidateCode.do"
+
+/** 登录 */
+let Login_UserLogined_Request = "userCenter/customer/login.do"
 
 //============================== 贷款 ==============================\\
 
