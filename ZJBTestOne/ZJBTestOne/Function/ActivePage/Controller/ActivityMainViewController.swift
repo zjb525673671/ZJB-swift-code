@@ -35,7 +35,9 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
     //MARK: 🔒private
     private func xn_initData() {
         self.view.backgroundColor = UIColor.white
+        XNProgressHUD.showLoading()
         self.presenter.requestActivityList { (isSuccess, eMsg) in
+            XNProgressHUD.dismissLoading()
             if isSuccess {
                 self.tableView.reloadData()
             }
