@@ -49,8 +49,12 @@ extension XNNetWorkManager {
         let jsonString: String = String(data: jsonData!, encoding: String.Encoding.utf8)!
         newDict["xn_data"] = jsonString
 
+//        let configuration = URLSessionConfiguration.default
+//        configuration.timeoutIntervalForRequest = 20
+//        let manager = Alamofire.SessionManager(configuration:configuration)
         let manager = Alamofire.SessionManager.default
         manager.session.configuration.timeoutIntervalForRequest = 20
+        manager.session.configuration.timeoutIntervalForResource = 20
         manager.request("\(Environment_BaseURL)\(urlString)", method: .post, parameters: newDict)
             .responseJSON { (response) in/*这里使用了闭包*/
                 //当请求后response是我们自定义的，这个变量用于接受服务器响应的信息
@@ -60,18 +64,32 @@ extension XNNetWorkManager {
                     //当响应成功是，使用临时变量value接受服务器返回的信息并判断是否为[String: AnyObject]类型 如果是那么将其传给其定义方法中的success
                     let json = JSON(value)
                     let status = json["status"].intValue
-                    if status == 404 {
+                    if status == 404
+                    {
                         failture(json["error"].stringValue)
                         print("接口异常的数据:")
                         print(json)
-                    } else {
-                        success(json)
+                    }
+                    else
+                    {
                         let code = json["code"].intValue
-                        if code == 1009 {
-                            XNUserInfo.removeAllKey()
-                        }
+                        let message = json["message"].stringValue
                         print("请求成功的数据:")
                         print(json)
+                        if code == 1009
+                        {
+                            XNUserInfo.removeAllKey()
+                            //通知重新登录
+                            failture("token失效")
+                        }
+                        else if code == 200
+                        {
+                            success(json)
+                        }
+                        else
+                        {
+                            failture(message)
+                        }
                     }
                     
                 case .failure(let error):

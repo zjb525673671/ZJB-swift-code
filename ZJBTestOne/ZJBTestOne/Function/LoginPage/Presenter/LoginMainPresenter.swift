@@ -10,6 +10,9 @@ import UIKit
 
 class LoginMainPresenter: NSObject {
 
+    
+    var isRegister:Bool = false
+    
     /// 查询手机号码是否注册
     ///
     /// - Parameters:
@@ -22,12 +25,13 @@ class LoginMainPresenter: NSObject {
         XNNetWorkManager.sharedInstance.POSTRequest(urlString: Login_checkIsRegister_Request, params: dic, success: { (object) in
             if object["data"]["successed"].boolValue
             {
-                callBack(true, nil)
+                self.isRegister = true
             }
             else
             {
-                callBack(false, object["message"].stringValue)
+                self.isRegister = false
             }
+            callBack(true, nil)
         }) { (error) in
             callBack(false,error)
         }

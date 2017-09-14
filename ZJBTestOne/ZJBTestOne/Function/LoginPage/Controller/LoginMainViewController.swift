@@ -134,6 +134,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
         {
             //tips提示
             print("手机号码错误")
+            XNProgressHUD.showError(error: "手机号码错误,请从新输入")
             return
         }
         else
@@ -141,11 +142,20 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
             self.presenter.requestCheckPhoneNumberRegister(phoneNumber: self.phoneNumberField.text!, callBack: { (isSuccess, eMsg) in
                 if isSuccess
                 {
-                    let passwordVC = LoginMessageViewController()
-                    self.navigationController?.pushViewController(passwordVC, animated: true)
+                    if self.presenter.isRegister
+                    {
+                        let passwordVC = LoginPasswordViewController()
+                        self.navigationController?.pushViewController(passwordVC, animated: true)
+                    }
+                    else
+                    {
+                        let messageVC = LoginMessageViewController()
+                        self.navigationController?.pushViewController(messageVC, animated: true)
+                    }
                 }
                 else
                 {
+                    XNProgressHUD.showError(error: "真特么无语了")
                     //tips提示
                 }
             })

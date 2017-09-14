@@ -14,10 +14,44 @@ private let ProgressHUDShareInstance = ProgressHUD()
 
 class ProgressHUD {
     fileprivate var isLoading = false
-    fileprivate var tipsView = UIView.init()
+    fileprivate var tipsView = XNTipsView.init(frame: UIScreen.main.bounds)
     fileprivate var loadView = XNLoadingView.init(frame: UIScreen.main.bounds)
     class var sharedInstance : ProgressHUD {
         return ProgressHUDShareInstance
+    }
+}
+
+class XNTipsView: UIView {
+    
+    var infoLabel = UILabel.init()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        xn_initSubViews()
+    }
+    private func xn_initSubViews() {
+        self.addSubview(self.infoLabel)
+        self.infoLabel.snp.makeConstraints { (make) in
+            make.center.equalTo(self)
+            make.width.equalTo(100*ScaleX)
+            make.height.equalTo(30*ScaleX)
+        }
+        self.infoLabel.xn_init(text: "", textAlignment: NSTextAlignment.center, font: UIFont.regularFont(size: 16*ScaleX), textColor: UIColor.white)
+        self.infoLabel.backgroundColor = UIColor.RGBA(hex: 0x000000, alpha: 0.8);
+        self.infoLabel.layer.cornerRadius = 4*ScaleX
+        self.infoLabel.clipsToBounds = true;
+    }
+    
+    public func showInfo(message:String) {
+        let width = message.size(attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 16*ScaleX)]).width
+        self.infoLabel.snp.updateConstraints { (make) in
+            make.width.equalTo(width + 10*ScaleX)
+        }
+        self.infoLabel.text = message;
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -68,7 +102,14 @@ class XNLoadingView: UIView {
 extension ProgressHUD {
     
     public func showError(error : String) {
-        
+        if !error.isEmpty
+        {
+            self.tipsView.showInfo(message: error)
+            UIApplication.shared.keyWindow?.addSubview(self.tipsView)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0, execute: {
+                self.tipsView.removeFromSuperview()
+            })
+        }
     }
     public func showLoading() {
         UIApplication.shared.keyWindow?.addSubview(self.loadView)
@@ -78,4 +119,6 @@ extension ProgressHUD {
         self.loadView.stopAnimation()
         self.loadView.removeFromSuperview()
     }
+    
+    
 }

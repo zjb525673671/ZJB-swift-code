@@ -23,6 +23,13 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+//        XNProgressHUD.showLoading()
+        self.presenter.requestActivityList { (isSuccess, eMsg) in
+//            XNProgressHUD.dismissLoading()
+            if isSuccess {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -35,13 +42,7 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
     //MARK: 🔒private
     private func xn_initData() {
         self.view.backgroundColor = UIColor.white
-        XNProgressHUD.showLoading()
-        self.presenter.requestActivityList { (isSuccess, eMsg) in
-            XNProgressHUD.dismissLoading()
-            if isSuccess {
-                self.tableView.reloadData()
-            }
-        }
+        
     }
     
     private func xn_initSubViews() {
