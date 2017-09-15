@@ -17,7 +17,7 @@ class LoginUserModel: NSObject {
     }
     
     var isLogin:Bool = false
-    
+    var isLoginPageShow : Bool = false
     //客户的唯一id
     var customId:String? {
         get{
@@ -97,7 +97,7 @@ class LoginUserModel: NSObject {
     }
     
     func checkUserIsLogon() -> Bool {
-        let nowTime = (Int)(Date().timeIntervalSinceNow)*1000
+        let nowTime = (Int)(Date().timeIntervalSince1970)*1000
         var beforeTime = 0
         var afterTime = 0
         if self.tokenEffective != nil {

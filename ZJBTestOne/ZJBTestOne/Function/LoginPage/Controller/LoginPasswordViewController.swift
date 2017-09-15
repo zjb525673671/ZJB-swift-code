@@ -11,12 +11,14 @@ import UIKit
 class LoginPasswordViewController: BaseViewController, UITextFieldDelegate {
 
     //MARK: ☸property
+    public var phoneNumber : String = ""
     private var backLayer = CAGradientLayer.init()
     private var backButton = UIButton.init(type: UIButtonType.custom)
     private var nextButton = UIButton.init(type: UIButtonType.custom)
     private var forgetButton = UIButton.init(type: UIButtonType.custom)
     private var hiddenButton = UIButton.init(type: UIButtonType.custom)
-    private var phoneNumberField = UITextField.init()
+    private var passwordField = UITextField.init()
+    private var presenter = LoginMainPresenter.init()
     //MARK: ♻️life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +62,7 @@ class LoginPasswordViewController: BaseViewController, UITextFieldDelegate {
         self.view.addSubview(callLabel)
         self.view.addSubview(self.hiddenButton)
         self.view.addSubview(self.forgetButton)
-        self.view.addSubview(self.phoneNumberField)
+        self.view.addSubview(self.passwordField)
         self.view.addSubview(phoneLine)
         self.view.addSubview(self.nextButton)
         
@@ -89,7 +91,7 @@ class LoginPasswordViewController: BaseViewController, UITextFieldDelegate {
             make.top.equalTo(self.view).offset(155*ScaleX)
             make.size.equalTo(CGSize.init(width: 40*ScaleX, height: 30*ScaleX))
         }
-        self.phoneNumberField.snp.makeConstraints { (make) in
+        self.passwordField.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(18*ScaleX)
             make.right.equalTo(self.view).offset(-18*ScaleX)
             make.top.equalTo(self.view).offset(187*ScaleX)
@@ -126,13 +128,13 @@ class LoginPasswordViewController: BaseViewController, UITextFieldDelegate {
         self.forgetButton.setTitle("忘记密码?", for: UIControlState.normal)
         self.forgetButton.titleLabel?.font = UIFont.regularFont(size: 14*ScaleX)
         self.nextButton.addTarget(self, action: #selector(self.clickAction_nextStep), for: UIControlEvents.touchUpInside)
-        self.phoneNumberField.keyboardType = UIKeyboardType.default
-        self.phoneNumberField.textColor = UIColor.white
-        self.phoneNumberField.delegate = self
-        self.phoneNumberField.tintColor = UIColor.white
-        self.phoneNumberField.font = UIFont.regularFont(size: 24*ScaleX)
-        self.phoneNumberField.isSecureTextEntry = true
-        self.phoneNumberField.autocapitalizationType = .none;
+        self.passwordField.keyboardType = UIKeyboardType.default
+        self.passwordField.textColor = UIColor.white
+        self.passwordField.delegate = self
+        self.passwordField.tintColor = UIColor.white
+        self.passwordField.font = UIFont.regularFont(size: 24*ScaleX)
+        self.passwordField.isSecureTextEntry = true
+        self.passwordField.autocapitalizationType = .none;
     }
     //MARK: 🚪public
     //MARK: 🍐delegate
@@ -151,8 +153,8 @@ class LoginPasswordViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc private func clickAction_hiddenPassword() {
-        self.phoneNumberField.isSecureTextEntry = !self.phoneNumberField.isSecureTextEntry
-        if self.phoneNumberField.isSecureTextEntry {
+        self.passwordField.isSecureTextEntry = !self.passwordField.isSecureTextEntry
+        if self.passwordField.isSecureTextEntry {
             self.hiddenButton.setTitle("显示", for: UIControlState.normal)
         } else {
             self.hiddenButton.setTitle("隐藏", for: UIControlState.normal)
@@ -165,7 +167,16 @@ class LoginPasswordViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc private func clickAction_nextStep() {
-        
+        self.presenter.reuqestUserLogin(phoneNumber: self.phoneNumber, password: self.passwordField.text!) { (isSuccess, error) in
+            if isSuccess
+            {
+                self.dismiss(animated: true, completion: nil)
+            }
+            else
+            {
+                XNProgressHUD.showError(error: error)
+            }
+        }
     }
 
 }

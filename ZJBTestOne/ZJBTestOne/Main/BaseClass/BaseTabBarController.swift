@@ -51,8 +51,12 @@ class BaseTabBarController: UITabBarController {
     //MARK: 🍐delegate
     //MARK: ☎️notification
     @objc private func notification_showLoginRegisterPage() {
-        let nav = BaseNavigtionController.init(rootViewController: LoginMainViewController())
-        self.present(nav, animated: true, completion: nil)
+        if !XNUserInfo.isLoginPageShow
+        {
+            let nav = BaseNavigtionController.init(rootViewController: LoginMainViewController())
+            XNUserInfo.isLoginPageShow = true
+            self.present(nav, animated: true, completion: nil)
+        }
     }
     //MARK: 🎬event response
 

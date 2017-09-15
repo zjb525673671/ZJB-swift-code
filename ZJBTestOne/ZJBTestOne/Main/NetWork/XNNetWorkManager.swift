@@ -80,6 +80,7 @@ extension XNNetWorkManager {
                         {
                             XNUserInfo.removeAllKey()
                             //通知重新登录
+                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
                             failture("token失效")
                         }
                         else if code == 200

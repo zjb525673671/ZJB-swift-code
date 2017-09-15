@@ -32,7 +32,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
     }
     
     deinit {
-        
+        XNUserInfo.isLoginPageShow = false
     }
     //MARK: 🔒private
     private func xn_initData() {
@@ -51,7 +51,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
         self.backLayer.endPoint = CGPoint.init(x: 0, y: 1)
         self.backLayer.colors = [(UIColor.RGBA(hex: 0xf73776).cgColor),(UIColor.RGBA(hex: 0xfa6338).cgColor)]
         self.backLayer.locations = [0.0,1.0]
-        self.view.layer .addSublayer(self.backLayer)
+        self.view.layer.addSublayer(self.backLayer)
         
         self.view.addSubview(backImageView)
         self.view.addSubview(self.backButton)
@@ -130,6 +130,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc private func clickAction_nextStep() {
+        self.phoneNumberField.resignFirstResponder()
         if (self.phoneNumberField.text?.characters.count)! < 11
         {
             //tips提示
@@ -139,12 +140,15 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
         }
         else
         {
+            XNProgressHUD.showLoading()
             self.presenter.requestCheckPhoneNumberRegister(phoneNumber: self.phoneNumberField.text!, callBack: { (isSuccess, eMsg) in
+                XNProgressHUD.dismissLoading()
                 if isSuccess
                 {
                     if self.presenter.isRegister
                     {
                         let passwordVC = LoginPasswordViewController()
+                        passwordVC.phoneNumber = self.phoneNumberField.text!
                         self.navigationController?.pushViewController(passwordVC, animated: true)
                     }
                     else
@@ -155,11 +159,10 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
                 }
                 else
                 {
-                    XNProgressHUD.showError(error: "真特么无语了")
+                    XNProgressHUD.showError(error: eMsg)
                     //tips提示
                 }
             })
-            
         }
     }
 }
