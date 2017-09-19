@@ -9,7 +9,7 @@
 import Foundation
 
 //设置环境的参数, 1:测试环境 2:开发环境 3:预发布环境  4或者其他:生产环境
-let EnvironmentIndex:Int = 3
+let EnvironmentIndex:Int = 1
 
 let Environment_BaseURL = XNNetWorkManager.sharedInstance.setEnvironment()//请求头
 let Picture_BaseURL = XNNetWorkManager.sharedInstance.setPictureBaseUrl()//图片头
@@ -26,7 +26,13 @@ let Login_Register_Request = "userCenter/customer/login.do"
 let Login_checkIsRegister_Request = "userCenter/customer/checkPhoneNum.do"
 
 /** 发送短信验证码 */
-let Login_getMessageCode_Request = "userCenter/smsValidate/getValidateCode.do"
+let Login_getVerifyCod_Request = "userCenter/smsValidate/getValidateCode.do"
+
+/** 检查短信验证码 */
+let Login_checkVerifyCode_Request = "userCenter/customer/checkSmsCode.do"
+
+/** 忘记密码 */
+let Login_forgetPassword_Request = "userCenter/customer/forgotPassword.do"
 
 /** 登录 */
 let Login_UserLogined_Request = "userCenter/customer/login.do"

@@ -41,6 +41,8 @@ class LoginPasswordViewController: BaseViewController, UITextFieldDelegate {
     private func xn_initData() {
         self.view.backgroundColor = UIColor.white
         self.navigationController?.setNavigationBarHidden(true, animated: false);
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(clickAction_endEdit))
+        self.view.addGestureRecognizer(tapGesture);
     }
     
     private func xn_initSubViews() {
@@ -147,6 +149,9 @@ class LoginPasswordViewController: BaseViewController, UITextFieldDelegate {
     
     //MARK: ☎️notification
     //MARK: 🎬event response
+    @objc private func clickAction_endEdit() {
+        self.view.endEditing(true);
+    }
     
     @objc private func clickAction_back() {
         self.navigationController?.popViewController(animated: true)
@@ -162,12 +167,13 @@ class LoginPasswordViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc private func clickAction_forgetPassword() {
-        let passwordVC = LoginForgetPasswordViewController()
+        let passwordVC = LoginMessageViewController()
+        passwordVC.phoneNumber = self.phoneNumber
         self.navigationController?.pushViewController(passwordVC, animated: true)
     }
     
     @objc private func clickAction_nextStep() {
-        self.presenter.reuqestUserLogin(phoneNumber: self.phoneNumber, password: self.passwordField.text!) { (isSuccess, error) in
+        self.presenter.requestUserLogin(phoneNumber: self.phoneNumber, password: self.passwordField.text!, messageCode:"") { (isSuccess, error) in
             if isSuccess
             {
                 self.dismiss(animated: true, completion: nil)

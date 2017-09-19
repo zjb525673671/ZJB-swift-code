@@ -38,6 +38,9 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
     private func xn_initData() {
         self.view.backgroundColor = UIColor.white
         self.navigationController?.setNavigationBarHidden(true, animated: false);
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(clickAction_endEdit))
+        self.view.addGestureRecognizer(tapGesture);
+        
     }
     
     private func xn_initSubViews() {
@@ -125,12 +128,20 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
     //MARK: ☎️notification
     //MARK: 🎬event response
 
+    @objc private func clickAction_endEdit() {
+        self.view.endEditing(true);
+    }
+
     @objc private func clickAction_back() {
         self.dismiss(animated: true, completion: nil)
     }
     
     @objc private func clickAction_nextStep() {
-        self.phoneNumberField.resignFirstResponder()
+//        self.phoneNumberField.resignFirstResponder()
+//        let messageVC = LoginMessageViewController()
+//        messageVC.phoneNumber = "13701728195"
+//        self.navigationController?.pushViewController(messageVC, animated: true)
+//        return
         if (self.phoneNumberField.text?.characters.count)! < 11
         {
             //tips提示
@@ -147,6 +158,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
                 {
                     if self.presenter.isRegister
                     {
+                        
                         let passwordVC = LoginPasswordViewController()
                         passwordVC.phoneNumber = self.phoneNumberField.text!
                         self.navigationController?.pushViewController(passwordVC, animated: true)
@@ -154,6 +166,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
                     else
                     {
                         let messageVC = LoginMessageViewController()
+                        messageVC.phoneNumber = self.phoneNumberField.text!
                         self.navigationController?.pushViewController(messageVC, animated: true)
                     }
                 }

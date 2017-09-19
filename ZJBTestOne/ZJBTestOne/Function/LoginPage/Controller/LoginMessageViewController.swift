@@ -17,10 +17,12 @@ class CustomTextField: UITextField {
 class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
 
     //MARK: ☸property
+    public var phoneNumber : String = ""
+    private var presenter = LoginMainPresenter.init()
     private var backLayer = CAGradientLayer.init()
     private var backButton = UIButton.init(type: UIButtonType.custom)
     private var nextButton = UIButton.init(type: UIButtonType.custom)
-    private var phoneNumberField = CustomTextField.init()
+    private var verifycodeFiled = CustomTextField.init()
     private var countDownButton = UIButton.init()
     
     private var firstCodeLabel = UILabel.init()
@@ -58,6 +60,8 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
     private func xn_initData() {
         self.view.backgroundColor = UIColor.white
         self.navigationController?.setNavigationBarHidden(true, animated: false);
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(clickAction_endEdit))
+        self.view.addGestureRecognizer(tapGesture);
     }
     
     private func xn_initSubViews() {
@@ -81,7 +85,7 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
         self.view.addSubview(self.secondCodeLabel)
         self.view.addSubview(self.thirdCodeLabel)
         self.view.addSubview(self.forthCodeLabel)
-        self.view.addSubview(self.phoneNumberField)
+        self.view.addSubview(self.verifycodeFiled)
         self.view.addSubview(self.nextButton)
         
         backImageView.snp.makeConstraints { (make) in
@@ -130,7 +134,7 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
             make.size.equalTo(CGSize.init(width: 60*ScaleX, height: 60*ScaleX))
         }
         
-        self.phoneNumberField.snp.makeConstraints { (make) in
+        self.verifycodeFiled.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(18*ScaleX)
             make.right.equalTo(self.view).offset(-18*ScaleX)
             make.centerY.equalTo(self.firstCodeLabel)
@@ -143,7 +147,7 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
         }
         
         inputLabel.xn_init(text: "输入验证码", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 26*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
-        callLabel.xn_init(text: "13701728194", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 18*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
+        callLabel.xn_init(text: self.phoneNumber, textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 18*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
         self.initLabel(self.firstCodeLabel, true)
         self.initLabel(self.secondCodeLabel, false)
         self.initLabel(self.thirdCodeLabel, false)
@@ -157,10 +161,10 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
         self.countDownButton.titleLabel?.font = UIFont.regularFont(size: 14*ScaleX)
         self.countDownButton.setTitleColor(UIColor.RGBA(hex: 0xffffff, alpha: 1), for: UIControlState.normal)
         self.countDownButton.addTarget(self, action: #selector(self.clickAction_sendMessage), for: UIControlEvents.touchUpInside)
-        self.phoneNumberField.keyboardType = UIKeyboardType.numberPad
-        self.phoneNumberField.textColor = UIColor.clear
-        self.phoneNumberField.delegate = self
-        self.phoneNumberField.tintColor = UIColor.clear
+        self.verifycodeFiled.keyboardType = UIKeyboardType.numberPad
+        self.verifycodeFiled.textColor = UIColor.clear
+        self.verifycodeFiled.delegate = self
+        self.verifycodeFiled.tintColor = UIColor.clear
     }
     
     private func initLabel(_ label: UILabel, _ isShow: Bool) {
@@ -229,24 +233,54 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
     
     //MARK: ☎️notification
     //MARK: 🎬event response
+    @objc private func clickAction_endEdit() {
+        self.view.endEditing(true);
+    }
     
     @objc private func clickAction_back() {
         self.navigationController?.popViewController(animated: true)
     }
     
     @objc private func clickAction_nextStep() {
-        let passwordVC = LoginPasswordViewController()
-        self.navigationController?.pushViewController(passwordVC, animated: true)
+        if (self.verifycodeFiled.text?.characters.count)! < 4
+        {
+            //tips提示
+            print("验证码位数不够")
+            XNProgressHUD.showError(error: "验证码位数不够")
+            return
+        }
+        self.presenter.requestCheckVerifyCode(phoneNumber: self.phoneNumber, verifyCode: self.verifycodeFiled.text!) { (isSuccess, error) in
+            if isSuccess
+            {
+                let setPasswordVC = LoginForgetPasswordViewController()
+                setPasswordVC.phoneNumber = self.phoneNumber
+                setPasswordVC.verifyCode = self.verifycodeFiled.text!
+                self.navigationController?.pushViewController(setPasswordVC, animated: true)
+            }
+            else
+            {
+                XNProgressHUD.showError(error: error)
+            }
+        }
     }
     
     @objc private func clickAction_sendMessage() {
         //发送短信验证码
-        print("短信验证码发送成功!")
-        self.countDownButton.isEnabled = false
-        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timer_countTime(timer:)), userInfo: nil, repeats: true)
-        RunLoop.current.add(self.timer!, forMode: RunLoopMode.commonModes)
-        self.countDownButton.setTitle("60秒后重新获取", for: UIControlState.normal)
-        self.countDownButton.setTitleColor(UIColor.RGBA(hex: 0xffffff, alpha: 0.5), for: UIControlState.normal)
+        self.presenter.requestSendMessage(phoneNumber: self.phoneNumber) { (isSuccess, error) in
+            if isSuccess
+            {
+                print("短信验证码发送成功!")
+                self.countDownButton.isEnabled = false
+                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timer_countTime(timer:)), userInfo: nil, repeats: true)
+                RunLoop.current.add(self.timer!, forMode: RunLoopMode.commonModes)
+                self.countDownButton.setTitle("60秒后重新获取", for: UIControlState.normal)
+                self.countDownButton.setTitleColor(UIColor.RGBA(hex: 0xffffff, alpha: 0.5), for: UIControlState.normal)
+            }
+            else
+            {
+                XNProgressHUD.showError(error: error)
+            }
+        }
     }
     
     @objc private func timer_countTime(timer:Timer) {

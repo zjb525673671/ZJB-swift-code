@@ -65,7 +65,7 @@ class LoanMainViewController: BaseViewController {
     @objc private func clickAction_enterNext() {
 //        XNProgressHUD.showLoading()
         
-//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
 //        let authenVC = AuthenMainViewController()
 //        self.navigationController?.pushViewController(authenVC, animated: true)
     }

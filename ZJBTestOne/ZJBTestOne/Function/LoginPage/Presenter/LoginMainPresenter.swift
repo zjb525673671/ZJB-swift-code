@@ -46,10 +46,10 @@ class LoginMainPresenter: NSObject {
         var dic : [String : String] = [String : String]()
         dic["phoneNum"] = phoneNumber
         dic["channelType"] = "1"
-        dic["ip"] = "1"
+        dic["ip"] = "0.0.0.0"
         dic["blackBox"] = "1"
         dic["appNum"] = "1"
-        XNNetWorkManager.sharedInstance.POSTRequest(urlString: Login_getMessageCode_Request, params: dic, success: { (object) in
+        XNNetWorkManager.sharedInstance.POSTRequest(urlString: Login_getVerifyCod_Request, params: dic, success: { (object) in
             if object["data"]["successed"].boolValue
             {
                 callBack(true, "")
@@ -64,10 +64,41 @@ class LoginMainPresenter: NSObject {
         }
     }
     
-    public func reuqestUserLogin(phoneNumber:String, password:String, callBack:@escaping (_ isSuccess:Bool, _ eMsg:String) -> ()) {
+    /// 验证验证码
+    ///
+    /// - Parameters:
+    ///   - phoneNumber: 手机号码
+    ///   - verifyCode: 验证码
+    ///   - callBack: 回调
+    public func requestCheckVerifyCode(phoneNumber:String, verifyCode:String, callBack:@escaping (_ isSuccess:Bool, _ eMsg:String) -> ()) {
+        var dic : [String : String] = [String : String]()
+        dic["phoneNum"] = phoneNumber
+        dic["smsCode"] = verifyCode
+        XNNetWorkManager.sharedInstance.POSTRequest(urlString: Login_checkVerifyCode_Request, params: dic, success: { (object) in
+            if object["data"]["successed"].boolValue
+            {
+                callBack(true, "")
+            }
+            else
+            {
+                callBack(false, object["message"].stringValue)
+            }
+            
+        }) { (error) in
+            callBack(false,error)
+        }
+    }
+    /// 用户登录
+    ///
+    /// - Parameters:
+    ///   - phoneNumber: 手机号码
+    ///   - password: 密码
+    ///   - callBack: 回调
+    public func requestUserLogin(phoneNumber:String, password:String , messageCode:String, callBack:@escaping (_ isSuccess:Bool, _ eMsg:String) -> ()) {
         var dic : [String : String] = [String : String]()
         dic["phoneNum"] = phoneNumber
         dic["password"] = password
+        dic["smsCode"] = messageCode
         dic["ip"] = "0.0.0.0"
         dic["blackBox"] = "1"
         dic["appNum"] = "1"
@@ -82,6 +113,35 @@ class LoginMainPresenter: NSObject {
                 XNUserInfo.nickName = object["data"]["data"]["nickName"].string
                 XNUserInfo.tokenEffective = object["data"]["data"]["tokenEffective"].string
                 XNUserInfo.tokenExpired = object["data"]["data"]["tokenExpired"].string
+                callBack(true, "")
+            }
+            else
+            {
+                callBack(false, object["message"].stringValue)
+            }
+            
+        }) { (error) in
+            callBack(false,error)
+        }
+    }
+    
+    /// 忘记密码
+    ///
+    /// - Parameters:
+    ///   - phoneNumber: 手机号码
+    ///   - password: 密码
+    ///   - messageCode: 验证码
+    ///   - callBack: 回调
+    public func requestForgetPassword(phoneNumber:String, password:String , messageCode:String, callBack:@escaping (_ isSuccess:Bool, _ eMsg:String) -> ()) {
+        var dic : [String : String] = [String : String]()
+        dic["phoneNum"] = phoneNumber
+        dic["password"] = password
+        dic["smsCode"] = messageCode
+        dic["appNum"] = "1"
+        XNNetWorkManager.sharedInstance.POSTRequest(urlString: Login_forgetPassword_Request, params: dic, success: { (object) in
+            let isSuccess = object["data"]["successed"]
+            if isSuccess.boolValue
+            {
                 callBack(true, "")
             }
             else
