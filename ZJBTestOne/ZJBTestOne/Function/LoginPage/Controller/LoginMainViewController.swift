@@ -142,6 +142,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
 //        messageVC.phoneNumber = "13701728195"
 //        self.navigationController?.pushViewController(messageVC, animated: true)
 //        return
+        
         if (self.phoneNumberField.text?.characters.count)! < 11
         {
             //tips提示

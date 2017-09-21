@@ -9,7 +9,7 @@
 import Foundation
 
 //设置环境的参数, 1:测试环境 2:开发环境 3:预发布环境  4或者其他:生产环境
-let EnvironmentIndex:Int = 1
+let EnvironmentIndex:Int = 3
 
 let Environment_BaseURL = XNNetWorkManager.sharedInstance.setEnvironment()//请求头
 let Picture_BaseURL = XNNetWorkManager.sharedInstance.setPictureBaseUrl()//图片头

@@ -12,6 +12,7 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
 
     //MARK: ☸property
     private var tableView = UITableView.init()
+    private var noDataView = UIView.init()
     private var presenter = ActivityMainPresenter.init()
     //MARK: ♻️life cycle
     override func viewDidLoad() {
@@ -23,11 +24,19 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-//        XNProgressHUD.showLoading()
         self.presenter.requestActivityList { (isSuccess, eMsg) in
-//            XNProgressHUD.dismissLoading()
             if isSuccess {
-                self.tableView.reloadData()
+                if self.presenter.dataArray.count > 0
+                {
+                    self.tableView.isHidden = false
+                    self.noDataView.isHidden = true
+                    self.tableView.reloadData()
+                }
+                else
+                {
+                    self.tableView.isHidden = true
+                    self.noDataView.isHidden = false
+                }
             }
         }
     }
@@ -52,16 +61,35 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
         backLayer.endPoint = CGPoint.init(x: 0, y: 1)
         backLayer.colors = [(UIColor.RGBA(hex: 0xf63875).cgColor),(UIColor.RGBA(hex: 0xf9603c).cgColor)]
         backLayer.locations = [0.0,1.0]
+        let talkLabel = UILabel.init()
         self.view.layer.addSublayer(backLayer)
+        self.view.addSubview(self.noDataView)
         self.view.addSubview(self.tableView)
+        self.noDataView.addSubview(talkLabel)
+        self.noDataView.snp.makeConstraints { (make) in
+            make.left.equalTo(self.view).offset(12*ScaleX)
+            make.top.equalTo(self.view).offset(44)
+            make.right.equalTo(self.view).offset(-12*ScaleX)
+            make.bottom.equalTo(self.view).offset(-64)
+        }
         self.tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
+        talkLabel.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view)
+            make.size.equalTo(CGSize.init(width: 200*ScaleX, height: 30*ScaleX))
+        }
+        talkLabel.xn_init(text: "暂无活动~", textAlignment: NSTextAlignment.center, font: UIFont.regularFont(size: 18*ScaleX), textColor: UIColor.RGBA(hex: 0x7a7c7c))
+        self.noDataView.isHidden = true
+        self.noDataView.backgroundColor = UIColor.white
+        self.noDataView.layer.cornerRadius = 4
         self.tableView.register(ActivityMainCell.self, forCellReuseIdentifier: "ActivityMainCell")
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 40*ScaleX));
+        self.tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 40*ScaleX));
     }
     //MARK: 🚪public
     //MARK: 🍐delegate

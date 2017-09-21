@@ -12,9 +12,8 @@ import SnapKit
 class LoanMainViewController: BaseViewController {
 
     //MARK: ☸property
-    var enterButton = XNGradientButton.init(type: UIButtonType.custom)
-    var testImageView = UIImageView()
-    
+    private var scrollView = UIScrollView.init()
+    public var pages = NSInteger.init()
     //MARK: ♻️life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,23 +50,15 @@ class LoanMainViewController: BaseViewController {
     
     private func xn_initSubViews() {
         
-        self.view.addSubview(self.enterButton)
-        self.enterButton.frame = CGRect(x:100,y:100,width:100,height:200)
-//        self.enterButton.snp.makeConstraints { (make) in
-//            make.top.equalTo(self.view).offset(64)
-//            make.centerX.equalTo(self.view)
-//            make.size.equalTo(CGSize(width: 200, height: 200))
-//        }
-        self.enterButton.backgroundColor = UIColor.green
-        self.enterButton.addTarget(self, action: #selector(self.clickAction_enterNext), for: .touchUpInside)
+        self.scrollView.frame = self.view.bounds
+        self.view.addSubview(self.scrollView)
+        
     }
     
     @objc private func clickAction_enterNext() {
-//        XNProgressHUD.showLoading()
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
-//        let authenVC = AuthenMainViewController()
-//        self.navigationController?.pushViewController(authenVC, animated: true)
+        
     }
     
     public func clickAction_update() {
