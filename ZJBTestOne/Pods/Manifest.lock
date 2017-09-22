@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.5.0)
+  - DGElasticPullToRefresh (1.1)
   - IBAnimatable (4.1.0)
   - Kingfisher (3.10.3)
   - Moya (8.0.5):
@@ -15,6 +16,7 @@ PODS:
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - DGElasticPullToRefresh (~> 1.1)
   - IBAnimatable (~> 4.1.0)
   - Kingfisher (~> 3.10.3)
   - Moya (~> 8.0.5)
@@ -24,6 +26,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
   IBAnimatable: 0fd2c9fd38c4798d71bcc18dbd87d473a7df2577
   Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
@@ -32,6 +35,6 @@ SPEC CHECKSUMS:
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 2f2ada764d2758e21800de5357de22655adc6aae
+PODFILE CHECKSUM: 2d44a6f6a19dc7ecb83308ba39873ece98cb43c5
 
 COCOAPODS: 1.2.1.beta.1
