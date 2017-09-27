@@ -89,7 +89,7 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
         self.tableView.dataSource = self
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        self.tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 40*ScaleX));
+        self.tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 20*ScaleX));
         self.tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 40*ScaleX));
     }
     //MARK: 🚪public
@@ -117,7 +117,8 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
         return 0.01
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let authVC = AuthenMainViewController()
+        self.navigationController?.pushViewController(authVC, animated: true)
     }
     //MARK: ☎️notification
     //MARK: 🎬event response

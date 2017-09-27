@@ -16,7 +16,7 @@ class BaseNavigtionController: UINavigationController {
         self.navigationBar.backgroundColor = UIColor.clear
         self.navigationBar.barTintColor = UIColor.clear
         var newImage = UIImage.init(named: "public_navigition_back")
-        newImage = newImage?.resizableImage(withCapInsets: UIEdgeInsetsMake(0, (newImage?.size.width)!/2 - 10, 0, (newImage?.size.width)!/2 - 10))
+        newImage = newImage?.resizableImage(withCapInsets: UIEdgeInsetsMake(0, (newImage?.size.width)!/2 - 5, (newImage?.size.height)!/2 - 5, (newImage?.size.width)!/2 - 10))
         self.navigationBar.setBackgroundImage(newImage, for: UIBarMetrics.default)
         
     }
