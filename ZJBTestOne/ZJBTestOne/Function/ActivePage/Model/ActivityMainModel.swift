@@ -13,5 +13,5 @@ class ActivityMainModel: NSObject {
     var peopleCount:Int = 0
     var isJion:Bool = false
     var html5Url:String = ""    
-    
+    var title:String = ""
 }

@@ -138,8 +138,11 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
         return 0.01
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let authVC = AuthenMainViewController()
-        self.navigationController?.pushViewController(authVC, animated: true)
+        let model:ActivityMainModel = self.presenter.dataArray[indexPath.row] as! ActivityMainModel
+        let webVC = XNWebViewController()
+        webVC.urlStr = model.html5Url
+        webVC.webTitle = model.title
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
     //MARK: ☎️notification
     //MARK: 🎬event response

@@ -14,4 +14,14 @@ let ScaleX = kScreenWidth/375.0
 
 class XNHelper: NSObject {
 
+    public static func help_topistance() -> Float {
+        if kScreenHeight == 812.0
+        {
+            return 20.0
+        }
+        else
+        {
+            return 0.0
+        }
+    }
 }

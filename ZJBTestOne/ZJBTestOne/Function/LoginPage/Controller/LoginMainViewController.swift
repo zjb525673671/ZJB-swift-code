@@ -12,6 +12,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
 
     //MARK: ☸property
     private var backLayer = CAGradientLayer.init()
+    private var xView = UIView.init()
     private var backButton = UIButton.init(type: UIButtonType.custom)
     private var nextButton = UIButton.init(type: UIButtonType.custom)
     private var phoneNumberField = UITextField.init()
@@ -40,7 +41,10 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
         self.navigationController?.setNavigationBarHidden(true, animated: false);
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(clickAction_endEdit))
         self.view.addGestureRecognizer(tapGesture);
-        
+        let deviceName = UIDevice.current.name
+        let width = kScreenHeight
+        print(deviceName)
+        print(width)
     }
     
     private func xn_initSubViews() {
@@ -55,50 +59,55 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
         self.backLayer.colors = [(UIColor.RGBA(hex: 0xf73776).cgColor),(UIColor.RGBA(hex: 0xfa6338).cgColor)]
         self.backLayer.locations = [0.0,1.0]
         self.view.layer.addSublayer(self.backLayer)
+        self.view.addSubview(self.xView)
         
-        self.view.addSubview(backImageView)
-        self.view.addSubview(self.backButton)
-        self.view.addSubview(inputLabel)
-        self.view.addSubview(callLabel)
-        self.view.addSubview(self.phoneNumberField)
-        self.view.addSubview(phoneLine)
-        self.view.addSubview(self.nextButton)
-        
+        self.xView.addSubview(backImageView)
+        self.xView.addSubview(self.backButton)
+        self.xView.addSubview(inputLabel)
+        self.xView.addSubview(callLabel)
+        self.xView.addSubview(self.phoneNumberField)
+        self.xView.addSubview(phoneLine)
+        self.xView.addSubview(self.nextButton)
+        let topD = XNHelper.help_topistance()
+        self.xView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view).offset(topD)
+            make.left.right.bottom.equalTo(self.view)
+        }
         backImageView.snp.makeConstraints { (make) in
-            make.left.equalTo(self.view).offset(18*ScaleX)
-            make.top.equalTo(self.view).offset(30*ScaleX)
+            make.left.equalTo(self.xView).offset(18*ScaleX)
+            make.top.equalTo(self.xView).offset(30*ScaleX)
             make.size.equalTo(CGSize.init(width: 10.5*ScaleX, height: 18.5*ScaleX))
         }
         self.backButton.snp.makeConstraints { (make) in
-            make.left.equalTo(self.view)
-            make.top.equalTo(self.view).offset(20*ScaleX)
+            make.left.equalTo(self.xView)
+            make.top.equalTo(self.xView).offset(20*ScaleX)
             make.size.equalTo(CGSize.init(width: 50*ScaleX, height: 40*ScaleX))
         }
         inputLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(self.view).offset(18*ScaleX)
-            make.top.equalTo(self.view).offset(80*ScaleX)
+            make.left.equalTo(self.xView).offset(18*ScaleX)
+            make.top.equalTo(self.xView).offset(80*ScaleX)
             make.size.equalTo(CGSize.init(width: 200*ScaleX, height: 36*ScaleX))
         }
         callLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(self.view).offset(18*ScaleX)
-            make.top.equalTo(self.view).offset(160*ScaleX)
+            make.left.equalTo(self.xView).offset(18*ScaleX)
+            make.top.equalTo(self.xView).offset(160*ScaleX)
             make.size.equalTo(CGSize.init(width: 80*ScaleX, height: 20*ScaleX))
         }
         self.phoneNumberField.snp.makeConstraints { (make) in
-            make.left.equalTo(self.view).offset(18*ScaleX)
-            make.right.equalTo(self.view).offset(-18*ScaleX)
-            make.top.equalTo(self.view).offset(187*ScaleX)
+            make.left.equalTo(self.xView).offset(18*ScaleX)
+            make.right.equalTo(self.xView).offset(-18*ScaleX)
+            make.top.equalTo(self.xView).offset(187*ScaleX)
             make.height.equalTo(30*ScaleX)
         }
         phoneLine.snp.makeConstraints { (make) in
-            make.left.equalTo(self.view).offset(18*ScaleX)
-            make.right.equalTo(self.view).offset(-18*ScaleX)
-            make.top.equalTo(self.view).offset(222*ScaleX)
+            make.left.equalTo(self.xView).offset(18*ScaleX)
+            make.right.equalTo(self.xView).offset(-18*ScaleX)
+            make.top.equalTo(self.xView).offset(222*ScaleX)
             make.height.equalTo(0.5)
         }
         self.nextButton.snp.makeConstraints { (make) in
-            make.right.equalTo(self.view).offset(-18*ScaleX)
-            make.bottom.equalTo(self.view).offset(-237*ScaleX)
+            make.right.equalTo(self.xView).offset(-18*ScaleX)
+            make.top.equalTo(self.xView).offset(400*ScaleX)
             make.size.equalTo(CGSize.init(width: 93*ScaleX, height: 33*ScaleX))
         }
         
@@ -106,6 +115,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
         callLabel.xn_init(text: "电话号码", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 14*ScaleX), textColor: UIColor.RGBA(hex: 0xffffff))
         phoneLine.backgroundColor = UIColor.RGBA(hex: 0xffffff)
         backImageView.image = UIImage.init(named: "login_goBack")
+//        self.backButton.backgroundColor = UIColor.blue
         self.backButton.addTarget(self, action: #selector(self.clickAction_back), for: UIControlEvents.touchUpInside)
         self.nextButton.setTitle("下一步>", for: UIControlState.normal)
         self.nextButton.titleLabel?.font = UIFont.regularFont(size: 24*ScaleX)

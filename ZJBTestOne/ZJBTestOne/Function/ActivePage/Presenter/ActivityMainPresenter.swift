@@ -31,6 +31,7 @@ class ActivityMainPresenter: NSObject {
                     model.peopleCount = subJson["depict"].intValue
                     model.isJion = subJson["isParticipate"].boolValue
                     model.html5Url = subJson["linkAddress"].stringValue
+                    model.title = subJson["title"].stringValue
                     self.dataArray.append(model)
                 }
                 callBack(true, "")

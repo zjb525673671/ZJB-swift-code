@@ -52,6 +52,7 @@
 		F3D4AA761F615F1E0041B476 /* loading_10.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D4AA6A1F615F1E0041B476 /* loading_10.png */; };
 		F3D4AA771F615F1E0041B476 /* loading_11.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D4AA6B1F615F1E0041B476 /* loading_11.png */; };
 		F3D4AA781F615F1E0041B476 /* loading_12.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D4AA6C1F615F1E0041B476 /* loading_12.png */; };
+		F3F79EDB1F8F1BA3002AE8D6 /* XNWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F79EDA1F8F1BA3002AE8D6 /* XNWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		F3D4AA6A1F615F1E0041B476 /* loading_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_10.png; sourceTree = "<group>"; };
 		F3D4AA6B1F615F1E0041B476 /* loading_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_11.png; sourceTree = "<group>"; };
 		F3D4AA6C1F615F1E0041B476 /* loading_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_12.png; sourceTree = "<group>"; };
+		F3F79EDA1F8F1BA3002AE8D6 /* XNWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +274,7 @@
 		F36983811F418FF000780DAB /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				F3F79ED71F8F1B44002AE8D6 /* PublicPage */,
 				F358FABE1F514326006EC360 /* LoginPage */,
 				F328CBE61F4A8B7F00A1D632 /* AuthenPage */,
 				F369839F1F4330B500780DAB /* LoanPage */,
@@ -549,6 +552,30 @@
 			path = Loading;
 			sourceTree = "<group>";
 		};
+		F3F79ED71F8F1B44002AE8D6 /* PublicPage */ = {
+			isa = PBXGroup;
+			children = (
+				F3F79ED81F8F1B45002AE8D6 /* Controller */,
+				F3F79ED91F8F1B45002AE8D6 /* Presenter */,
+			);
+			path = PublicPage;
+			sourceTree = "<group>";
+		};
+		F3F79ED81F8F1B45002AE8D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F3F79EDA1F8F1BA3002AE8D6 /* XNWebViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3F79ED91F8F1B45002AE8D6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -702,6 +729,7 @@
 				F328CBEE1F4A8C1000A1D632 /* AuthenMainViewController.swift in Sources */,
 				F328CBF71F4AEF7A00A1D632 /* MeMainCell.swift in Sources */,
 				F328CBF01F4A8FDF00A1D632 /* BaseNavigtionController.swift in Sources */,
+				F3F79EDB1F8F1BA3002AE8D6 /* XNWebViewController.swift in Sources */,
 				F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */,
 				F358FAE11F57FB3E006EC360 /* LoginUserModel.swift in Sources */,
 				F358FAC41F514375006EC360 /* LoginMainViewController.swift in Sources */,

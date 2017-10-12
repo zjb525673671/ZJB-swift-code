@@ -109,6 +109,9 @@ class MeMainViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1
         {
+            if !XNUserInfo.isLogin {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
+            }
         }
         else
         {
