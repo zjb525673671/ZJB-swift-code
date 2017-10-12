@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import DGElasticPullToRefresh
+import MJRefresh
 
 class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -75,6 +75,7 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
         }
         self.tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
+            make.top.equalTo(self.view).offset(44*ScaleX)
         }
         talkLabel.snp.makeConstraints { (make) in
             make.center.equalTo(self.view)
@@ -89,8 +90,28 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
         self.tableView.dataSource = self
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        self.tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 20*ScaleX));
-        self.tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 40*ScaleX));
+        self.tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 20*ScaleX))
+        self.tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 40*ScaleX))
+        self.tableView.mj_header = MJRefreshHeader.init(refreshingTarget: self, refreshingAction: #selector(xn_refresh))
+    }
+    
+    @objc private func xn_refresh() {
+        self.presenter.requestActivityList { (isSuccess, eMsg) in
+            self.tableView.mj_header.endRefreshing()
+            if isSuccess {
+                if self.presenter.dataArray.count > 0
+                {
+                    self.tableView.isHidden = false
+                    self.noDataView.isHidden = true
+                    self.tableView.reloadData()
+                }
+                else
+                {
+                    self.tableView.isHidden = true
+                    self.noDataView.isHidden = false
+                }
+            }
+        }
     }
     //MARK: 🚪public
     //MARK: 🍐delegate

@@ -1,8 +1,8 @@
 PODS:
-  - Alamofire (4.5.0)
-  - DGElasticPullToRefresh (1.1)
+  - Alamofire (4.5.1)
   - IBAnimatable (4.1.0)
-  - Kingfisher (3.10.3)
+  - Kingfisher (3.10.4)
+  - MJRefresh (3.1.14)
   - Moya (8.0.5):
     - Moya/Core (= 8.0.5)
   - Moya/Core (8.0.5):
@@ -11,30 +11,30 @@ PODS:
   - NVActivityIndicatorView (3.7.0):
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
-  - Result (3.2.3)
+  - Result (3.2.4)
   - SnapKit (3.2.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - DGElasticPullToRefresh (~> 1.1)
   - IBAnimatable (~> 4.1.0)
   - Kingfisher (~> 3.10.3)
+  - MJRefresh (~> 3.1.14)
   - Moya (~> 8.0.5)
   - NVActivityIndicatorView (~> 3.7.0)
   - SnapKit (~> 3.2.0)
   - SwiftyJSON (~> 3.1.4)
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   IBAnimatable: 0fd2c9fd38c4798d71bcc18dbd87d473a7df2577
-  Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
+  Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
+  MJRefresh: 6642e35b3227a5447b9fd5e17c552c90196c9859
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
-  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 2d44a6f6a19dc7ecb83308ba39873ece98cb43c5
+PODFILE CHECKSUM: 9a8a1387a1339a7aaccab944aac932a58a2898e0
 
 COCOAPODS: 1.2.1.beta.1
