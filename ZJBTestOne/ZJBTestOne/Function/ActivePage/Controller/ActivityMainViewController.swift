@@ -139,10 +139,21 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model:ActivityMainModel = self.presenter.dataArray[indexPath.row] as! ActivityMainModel
-        let webVC = XNWebViewController()
-        webVC.urlStr = model.html5Url
-        webVC.webTitle = model.title
-        self.navigationController?.pushViewController(webVC, animated: true)
+        if model.state == 2
+        {
+            let webVC = XNWebViewController()
+            webVC.urlStr = model.html5Url
+            webVC.webTitle = model.title
+            self.navigationController?.pushViewController(webVC, animated: true)
+        }
+        else if model.state == 1
+        {
+            XNProgressHUD.showError(error: "活动还未开始")
+        }
+        else if model.state == 3
+        {
+            XNProgressHUD.showError(error: "活动已结束")
+        }
     }
     //MARK: ☎️notification
     //MARK: 🎬event response

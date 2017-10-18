@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class XNWebViewController: BaseViewController {
+class XNWebViewController: BaseViewController, UIWebViewDelegate {
 
     //MARK: ☸property
     public var urlStr:String = ""
@@ -48,7 +48,8 @@ class XNWebViewController: BaseViewController {
         }
         let requestUrl:URLRequest = URLRequest.init(url: URL.init(string: self.urlStr)!)
         self.webView.loadRequest(requestUrl)
-        
+        self.webView.delegate = self
+        XNProgressHUD.showLoading()
 //        self.view.addSubview(self.wkWebView)
 //        self.wkWebView.snp.makeConstraints { (make) in
 //            make.edges.equalTo(self.view)
@@ -57,6 +58,11 @@ class XNWebViewController: BaseViewController {
     }
     //MARK: 🚪public
     //MARK: 🍐delegate
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        XNProgressHUD.dismissLoading()
+    }
+
     //MARK: ☎️notification
     //MARK: 🎬event response
 

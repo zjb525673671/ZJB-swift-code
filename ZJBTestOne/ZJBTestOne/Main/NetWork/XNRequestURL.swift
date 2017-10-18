@@ -9,7 +9,7 @@
 import Foundation
 
 //设置环境的参数, 1:测试环境 2:开发环境 3:预发布环境  4或者其他:生产环境
-let EnvironmentIndex:Int = 4
+let EnvironmentIndex:Int = 1
 
 let Environment_BaseURL = XNNetWorkManager.sharedInstance.setEnvironment()//请求头
 let Picture_BaseURL = XNNetWorkManager.sharedInstance.setPictureBaseUrl()//图片头
@@ -36,6 +36,9 @@ let Login_forgetPassword_Request = "userCenter/customer/forgotPassword.do"
 
 /** 登录 */
 let Login_UserLogined_Request = "userCenter/customer/login.do"
+
+/** 退出 */
+let Login_UserLoginOut_Request = "userCenter/customer/logout.do"
 
 //============================== 贷款 ==============================\\
 

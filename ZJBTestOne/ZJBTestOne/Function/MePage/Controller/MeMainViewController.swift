@@ -14,9 +14,9 @@ class MeMainViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     //MARK: ☸property
     var tableView = UITableView.init(frame: CGRect.zero, style: UITableViewStyle.grouped)
     var dataArray = NSMutableArray.init()
-    let imageUrlArray = ["me_cell_redPacket","me_cell_jion","me_cell_help","me_cell_service","me_cell_setting"]
-    let titleArray = ["我的红包","我参与的活动","帮助中心","联系客服","设置中心"]
-    let indexArray = [1,2,1,3,2]
+    let imageUrlArray = ["me_cell_vip","me_cell_redPacket","me_cell_jion","me_cell_help","me_cell_service","me_cell_setting"]
+    let titleArray = ["会员等级","我的红包","我参与的活动","帮助中心","联系客服","设置中心"]
+    let indexArray = [1,3,3,3,3,2]
     
     //MARK: ♻️life cycle
     override func viewDidLoad() {
@@ -27,6 +27,7 @@ class MeMainViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -38,9 +39,8 @@ class MeMainViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     }
     //MARK: 🔒private
     private func xn_initData() {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.dataArray.removeAllObjects()
-        for i in 0...4 {
+        for i in 0...5 {
             let model = MeMainModel.init()
             model.imageIcon = self.imageUrlArray[i]
             model.title = self.titleArray[i]
@@ -76,10 +76,14 @@ class MeMainViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     //MARK: 🚪public
     //MARK: 🍐delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return section + 1
+        if section == 0
+        {
+            return 1;
+        }
+        return self.dataArray.count
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
@@ -89,8 +93,6 @@ class MeMainViewController: BaseViewController,UITableViewDelegate,UITableViewDa
         let cell:MeMainNormalCell = tableView.dequeueReusableCell(withIdentifier: "MeMainNormalCell") as! MeMainNormalCell
         if indexPath.section == 1 {
             cell.cell_updateData(model: self.dataArray[indexPath.row] as! MeMainModel)
-        } else if indexPath.section == 2 {
-            cell.cell_updateData(model: self.dataArray[indexPath.row + 2] as! MeMainModel)
         }
         return cell
     }
@@ -109,21 +111,17 @@ class MeMainViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1
         {
-            if !XNUserInfo.isLogin {
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
-            }
-        }
-        else
-        {
             if indexPath.row == 0
             {
-                
+                let webVC = XNWebViewController()
+                webVC.urlStr = "\(Html_BaseURL)FlashLoanH5/html/page/index/vip_rank.html?customerId=\(XNUserInfo.customId ?? "")"
+                webVC.webTitle = "会员等级规则"
+                self.navigationController?.pushViewController(webVC, animated: true)
             }
-            else if indexPath.row == 1
+            else if indexPath.row == 5
             {
-            }
-            else if indexPath.row == 2
-            {
+                let mesetVC = MeSettingViewController()
+                self.navigationController?.pushViewController(mesetVC, animated: true)
             }
         }
     }

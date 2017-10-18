@@ -27,4 +27,21 @@ class MeMainPresenter: NSObject {
             callBack(false, eMsg)
         }
     }
+    
+    public func requestUserLoginOut(callBack : @escaping (_ isSuccess:Bool, _ eMsg:String)->()) {
+        var dic : [String : String] = [String : String]()
+        dic["token"] = XNUserInfo.tokenCode
+        XNNetWorkManager.sharedInstance.POSTRequest(urlString: Login_UserLoginOut_Request, params: dic, success: { (object) in
+            if object["data"]["successed"].boolValue || object["code"].intValue == 1009
+            {
+                callBack(true, "")
+            }
+            else
+            {
+                callBack(false, object["message"].stringValue)
+            }
+        }) { (eMsg) in
+            callBack(false, eMsg)
+        }
+    }
 }

@@ -39,6 +39,7 @@
 		F36983C81F459F6400780DAB /* BaseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983C71F459F6400780DAB /* BaseCategory.swift */; };
 		F36983CB1F46BF6500780DAB /* XNGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983CA1F46BF6500780DAB /* XNGradientButton.swift */; };
 		F36983CE1F46C3A600780DAB /* XNGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36983CD1F46C3A600780DAB /* XNGradientView.swift */; };
+		F3B7D78D1F94BA3000784E23 /* MeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B7D78C1F94BA2F00784E23 /* MeSettingViewController.swift */; };
 		F3D4AA5E1F6158060041B476 /* XNProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4AA5D1F6158060041B476 /* XNProgressHUD.swift */; };
 		F3D4AA6D1F615F1E0041B476 /* loading_01.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D4AA611F615F1E0041B476 /* loading_01.png */; };
 		F3D4AA6E1F615F1E0041B476 /* loading_02.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D4AA621F615F1E0041B476 /* loading_02.png */; };
@@ -92,6 +93,7 @@
 		F36983C71F459F6400780DAB /* BaseCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCategory.swift; sourceTree = "<group>"; };
 		F36983CA1F46BF6500780DAB /* XNGradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNGradientButton.swift; sourceTree = "<group>"; };
 		F36983CD1F46C3A600780DAB /* XNGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNGradientView.swift; sourceTree = "<group>"; };
+		F3B7D78C1F94BA2F00784E23 /* MeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeSettingViewController.swift; sourceTree = "<group>"; };
 		F3D4AA5D1F6158060041B476 /* XNProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNProgressHUD.swift; sourceTree = "<group>"; };
 		F3D4AA611F615F1E0041B476 /* loading_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_01.png; sourceTree = "<group>"; };
 		F3D4AA621F615F1E0041B476 /* loading_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_02.png; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				F36983BD1F4331C000780DAB /* MeMainViewController.swift */,
+				F3B7D78C1F94BA2F00784E23 /* MeSettingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				F36983BA1F43317900780DAB /* QuotaMainViewController.swift in Sources */,
 				F328CBFE1F4C347900A1D632 /* XNNetWorkManager.swift in Sources */,
 				F328CC001F4DB4A100A1D632 /* MeMainPresenter.swift in Sources */,
+				F3B7D78D1F94BA3000784E23 /* MeSettingViewController.swift in Sources */,
 				F36983C21F459BB900780DAB /* ActivityMainViewController.swift in Sources */,
 				F328CBF51F4ADE7000A1D632 /* XNHelper.swift in Sources */,
 				F328CBF91F4C032300A1D632 /* MeMainModel.swift in Sources */,

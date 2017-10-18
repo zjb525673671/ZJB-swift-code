@@ -132,7 +132,7 @@ extension XNNetWorkManager {
             return "http://test.xnsudai5.com/"
         } else if EnvironmentIndex == 3  {
             //预发布环境
-            return "http://pre.xnshandai.com/"
+            return "http://test02.xnshandai.net/"
         } else {
             //生产环境
             return "https://sdai.xnsudai.com/"
@@ -152,7 +152,7 @@ extension XNNetWorkManager {
             return "http://h5.xnsudai5.com/"
         } else if EnvironmentIndex == 3  {
             //预发布环境
-            return "http://image.xnshandai.com/"
+            return "http://image.xnshandai.net/"
         } else {
             //生产环境
             return "http://image.xnshandai.com/"
@@ -166,13 +166,13 @@ extension XNNetWorkManager {
     public func setHtml5BaseUrl() -> String {
         if EnvironmentIndex == 1 {
             //测试环境
-            return "http://h5.xnsudai5.com/"
+            return "http://pre.xnshandai.net/"
         } else if EnvironmentIndex == 2  {
             //开发环境
             return "http://h5.xnsudai5.com/"
         } else if EnvironmentIndex == 3  {
             //预发布环境
-            return "https://sdai.xnsudai.com/"
+            return "https://test02.xnsudai.com/"
         } else {
             //生产环境
             return "https://sdai.xnsudai.com/"

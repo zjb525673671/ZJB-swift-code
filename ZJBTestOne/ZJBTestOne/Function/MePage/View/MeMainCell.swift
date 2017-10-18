@@ -191,7 +191,6 @@ class MeMainNormalCell: UITableViewCell {
     public func cell_updateData(model:MeMainModel) {
         self.itemLabel.text = model.title
         self.leftImageView.image = UIImage.init(named: model.imageIcon)
-        self.bottomLine.isHidden = model.isHidden
         if model.index == 1 {
             self.upView.layer.cornerRadius = 4
             self.downView.layer.cornerRadius = 0
@@ -201,6 +200,66 @@ class MeMainNormalCell: UITableViewCell {
         } else {
             self.upView.layer.cornerRadius = 0
             self.downView.layer.cornerRadius = 0
+        }
+    }
+}
+
+class MeSettingCell: UITableViewCell {
+    
+    var itemLabel = UILabel.init()
+    var selectImageView = UIImageView.init()
+    var bottomLine = UIView.init()
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.xn_initSubViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.xn_initSubViews()
+    }
+    
+    private func xn_initSubViews() {
+        self.contentView.addSubview(self.itemLabel)
+        self.contentView.addSubview(self.selectImageView)
+        self.contentView.addSubview(self.bottomLine)
+
+        self.selectImageView.snp.makeConstraints { (make) in
+            make.right.equalTo(self.contentView).offset(-12*ScaleX)
+            make.centerY.equalTo(self.contentView)
+            make.size.equalTo(CGSize.init(width: 14*ScaleX, height: 14*ScaleX))
+        }
+        self.itemLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.contentView).offset(12*ScaleX)
+            make.centerY.equalTo(self.contentView)
+            make.right.equalTo(self.selectImageView.snp.left)
+            make.height.equalTo(24*ScaleX)
+        }
+        self.bottomLine.snp.makeConstraints { (make) in
+            make.left.equalTo(self.contentView).offset(12*ScaleX)
+            make.right.equalTo(self.contentView).offset(-12*ScaleX)
+            make.bottom.equalTo(self.contentView)
+            make.height.equalTo(1)
+        }
+        self.backgroundColor = UIColor.clear
+        self.selectImageView.image = UIImage.init(named: "me_cell_arrow")
+        self.bottomLine.backgroundColor = UIColor.RGBA(hex: 0xeeeeee)
+        self.selectionStyle = UITableViewCellSelectionStyle.none
+        self.itemLabel.xn_init(text: "", textAlignment: NSTextAlignment.left, font: UIFont.regularFont(size: 16*ScaleX), textColor: UIColor.RGBA(hex: 0x242121))
+    }
+    public func cell_updateData(index:NSInteger) {
+        
+        if index == 0 {
+            self.itemLabel.text = "关于我们"
+        } else if index == 1 {
+            self.itemLabel.text = "意见反馈"
+        } else {
+            self.itemLabel.text = "修改登录密码"
         }
     }
 }

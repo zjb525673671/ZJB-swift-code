@@ -29,6 +29,7 @@ class ActivityMainPresenter: NSObject {
                     let model = ActivityMainModel.init()
                     model.imageUrl = "\(Picture_BaseURL)\(subJson["activityPic"].stringValue)"
                     model.peopleCount = subJson["depict"].intValue
+                    model.state = subJson["activityState"].intValue
                     model.isJion = subJson["isParticipate"].boolValue
                     model.html5Url = subJson["linkAddress"].stringValue
                     model.title = subJson["title"].stringValue

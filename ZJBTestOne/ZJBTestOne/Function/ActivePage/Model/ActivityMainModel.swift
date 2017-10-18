@@ -11,6 +11,7 @@ import UIKit
 class ActivityMainModel: NSObject {
     var imageUrl:String = ""
     var peopleCount:Int = 0
+    var state:Int = 0
     var isJion:Bool = false
     var html5Url:String = ""    
     var title:String = ""
