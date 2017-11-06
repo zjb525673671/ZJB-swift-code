@@ -54,6 +54,7 @@
 		F3D4AA771F615F1E0041B476 /* loading_11.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D4AA6B1F615F1E0041B476 /* loading_11.png */; };
 		F3D4AA781F615F1E0041B476 /* loading_12.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D4AA6C1F615F1E0041B476 /* loading_12.png */; };
 		F3F79EDB1F8F1BA3002AE8D6 /* XNWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F79EDA1F8F1BA3002AE8D6 /* XNWebViewController.swift */; };
+		F3FA7EDF1FA9D0F1008D4DBF /* QuotaMainTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA7EDE1FA9D0F1008D4DBF /* QuotaMainTaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		F3D4AA6B1F615F1E0041B476 /* loading_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_11.png; sourceTree = "<group>"; };
 		F3D4AA6C1F615F1E0041B476 /* loading_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_12.png; sourceTree = "<group>"; };
 		F3F79EDA1F8F1BA3002AE8D6 /* XNWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNWebViewController.swift; sourceTree = "<group>"; };
+		F3FA7EDE1FA9D0F1008D4DBF /* QuotaMainTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotaMainTaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -491,6 +493,7 @@
 		F36983B81F43310A00780DAB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F3FA7EDE1FA9D0F1008D4DBF /* QuotaMainTaskCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -609,7 +612,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = zjb;
 				TargetAttributes = {
 					18F987411DE41E500043EDD8 = {
@@ -715,6 +718,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36983911F42EE1600780DAB /* AppDelegate.swift in Sources */,
+				F3FA7EDF1FA9D0F1008D4DBF /* QuotaMainTaskCell.swift in Sources */,
 				F358FAD11F5695D0006EC360 /* LoginMainPresenter.swift in Sources */,
 				F358FACB1F54490B006EC360 /* LoginPasswordViewController.swift in Sources */,
 				F358FAD31F56A857006EC360 /* ActivityMainCell.swift in Sources */,
@@ -773,7 +777,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -781,7 +787,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -823,7 +833,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -831,7 +843,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;

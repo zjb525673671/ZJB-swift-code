@@ -173,7 +173,9 @@ class LoginPasswordViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc private func clickAction_nextStep() {
+        XNProgressHUD.showLoading()
         self.presenter.requestUserLogin(phoneNumber: self.phoneNumber, password: self.passwordField.text!, messageCode:"") { (isSuccess, error) in
+            XNProgressHUD.dismissLoading()
             if isSuccess
             {
                 self.dismiss(animated: true, completion: nil)

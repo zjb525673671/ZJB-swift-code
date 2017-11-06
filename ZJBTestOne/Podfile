@@ -10,6 +10,7 @@ def shared_pods
     pod 'NVActivityIndicatorView', '~> 3.7.0' #loading框
     pod 'Kingfisher', '~> 3.10.3' #图片下载、缓存的框架,灵感取自于SDWebImage
     pod 'MJRefresh', '~> 3.1.14' #下拉刷新
+    pod 'LeanCloud', '~> 10.1.0' #云引擎
 end
 
 target 'ZJBTestOne’ do
