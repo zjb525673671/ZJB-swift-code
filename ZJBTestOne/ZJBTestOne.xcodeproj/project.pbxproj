@@ -878,9 +878,10 @@
 			baseConfigurationReference = 55F46CFF9AC325180EF820C8 /* Pods-ZJBTestOne.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = KAY8GR4GJK;
 				INFOPLIST_FILE = ZJBTestOne/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zjb.ZJBTestOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -893,9 +894,10 @@
 			baseConfigurationReference = 6C0C58AFFAE0D6FB2A3D3424 /* Pods-ZJBTestOne.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = KAY8GR4GJK;
 				INFOPLIST_FILE = ZJBTestOne/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zjb.ZJBTestOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
