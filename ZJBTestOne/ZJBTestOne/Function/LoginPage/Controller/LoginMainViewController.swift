@@ -129,7 +129,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
     //MARK: 🚪public
     //MARK: 🍐delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (textField.text?.characters.count)! > 10 && string != "" {
+        if (textField.text?.count)! > 10 && string != "" {
             return false
         }
         return true
@@ -153,7 +153,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
 //        self.navigationController?.pushViewController(messageVC, animated: true)
 //        return
         
-        if (self.phoneNumberField.text?.characters.count)! < 11
+        if (self.phoneNumberField.text?.count)! < 11
         {
             //tips提示
             print("手机号码错误")

@@ -141,7 +141,7 @@ class LoginPasswordViewController: BaseViewController, UITextFieldDelegate {
     //MARK: 🚪public
     //MARK: 🍐delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (textField.text?.characters.count)! > 15 && string != "" {
+        if (textField.text?.count)! > 15 && string != "" {
             return false
         }
         return true

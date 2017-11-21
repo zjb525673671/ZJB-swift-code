@@ -183,7 +183,7 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
     //MARK: 🚪public
     //MARK: 🍐delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let length:Int = (textField.text?.characters.count)!
+        let length:Int = (textField.text?.count)!
         
         
         if length == 0 {
@@ -242,7 +242,7 @@ class LoginMessageViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc private func clickAction_nextStep() {
-        if (self.verifycodeFiled.text?.characters.count)! < 4
+        if (self.verifycodeFiled.text?.count)! < 4
         {
             //tips提示
             print("验证码位数不够")
