@@ -99,6 +99,7 @@ class XNLoadingView: UIView {
     }
 }
 
+//loading框主要的类
 extension ProgressHUD {
     
     public func showError(error : String) {
