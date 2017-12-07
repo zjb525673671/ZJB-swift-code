@@ -56,7 +56,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
         self.backLayer.frame = self.view.bounds
         self.backLayer.startPoint = CGPoint.init(x: 0, y: 0)
         self.backLayer.endPoint = CGPoint.init(x: 0, y: 1)
-        self.backLayer.colors = [(UIColor.RGBA(hex: 0xf73776).cgColor),(UIColor.RGBA(hex: 0xfa6338).cgColor)]
+        self.backLayer.colors = [(UIColor.layerStartColor().cgColor),(UIColor.layerEndColor().cgColor)]
         self.backLayer.locations = [0.0,1.0]
         self.view.layer.addSublayer(self.backLayer)
         self.view.addSubview(self.xView)

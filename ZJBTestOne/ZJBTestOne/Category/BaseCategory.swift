@@ -88,6 +88,13 @@ extension UIColor {
         return UIColor(hex: hex, alpha: alpha)!
     }
     
+    public static func layerStartColor() -> UIColor {
+        return UIColor(hex: 0x235678, alpha: 1.0)!
+    }
+    public static func layerEndColor() -> UIColor {
+        return UIColor(hex: 0x782345, alpha: 1.0)!
+    }
+    
     public static func yzts_arc4randomColor(_ randomAlpha: Bool = false) -> UIColor {
         return UIColor(r: CGFloat(Float(arc4random()) / Float(UINT32_MAX)), g: CGFloat(Float(arc4random()) / Float(UINT32_MAX)), b: CGFloat(Float(arc4random()) / Float(UINT32_MAX)), a: (randomAlpha ? (CGFloat(Float(arc4random()) / Float(UINT32_MAX))) : 1.0))
     }
