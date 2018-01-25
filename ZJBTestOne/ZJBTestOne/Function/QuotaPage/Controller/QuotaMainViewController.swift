@@ -43,7 +43,7 @@ class QuotaMainViewController: BaseViewController, UITableViewDelegate, UITableV
         self.scrollView.frame = self.view.bounds
         self.scrollView.contentSize = self.view.bounds.size
         self.tableView.frame = CGRect.init(x: 12*ScaleX, y: 300*ScaleX, width: kScreenWidth - 24*ScaleX, height: kScreenHeight - 400*ScaleX)
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        self.tableView.register(QuotaMainTaskCell.self, forCellReuseIdentifier: "QuotaMainTaskCell")
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.backgroundColor = UIColor.clear
@@ -71,7 +71,7 @@ class QuotaMainViewController: BaseViewController, UITableViewDelegate, UITableV
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell") as! UITableViewCell
+        let cell:QuotaMainTaskCell = tableView.dequeueReusableCell(withIdentifier: "QuotaMainTaskCell") as! QuotaMainTaskCell
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

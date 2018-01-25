@@ -1,6 +1,6 @@
 workspace ‘ZJBTestOne.xcworkspace'
 use_frameworks!
-platform :ios, ‘8.0’
+platform :ios, ‘9.0’
 
 def shared_pods
     pod 'SnapKit', '~> 3.2.0' #swift版本的约束,相当于OC的masonry
@@ -11,6 +11,7 @@ def shared_pods
     pod 'Kingfisher', '~> 3.10.3' #图片下载、缓存的框架,灵感取自于SDWebImage
     pod 'MJRefresh', '~> 3.1.14' #下拉刷新
     pod 'LeanCloud', '~> 10.1.0' #云引擎
+    pod 'RAMAnimatedTabBarController', '~> 3.0.1' #tabbar动画
 end
 
 target 'ZJBTestOne’ do
