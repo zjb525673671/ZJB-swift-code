@@ -12,7 +12,7 @@ class MeSettingViewController: BaseViewController, UITableViewDelegate, UITableV
 
     //MARK: ☸property
     private var tableView = UITableView.init()
-    private var footerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 116*ScaleX))
+    private var footerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: MainScreenWidth, height: 116*ScaleX))
     private var loginOutButton = UIButton.init(type: UIButtonType.custom)
     private var presenter = MeMainPresenter.init()
     //MARK: ♻️life cycle

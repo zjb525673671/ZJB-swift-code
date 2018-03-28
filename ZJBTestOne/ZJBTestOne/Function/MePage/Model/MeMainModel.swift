@@ -12,5 +12,7 @@ class MeMainModel: NSObject {
     var imageIcon:String = ""
     var title:String = ""
     var index:Int = 0
-    var isHidden:Bool = false    
+    var isHidden:Bool = false
+    
+    
 }

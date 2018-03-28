@@ -42,7 +42,7 @@ class QuotaMainViewController: BaseViewController, UITableViewDelegate, UITableV
         self.scrollView.addSubview(self.tableView)
         self.scrollView.frame = self.view.bounds
         self.scrollView.contentSize = self.view.bounds.size
-        self.tableView.frame = CGRect.init(x: 12*ScaleX, y: 300*ScaleX, width: kScreenWidth - 24*ScaleX, height: kScreenHeight - 400*ScaleX)
+        self.tableView.frame = CGRect.init(x: 12*ScaleX, y: 300*ScaleX, width: MainScreenWidth - 24*ScaleX, height: MainScreenHeight - 400*ScaleX)
         self.tableView.register(QuotaMainTaskCell.self, forCellReuseIdentifier: "QuotaMainTaskCell")
         self.tableView.delegate = self
         self.tableView.dataSource = self

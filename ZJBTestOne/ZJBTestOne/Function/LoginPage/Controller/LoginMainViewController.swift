@@ -42,7 +42,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(clickAction_endEdit))
         self.view.addGestureRecognizer(tapGesture);
         let deviceName = UIDevice.current.name
-        let width = kScreenHeight
+        let width = MainScreenWidth
         print(deviceName)
         print(width)
     }
@@ -68,7 +68,7 @@ class LoginMainViewController: BaseViewController, UITextFieldDelegate {
         self.xView.addSubview(self.phoneNumberField)
         self.xView.addSubview(phoneLine)
         self.xView.addSubview(self.nextButton)
-        let topD = XNHelper.help_topistance()
+        let topD = APStatusHeight()
         self.xView.snp.makeConstraints { (make) in
             make.top.equalTo(self.view).offset(topD)
             make.left.right.bottom.equalTo(self.view)

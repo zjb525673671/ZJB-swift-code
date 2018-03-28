@@ -40,11 +40,18 @@ class LoanMainViewController: BaseViewController {
         self.view.backgroundColor = UIColor.white
         
         self.title = "贷款"
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            if !XNUserInfo.isLogin {
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
-            }
-        }
+        
+        self.view.addSubview(self.scrollView)
+        self.scrollView.frame = CGRect.init(x: 0, y: 0, width: MainScreenWidth, height: MainScreenHeight)
+        self.scrollView.contentSize = CGSize.init(width: MainScreenWidth, height: MainScreenHeight - 49)
+        
+        
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+//            if !XNUserInfo.isLogin {
+//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: LoginRegisterShowNotifacation), object: nil)
+//            }
+//        }
+        
         
     }
     

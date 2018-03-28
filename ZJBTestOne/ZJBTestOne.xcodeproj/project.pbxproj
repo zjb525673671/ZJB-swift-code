@@ -11,7 +11,6 @@
 		F328CBEE1F4A8C1000A1D632 /* AuthenMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBED1F4A8C1000A1D632 /* AuthenMainViewController.swift */; };
 		F328CBF01F4A8FDF00A1D632 /* BaseNavigtionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBEF1F4A8FDF00A1D632 /* BaseNavigtionController.swift */; };
 		F328CBF21F4AC86500A1D632 /* MeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF11F4AC86500A1D632 /* MeMainView.swift */; };
-		F328CBF51F4ADE7000A1D632 /* XNHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF41F4ADE7000A1D632 /* XNHelper.swift */; };
 		F328CBF71F4AEF7A00A1D632 /* MeMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF61F4AEF7A00A1D632 /* MeMainCell.swift */; };
 		F328CBF91F4C032300A1D632 /* MeMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBF81F4C032300A1D632 /* MeMainModel.swift */; };
 		F328CBFE1F4C347900A1D632 /* XNNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328CBFD1F4C347900A1D632 /* XNNetWorkManager.swift */; };
@@ -41,6 +40,9 @@
 		F3CF96B820688EA000E38027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3CF96B520688E9F00E38027 /* Assets.xcassets */; };
 		F3CF96B920688EA000E38027 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3CF96B620688E9F00E38027 /* Info.plist */; };
 		F3CF96BC20688EC900E38027 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3CF96BA20688EC900E38027 /* LaunchScreen.storyboard */; };
+		F3CF96F1206A196C00E38027 /* LoanTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CF96F0206A196C00E38027 /* LoanTopView.swift */; };
+		F3CF96F3206A1FB600E38027 /* LoanUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CF96F2206A1FB600E38027 /* LoanUserModel.swift */; };
+		F3CF96F5206B35BA00E38027 /* XNPrefixHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CF96F4206B35BA00E38027 /* XNPrefixHeader.swift */; };
 		F3D4AA5E1F6158060041B476 /* XNProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4AA5D1F6158060041B476 /* XNProgressHUD.swift */; };
 		F3D4AA6D1F615F1E0041B476 /* loading_01.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D4AA611F615F1E0041B476 /* loading_01.png */; };
 		F3D4AA6E1F615F1E0041B476 /* loading_02.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D4AA621F615F1E0041B476 /* loading_02.png */; };
@@ -66,7 +68,6 @@
 		F328CBED1F4A8C1000A1D632 /* AuthenMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenMainViewController.swift; sourceTree = "<group>"; };
 		F328CBEF1F4A8FDF00A1D632 /* BaseNavigtionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigtionController.swift; sourceTree = "<group>"; };
 		F328CBF11F4AC86500A1D632 /* MeMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainView.swift; sourceTree = "<group>"; };
-		F328CBF41F4ADE7000A1D632 /* XNHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNHelper.swift; sourceTree = "<group>"; };
 		F328CBF61F4AEF7A00A1D632 /* MeMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainCell.swift; sourceTree = "<group>"; };
 		F328CBF81F4C032300A1D632 /* MeMainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMainModel.swift; sourceTree = "<group>"; };
 		F328CBFD1F4C347900A1D632 /* XNNetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNNetWorkManager.swift; sourceTree = "<group>"; };
@@ -96,6 +97,9 @@
 		F3CF96B520688E9F00E38027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3CF96B620688E9F00E38027 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3CF96BB20688EC900E38027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F3CF96F0206A196C00E38027 /* LoanTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanTopView.swift; sourceTree = "<group>"; };
+		F3CF96F2206A1FB600E38027 /* LoanUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanUserModel.swift; sourceTree = "<group>"; };
+		F3CF96F4206B35BA00E38027 /* XNPrefixHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNPrefixHeader.swift; sourceTree = "<group>"; };
 		F3D4AA5D1F6158060041B476 /* XNProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNProgressHUD.swift; sourceTree = "<group>"; };
 		F3D4AA611F615F1E0041B476 /* loading_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_01.png; sourceTree = "<group>"; };
 		F3D4AA621F615F1E0041B476 /* loading_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_02.png; sourceTree = "<group>"; };
@@ -215,7 +219,7 @@
 		F328CBF31F4ADE5000A1D632 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				F328CBF41F4ADE7000A1D632 /* XNHelper.swift */,
+				F3CF96F4206B35BA00E38027 /* XNPrefixHeader.swift */,
 				F3D4AA5D1F6158060041B476 /* XNProgressHUD.swift */,
 			);
 			path = Helper;
@@ -323,10 +327,10 @@
 		F369839F1F4330B500780DAB /* LoanPage */ = {
 			isa = PBXGroup;
 			children = (
+				F3CF96EF206A194E00E38027 /* Presenter */,
+				F3CF96EE206A194600E38027 /* Model */,
+				F3CF96ED206A193300E38027 /* View */,
 				F36983A01F4330B500780DAB /* Controller */,
-				F36983A31F4330B500780DAB /* Model */,
-				F36983A41F4330B500780DAB /* Presenter */,
-				F36983A51F4330B500780DAB /* View */,
 			);
 			path = LoanPage;
 			sourceTree = "<group>";
@@ -337,27 +341,6 @@
 				F36983BF1F4331F900780DAB /* LoanMainViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		F36983A31F4330B500780DAB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F36983A41F4330B500780DAB /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		F36983A51F4330B500780DAB /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F36983AA1F43310A00780DAB /* ActivePage */ = {
@@ -530,6 +513,29 @@
 				F3CF96B620688E9F00E38027 /* Info.plist */,
 			);
 			name = "Supporting File";
+			sourceTree = "<group>";
+		};
+		F3CF96ED206A193300E38027 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F3CF96F0206A196C00E38027 /* LoanTopView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3CF96EE206A194600E38027 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3CF96F2206A1FB600E38027 /* LoanUserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3CF96EF206A194E00E38027 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		F3D4AA5F1F615F1E0041B476 /* Source */ = {
@@ -729,7 +735,6 @@
 				F328CC001F4DB4A100A1D632 /* MeMainPresenter.swift in Sources */,
 				F3B7D78D1F94BA3000784E23 /* MeSettingViewController.swift in Sources */,
 				F36983C21F459BB900780DAB /* ActivityMainViewController.swift in Sources */,
-				F328CBF51F4ADE7000A1D632 /* XNHelper.swift in Sources */,
 				F328CBF91F4C032300A1D632 /* MeMainModel.swift in Sources */,
 				F358FADD1F56D289006EC360 /* ActivityMainPresenter.swift in Sources */,
 				F36983C81F459F6400780DAB /* BaseCategory.swift in Sources */,
@@ -737,9 +742,12 @@
 				F36983BE1F4331C000780DAB /* MeMainViewController.swift in Sources */,
 				F3D4AA5E1F6158060041B476 /* XNProgressHUD.swift in Sources */,
 				F328CBEE1F4A8C1000A1D632 /* AuthenMainViewController.swift in Sources */,
+				F3CF96F1206A196C00E38027 /* LoanTopView.swift in Sources */,
 				F328CBF71F4AEF7A00A1D632 /* MeMainCell.swift in Sources */,
+				F3CF96F5206B35BA00E38027 /* XNPrefixHeader.swift in Sources */,
 				F328CBF01F4A8FDF00A1D632 /* BaseNavigtionController.swift in Sources */,
 				F3F79EDB1F8F1BA3002AE8D6 /* XNWebViewController.swift in Sources */,
+				F3CF96F3206A1FB600E38027 /* LoanUserModel.swift in Sources */,
 				F36983931F42EE3D00780DAB /* BaseViewController.swift in Sources */,
 				F358FAE11F57FB3E006EC360 /* LoginUserModel.swift in Sources */,
 				F358FAC41F514375006EC360 /* LoginMainViewController.swift in Sources */,

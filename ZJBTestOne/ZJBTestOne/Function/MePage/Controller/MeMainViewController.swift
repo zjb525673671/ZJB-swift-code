@@ -133,6 +133,7 @@ class MeMainViewController: BaseViewController,UITableViewDelegate,UITableViewDa
             let A = Character(UnicodeScalar(number)!)
             newStr.append(A)
         }
+        
         print(newStr)
     }
     //MARK: ☎️notification

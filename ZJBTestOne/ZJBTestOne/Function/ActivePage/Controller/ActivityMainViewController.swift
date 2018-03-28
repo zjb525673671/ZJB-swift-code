@@ -90,8 +90,8 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
         self.tableView.dataSource = self
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        self.tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 20*ScaleX))
-        self.tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 40*ScaleX))
+        self.tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: MainScreenWidth, height: 20*ScaleX))
+        self.tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: MainScreenWidth, height: 40*ScaleX))
         self.tableView.mj_header = MJRefreshHeader.init(refreshingTarget: self, refreshingAction: #selector(xn_refresh))
     }
     
@@ -139,21 +139,25 @@ class ActivityMainViewController: BaseViewController, UITableViewDelegate, UITab
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model:ActivityMainModel = self.presenter.dataArray[indexPath.row] as! ActivityMainModel
-        if model.state == 2
-        {
-            let webVC = XNWebViewController()
-            webVC.urlStr = model.html5Url
-            webVC.webTitle = model.title
-            self.navigationController?.pushViewController(webVC, animated: true)
-        }
-        else if model.state == 1
-        {
-            XNProgressHUD.showError(error: "活动还未开始")
-        }
-        else if model.state == 3
-        {
-            XNProgressHUD.showError(error: "活动已结束")
-        }
+//        if model.state == 2
+//        {
+//            let webVC = XNWebViewController()
+//            webVC.urlStr = model.html5Url
+//            webVC.webTitle = model.title
+//            self.navigationController?.pushViewController(webVC, animated: true)
+//        }
+//        else if model.state == 1
+//        {
+//            XNProgressHUD.showError(error: "活动还未开始")
+//        }
+//        else if model.state == 3
+//        {
+//            XNProgressHUD.showError(error: "活动已结束")
+//        }
+        let webVC = XNWebViewController()
+        webVC.urlStr = model.html5Url
+        webVC.webTitle = model.title
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
     //MARK: ☎️notification
     //MARK: 🎬event response
